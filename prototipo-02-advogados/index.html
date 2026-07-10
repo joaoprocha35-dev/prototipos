@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocacia Premium | Defesa e Estratégia de Alto Valor</title>
+    <meta name="description" content="Estratégias jurídicas afiadas, atendimento de excelência e transparência implacável na sua defesa. Conheça nossa expertise.">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. CUSTOMIZAÇÃO BASE E TEMA PREMIUM
+           ========================================= */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Georgia', serif; 
+            background-color: #050505;
+            color: #ffffff; 
+            overflow-x: hidden;
+        }
+        .font-sans {
+            font-family: 'Arial', sans-serif !important;
+        }
+        .destaque-dourado {
+            color: #C0A16B !important; 
+        }
+        .bg-premium-dark {
+            background-color: #050505 !important;
+        }
+        .bg-card-dark {
+            background-color: #111111 !important;
+        }
+        
+        /* Correção das escritas apagadas: garantindo contraste e nitidez */
+        p.text-mutado-claro {
+            color: #e0e0e0 !important;
+            opacity: 1 !important;
+        }
+        .text-subtitulo {
+            color: #ffffff !important;
+            opacity: 1 !important;
+        }
+        
+        /* CORREÇÃO DO FORMULÁRIO E ÚLTIMA TELA (Legibilidade Total) */
+        .form-label {
+            color: #e0e0e0 !important; /* Transforma os títulos dos campos em cinza claro visível */
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .text-muted {
+            color: #b5b5b5 !important; /* Torna visível o texto "WhatsApp Corporativo" e "E-mail Institucional" */
+        }
+        .form-control::placeholder {
+            color: #777777 !important; /* Torna os textos de exemplo dentro das caixas legíveis */
+            opacity: 1 !important;
+        }
+        .form-select {
+            color: #ffffff !important;
+        }
+        
+        /* CORREÇÃO DO RODAPÉ (Legibilidade Total) */
+        footer p, footer .text-muted {
+            color: #a0a0a0 !important; /* Torna os textos de copyright e OAB visíveis */
+        }
+        footer a {
+            color: #c0a16b !important;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* =========================================
+           2. NAVEGAÇÃO
+           ========================================= */
+        .navbar {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.7));
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+        .navbar-brand {
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            letter-spacing: 2px;
+        }
+        .nav-link {
+            color: #fff !important;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            margin-left: 15px;
+        }
+        .nav-link:hover, .nav-link.active { 
+            color: #C0A16B !important; 
+        }
+        .navbar-toggler {
+            border-color: rgba(192, 161, 107, 0.5);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23C0A16B' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        /* =========================================
+           3. CAMADA DA ESTÁTUA (FIXA - COMEÇA NA ESQUERDA)
+           ========================================= */
+        #camada-estatua {
+            position: fixed; 
+            top: 0; left: 0;
+            width: 100%; height: 100vh;
+            pointer-events: none;
+            z-index: 5; 
+        }
+        .estatua-img {
+            position: absolute;
+            top: 12vh; 
+            left: 2%; 
+            height: 80vh; 
+            will-change: transform;
+            filter: drop-shadow(0px 0px 25px rgba(192, 161, 107, 0.25));
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+        }
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        /* Oculta a estátua em telas menores para manter usabilidade mobile */
+        @media (max-width: 991.98px) {
+            #camada-estatua { display: none !important; }
+        }
+
+        /* =========================================
+           4. HERO SECTION (ESCRITA NA DIREITA)
+           ========================================= */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            padding-top: 100px;
+        }
+        .fundo-animado {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+        }
+        .fundo-animado img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; opacity: 0;
+            animation: crossfade 12s infinite alternate ease-in-out;
+        }
+        .fundo-animado .img-topo { animation-delay: 6s; }
+        @keyframes crossfade { 0% { opacity: 0; } 15%, 35% { opacity: 0.22; } 50%, 100% { opacity: 0; } }
+
+        .conteudo-hero {
+            width: 40%; /* Reduzido para afastar da estátua */
+            margin-right: 5%;
+            z-index: 20;
+        }
+        .conteudo-hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
+        .conteudo-hero p { font-family: 'Arial', sans-serif; font-size: 1.2rem; line-height: 1.6; color: #ccc; margin-bottom: 40px; }
+
+        .btn-moderno {
+            display: inline-block; 
+            padding: 14px 35px; 
+            border: 1px solid #C0A16B; 
+            color: #C0A16B;
+            text-decoration: none; 
+            font-family: 'Arial', sans-serif; 
+            text-transform: uppercase;
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            transition: 0.3s;
+            background: transparent;
+        }
+        .btn-moderno:hover { 
+            background-color: #C0A16B; 
+            color: #000 !important; 
+        }
+
+        /* =========================================
+           5. ANIMAÇÕES DE REVELAÇÃO
+           ========================================= */
+        .revelar-esq { opacity: 0; transform: translateX(-40px); transition: 0.8s ease-out; }
+        .revelar-dir { opacity: 0; transform: translateX(40px); transition: 0.8s ease-out; }
+        .revelar-baixo { opacity: 0; transform: translateY(40px); transition: 0.8s ease-out; }
+        .visivel { opacity: 1 !important; transform: translate(0) !important; }
+
+        /* =========================================
+           6. COMPONENTES CUSTOMIZADOS
+           ========================================= */
+        .secao-solida {
+            position: relative;
+            z-index: 20; /* Passa por cima da estátua (que tem z-index 5) */
+            background-color: #050505; 
+        }
+        .titulo-secao { 
+            font-size: 2.5rem; 
+            color: #C0A16B; 
+            text-transform: uppercase; 
+        }
+        .topico { 
+            border-bottom: 1px solid #222; 
+        }
+        .card-atuacao {
+            border-top: 3px solid #C0A16B !important;
+            transition: transform 0.3s ease;
+        }
+        .card-atuacao:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Formulários Estrutura */
+        .form-control {
+            background-color: #111111 !important;
+            border: 1px solid #333333 !important;
+            color: #ffffff !important;
+            border-radius: 0;
+            padding: 12px;
+        }
+        .form-control:focus {
+            border-color: #C0A16B !important;
+            box-shadow: none !important;
+        }
+
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#menuPrincipal" data-bs-offset="100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="menuPrincipal">
+        <div class="container-fluid px-4 px-md-5">
+            <a class="navbar-brand text-white" href="#inicio">ADVOCACIA <span class="destaque-dourado">PRO</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <div class="navbar-nav py-3 py-lg-0 text-center">
+                    <a class="nav-link" href="#inicio">Início</a>
+                    <a class="nav-link" href="#expertise">Expertise</a>
+                    <a class="nav-link" href="#sobre">Trajetória</a>
+                    <a class="nav-link" href="#atuacao">Atuação</a>
+                    <a class="nav-link" href="#depoimentos">Depoimentos</a>
+                    <a class="nav-link" href="#contato">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="camada-estatua">
+        <img src="estatuajustica.png" alt="Estátua da Justiça" class="estatua-img" id="estatua">
+    </div>
+
+    <section class="hero" id="inicio">
+        <div class="fundo-animado">
+            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1920&q=80" alt="Fundo Escritório">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80" alt="Fundo Direito" class="img-topo">
+        </div>
+        <div class="container py-5">
+            <div class="row justify-content-md-end justify-content-center">
+                <div class="col-12 col-md-8 col-lg-5 revelar-baixo conteudo-hero">
+                    <h1 class="display-5 fw-bold text-uppercase mb-4">A balança da <span class="destaque-dourado">Justiça</span> pende para quem se prepara.</h1>
+                    <p class="font-sans text-subtitulo fs-5 mb-5">Estratégias jurídicas afiadas, atendimento de excelência e transparência implacável na sua defesa.</p>
+                    <a href="#contato" class="btn-moderno">Agende sua Consulta</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 position-relative" id="expertise" style="z-index: 10; background-color: transparent;">
+        <div class="container py-5">
+            <div class="row justify-content-md-start justify-content-center">
+                <div class="col-12 col-md-8 col-lg-5 col-xl-4">
+                    <h2 class="titulo-secao mb-5 revelar-esq">Nossa Expertise</h2>
+                    
+                    <div class="topico pb-4 mb-4 revelar-esq" style="transition-delay: 0.1s;">
+                        <h3 class="font-sans h4 text-white d-flex align-items-center"><i class="fa-solid fa-gavel destaque-dourado me-3 fs-5"></i>01. Direito Criminal Corporativo</h3>
+                        <p class="font-sans text-mutado-claro mt-2 small">Atuamos na defesa de executivos e empresas em investigações complexas, combinando discrição absoluta com defesa contundente.</p>
+                    </div>
+                    
+                    <div class="topico pb-4 mb-4 revelar-esq" style="transition-delay: 0.3s;">
+                        <h3 class="font-sans h4 text-white d-flex align-items-center"><i class="fa-solid fa-scale-balanced destaque-dourado me-3 fs-5"></i>02. Contencioso Estratégico</h3>
+                        <p class="font-sans text-mutado-claro mt-2 small">Resolução de disputas de alto valor, onde cada movimento é calculated para mitigar riscos e maximizar a vantagem do nosso cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 secao-solida" id="sobre">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                    <h2 class="titulo-secao mb-5 revelar-baixo">Nossa <span class="destaque-dourado">Trajetória</span></h2>
+                    
+                    <div class="topico pb-3 mb-4 revelar-baixo" style="transition-delay: 0.1s;">
+                        <h3 class="font-sans h5 text-white">Fundação de Excelência</h3>
+                        <p class="font-sans text-mutado-claro small">Desde o início, pautamos nossa atuação na transparência e no atendimento altamente especializado, construindo um legado.</p>
+                    </div>
+                    <div class="topico pb-3 mb-4 revelar-baixo" style="transition-delay: 0.3s;">
+                        <h3 class="font-sans h5 text-white">Expansão Estratégica</h3>
+                        <p class="font-sans text-mutado-claro small">Expandimos nossas operações para atender casos de alta complexidade em todo o território nacional, consolidando nossa autoridade.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 order-1 order-lg-2 text-center revelar-dir" style="transition-delay: 0.4s;">
+                    <div class="rounded overflow-hidden shadow">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Sócio Fundador" class="img-fluid" style="filter: grayscale(20%);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 secao-solida" id="atuacao" style="background-color: #020202 !important;">
+        <div class="container py-5 text-center">
+            <h2 class="titulo-secao mb-5 revelar-baixo">Áreas de Atuação</h2>
+            <div class="row g-4 mt-2 text-start">
+                <div class="col-12 col-md-4 revelar-baixo" style="transition-delay: 0.1s;">
+                    <div class="card card-atuacao bg-card-dark text-white p-4 h-100 border-0 rounded-0">
+                        <div class="mb-3"><i class="fa-solid fa-building destaque-dourado fs-3"></i></div>
+                        <h3 class="font-sans h5 destaque-dourado mb-3">Direito Societário</h3>
+                        <p class="font-sans text-mutado-claro small mb-0">Fusões, aquisições e estruturação de governança corporativa com precisão técnica.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 revelar-baixo" style="transition-delay: 0.2s;">
+                    <div class="card card-atuacao bg-card-dark text-white p-4 h-100 border-0 rounded-0">
+                        <div class="mb-3"><i class="fa-solid fa-coins destaque-dourado fs-3"></i></div>
+                        <h3 class="font-sans h5 destaque-dourado mb-3">Tributário</h3>
+                        <p class="font-sans text-mutado-claro small mb-0">Planejamento fiscal avançado e defesas complexas em autuações administrativas ou judiciais.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 revelar-baixo" style="transition-delay: 0.3s;">
+                    <div class="card card-atuacao bg-card-dark text-white p-4 h-100 border-0 rounded-0">
+                        <div class="mb-3"><i class="fa-solid fa-shield-halved destaque-dourado fs-3"></i></div>
+                        <h3 class="font-sans h5 destaque-dourado mb-3">Digital e Compliance</h3>
+                        <p class="font-sans text-mutado-claro small mb-0">Adequação legal para a economia digital protetiva e programas rígidos de integridade corporativa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 secao-solida" id="depoimentos">
+        <div class="container py-5 text-center">
+            <h2 class="titulo-secao mb-5 revelar-baixo">O que dizem nossos clientes</h2>
+            <div class="row g-4 text-start justify-content-center">
+                <div class="col-12 col-md-5 revelar-baixo" style="transition-delay: 0.1s;">
+                    <div class="bg-card-dark p-4 border border-secondary border-opacity-25 h-100 d-flex flex-column justify-content-between">
+                        <p class="font-sans text-light fst-italic small">"A atuação estratégica do escritório em nossa reestruturação societária foi impecável. Conduziram processos complexos com extrema maestria, segurança jurídica e discrição."</p>
+                        <div class="mt-3 pt-3 border-top border-dark d-flex align-items-center">
+                            <div class="ms-2">
+                                <h4 class="font-sans h6 fw-bold mb-0 text-white">Carlos Eduardo Ramos</h4>
+                                <small class="text-muted font-sans" style="font-size:0.75rem;">Diretor Executivo - TechHoldings</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 revelar-baixo" style="transition-delay: 0.2s;">
+                    <div class="bg-card-dark p-4 border border-secondary border-opacity-25 h-100 d-flex flex-column justify-content-between">
+                        <p class="font-sans text-light fst-italic small">"Em um momento crítico de fiscalização tributária de alta complexidade, a equipe trouxe soluções cirúrgicas que mitigaram riscos severos adicionais ao nosso fluxo patrimonial."</p>
+                        <div class="mt-3 pt-3 border-top border-dark d-flex align-items-center">
+                            <div class="ms-2">
+                                <h4 class="font-sans h6 fw-bold mb-0 text-white">Mariana J. Alencar</h4>
+                                <small class="text-muted font-sans" style="font-size:0.75rem;">CFO - Alencar Indústrias S.A.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 secao-solida" id="contato" style="background-color: #050505 !important;">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-12 col-lg-5 revelar-esq">
+                    <h2 class="titulo-secao mb-4">Agende uma <br><span class="destaque-dourado">Consulta</span></h2>
+                    <p class="font-sans text-mutado-claro mb-5">Entre em contato para avaliar a segurança jurídica da sua operação ou estruturar uma defesa assertiva de alta complexidade.</p>
+                    
+                    <div class="mb-4 d-flex align-items-center font-sans">
+                        <i class="fa-brands fa-whatsapp destaque-dourado fs-4 me-3"></i>
+                        <div>
+                            <small class="text-muted d-block">WhatsApp Corporativo</small>
+                            <a href="https://wa.me/5511999999999" target="_blank" class="text-decoration-none text-white fw-bold">(11) 99999-9999</a>
+                        </div>
+                    </div>
+                    <div class="mb-4 d-flex align-items-center font-sans">
+                        <i class="fa-solid fa-envelope destaque-dourado fs-4 me-3"></i>
+                        <div>
+                            <small class="text-muted d-block">E-mail Institucional</small>
+                            <span class="text-white fw-bold">contato@advocaciapro.com.br</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-lg-7 revelar-dir">
+                    <form class="font-sans row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small">Nome Completo</label>
+                            <input type="text" class="form-control" placeholder="Ex: Roberto Silva" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small">Telefone / WhatsApp</label>
+                            <input type="tel" class="form-control" placeholder="(11) 99999-9999" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small">E-mail Corporativo</label>
+                            <input type="email" class="form-control" placeholder="roberto@empresa.com" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small">Área de Interesse</label>
+                            <select class="form-select form-control">
+                                <option>Direito Societário</option>
+                                <option>Direito Tributário</option>
+                                <option>Criminal Corporativo</option>
+                                <option>Compliance / Outros</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small">Breve Resumo do Caso</label>
+                            <textarea class="form-control" rows="4" placeholder="Descreva sucintamente sua necessidade..." required></textarea>
+                        </div>
+                        <div class="col-12 text-end mt-4">
+                            <button type="submit" class="btn-moderno w-100 w-sm-auto">Solicitar Contato Especializado</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-premium-dark border-top border-dark position-relative font-sans" style="z-index:20;">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-12 col-md-4 text-center text-md-start">
+                    <span class="fw-bold text-uppercase tracking-wider text-white">ADVOCACIA <span class="destaque-dourado">PRO</span></span>
+                    <p class="text-muted mt-2 small mb-0">Inscrição de Sociedade de Advogados: OAB/SP nº 00.000</p>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <p class="text-muted small mb-0">&copy; 2026 Advocacia Pro. Todos os direitos reservados.<br>Em estrita conformidade com o Provimento 205/2021 do CFOAB.</p>
+                </div>
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <a href="#" class="me-3 small">Termos de Uso</a>
+                    <a href="#" class="small">Políticas de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /* 1. LÓGICA DA ESTÁTUA COORDENADA (DA ESQUERDA PARA A DIREITA) */
+        const estatua = document.getElementById('estatua');
+        
+        function regularEstatua() {
+            // Só executa o movimento se a tela for maior que 991px (Desktop)
+            if (window.innerWidth > 991) {
+                const scrollY = window.scrollY;
+                const alturaTela = window.innerHeight; 
+                
+                // Calcula o progresso do scroll apenas entre a Tela 1 e a Tela 2 (de 0 a 1)
+                let progresso = scrollY / alturaTela;
+                
+                // Trava o progresso no máximo 1
+                if (progresso > 1) progresso = 1;
+                
+                // Move no eixo X da esquerda (2%) para a direita (até 38% da largura da tela)
+                // Isso faz ela parar no espaço vazio à direita da Expertise, sem tocar na borda.
+                const moveX = progresso * (window.innerWidth * 0.38);
+                
+                estatua.style.transform = `translateX(${moveX}px)`;
+            } else {
+                estatua.style.transform = `none`;
+            }
+        }
+
+        window.addEventListener('scroll', regularEstatua);
+        window.addEventListener('resize', regularEstatua);
+
+        /* 2. INTERSECTION OBSERVER (CALIBRADO PARA ALTA VISIBILIDADE) */
+        const observerConfig = {
+            threshold: 0.1, // Exibe o texto mais rápido ao entrar na tela
+            rootMargin: "0px"
+        };
+
+        const animarElementos = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visivel');
+                    // Comente a linha abaixo para que a animação ocorra apenas uma vez
+                    // observer.unobserve(entry.target);
+                } else {
+                    entry.target.classList.remove('visivel');
+                }
+            });
+        }, observerConfig);
+
+        // Seleciona todos os elementos que devem ser animados
+        document.querySelectorAll('.revelar-esq, .revelar-dir, .revelar-baixo').forEach(el => {
+            animarElementos.observe(el);
+        });
+        
+        // Garante que a primeira tela esteja visível se a página for carregada no topo
+        setTimeout(() => {
+            if (window.scrollY < 100) {
+                document.querySelector('.conteudo-hero').classList.add('visivel');
+            }
+        }, 100);
+    </script>
+</body>
+</html>
