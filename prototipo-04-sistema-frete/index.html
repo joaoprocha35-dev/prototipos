@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Cyber-Logistics</title>
+    
+    <style>
+        /* ================= VARIÁVEIS DE COR (CSS CUSTOM PROPERTIES) ================= */
+        /* O :root é como se fosse um "cofre de variáveis" do CSS. 
+           Ao invés de digitar a mesma cor várias vezes, guardamos aqui. Se a cliente quiser
+           mudar a loja de verde para roxo, você só muda a cor aqui e o site todo atualiza! */
+        :root {
+            --bg-base: #0f1115;       /* Fundo mais escuro da página (quase preto) */
+            --bg-card: #181b21;       /* Fundo um pouco mais claro para o "cartão" central */
+            --text-main: #ffffff;     /* Texto principal em branco */
+            --text-muted: #8b92a5;    /* Texto secundário em tom acinzentado */
+            --neon-green: #00ff88;    /* O verde fluorescente de destaque */
+            --neon-glow: rgba(0, 255, 136, 0.3); /* Uma versão transparente do verde para dar efeito de brilho */
+            --border-color: #2a2f3a;  /* Cor das bordas das caixas de texto */
+        }
+
+        /* ================= RESET E BASE ================= */
+        * { 
+            box-sizing: border-box; /* Garante que as bordas não aumentem o tamanho total dos elementos */
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+        
+        body { 
+            background-color: var(--bg-base); 
+            color: var(--text-main); 
+            display: flex; 
+            justify-content: center; /* Centraliza horizontalmente na tela */
+            align-items: center;     /* Centraliza verticalmente na tela */
+            min-height: 100vh;       /* Garante que o fundo ocupe 100% da altura da tela (Viewport Height) */
+            padding: 20px; 
+        }
+
+        /* ================= CONTAINER PRINCIPAL ================= */
+        .container {
+            background-color: var(--bg-card);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra escura para destacar o cartão do fundo */
+            /* Essa animação (criada lá embaixo) faz o cartão subir suavemente quando a página abre */
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        h2 { text-align: center; margin-bottom: 25px; font-weight: 600; font-size: 24px; letter-spacing: 1px; }
+        /* O span aplica o efeito neon apenas na palavra "Logística" */
+        h2 span { color: var(--neon-green); text-shadow: 0 0 10px var(--neon-glow); }
+
+        /* ================= INPUTS E LABELS ================= */
+        .input-group { margin-bottom: 20px; position: relative; }
+        .input-group label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-size: 13px; 
+            color: var(--text-muted); 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+        }
+        
+        input {
+            width: 100%;
+            padding: 14px;
+            background-color: #0b0c0f;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 15px;
+            transition: all 0.3s ease; /* Faz as mudanças (como o brilho) acontecerem suavemente */
+        }
+
+        /* O :focus é ativado quando o usuário clica dentro da caixa para digitar */
+        input:focus { 
+            outline: none; 
+            border-color: var(--neon-green); 
+            box-shadow: 0 0 12px var(--neon-glow); 
+        }
+        
+        /* Estilo específico para campos que o usuário não pode digitar (como o do endereço automático) */
+        input[readonly] { color: var(--text-muted); cursor: not-allowed; }
+
+        /* ================= BOTÃO ================= */
+        button {
+            width: 100%;
+            padding: 16px;
+            margin-top: 10px;
+            background-color: transparent; /* Começa com o fundo transparente */
+            color: var(--neon-green);
+            border: 2px solid var(--neon-green);
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* O :hover é ativado quando o mouse passa por cima do botão */
+        button:hover { 
+            background-color: var(--neon-green); /* Pinta o fundo de verde */
+            color: var(--bg-base);               /* Muda a letra para escuro */
+            box-shadow: 0 0 20px var(--neon-glow); /* Adiciona um brilho em volta */
+            transform: translateY(-2px);         /* Faz o botão dar uma leve "subidinha" */
+        }
+        
+        /* O :active é ativado no momento exato do clique */
+        button:active { transform: translateY(0); }
+
+        /* ================= ÁREA DE RESULTADOS ================= */
+        #resultado { margin-top: 25px; display: flex; flex-direction: column; gap: 10px; }
+        
+        .frete-card {
+            background-color: #0b0c0f;
+            border-left: 4px solid var(--neon-green); /* Uma linha verde elegante na lateral esquerda */
+            padding: 15px;
+            border-radius: 6px;
+            /* Animação que faz o card aparecer suavemente de baixo para cima */
+            animation: fadeIn 0.4s ease forwards;
+            opacity: 0;
+        }
+
+        .frete-card span { font-size: 18px; font-weight: bold; color: var(--text-main); }
+        .frete-card p { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+        /* ================= ANIMAÇÕES (KEYFRAMES) ================= */
+        /* Instruções de "De" (from) "Para" (to) para as animações acontecerem */
+        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        /* Animação de pulso para o texto de "Carregando..." */
+        .loading { text-align: center; color: var(--neon-green); font-weight: bold; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 
+            0%, 100% { opacity: 1; } 
+            50% { opacity: 0.5; } /* Pisca diminuindo a opacidade na metade do tempo */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Painel de <span>Logística</span></h2>
+        
+        <div class="input-group">
+            <label>CEP de Destino</label>
+            <input type="text" id="cep" placeholder="Apenas números (Ex: 01001000)" maxlength="8" onblur="buscarEndereco()">
+        </div>
+
+        <div class="input-group">
+            <label>Endereço Completo</label>
+            <input type="text" id="endereco" readonly placeholder="Aguardando CEP...">
+        </div>
+
+        <button onclick="buscarFrete()">Calcular Fretes Disponíveis</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // FUNÇÃO 1: Autocompletar Endereço usando a API pública ViaCEP
+        // O "async" significa que essa função realiza tarefas que demoram (como ir até a internet buscar dados).
+        async function buscarEndereco() {
+            // Pega o valor (os números) que o usuário digitou no campo de CEP
+            const cep = document.getElementById('cep').value;
+            // Seleciona o campo de endereço para podermos escrever nele depois
+            const campoEndereco = document.getElementById('endereco');
+            
+            // Regra de segurança: Se não tiver 8 números exatos, a função para e não faz nada (return)
+            if (cep.length !== 8) return;
+
+            // Mostra um aviso temporário para o usuário
+            campoEndereco.value = "Buscando localização...";
+
+            // try/catch tenta executar um código e captura erros se algo der errado (ex: sem internet)
+            try {
+                // "await fetch" significa: "Espere a internet responder e só depois continue o código"
+                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                
+                // Converte a resposta da internet para um objeto JSON (que o Javascript entende)
+                const dados = await response.json();
+
+                // Se a API retornar que o CEP não existe, avisamos o usuário
+                if (dados.erro) {
+                    campoEndereco.value = "CEP não encontrado.";
+                    return;
+                }
+
+                // Se deu certo, juntamos a Rua, Bairro e Cidade (usando crases ` para interpolar variáveis)
+                campoEndereco.value = `${dados.logradouro}, ${dados.bairro} - ${dados.localidade}/${dados.uf}`;
+            } catch (error) {
+                campoEndereco.value = "Erro na busca.";
+            }
+        }
+
+        // FUNÇÃO 2: Conversar com o seu Python (Django) para buscar os Fretes
+        async function buscarFrete() {
+            const cepInput = document.getElementById('cep').value;
+            const resultadoDiv = document.getElementById('resultado');
+            
+            // Validação de segurança básica antes de enviar ao servidor
+            if (cepInput.length !== 8) {
+                // O .innerHTML insere código HTML diretamente dentro da div "resultado"
+                resultadoDiv.innerHTML = "<p style='color: #ff4444; text-align: center;'>⚠️ Digite um CEP válido com 8 números.</p>";
+                return;
+            }
+
+            // Exibe a mensagem de carregamento piscando com a classe CSS que criamos
+            resultadoDiv.innerHTML = "<p class='loading'>Sincronizando com as transportadoras...</p>";
+
+            try {
+                // Aqui o fetch está enviando o CEP empacotado para o Django na porta 8000
+                const response = await fetch('http://127.0.0.1:8000/api/calcular-frete/', {
+                    method: 'POST', // Usamos POST porque estamos enviando dados sensíveis no "corpo" da requisição
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ cep_destino: cepInput }) // Transforma o CEP em formato JSON
+                });
+
+                // Recebemos a lista de transportadoras que o Python devolveu
+                const transportadoras = await response.json();
+                
+                // Limpa o texto de "Sincronizando..." para dar lugar aos resultados
+                resultadoDiv.innerHTML = ""; 
+                
+                // Validação de erro: Se não for uma lista válida ou se o Token do Python estiver errado
+                if (transportadoras.error || !Array.isArray(transportadoras)) {
+                    resultadoDiv.innerHTML = "<p style='color: #ff4444;'>❌ Erro ao conectar com a API de fretes.</p>";
+                    return;
+                }
+
+                let contagemAnimacao = 0;
+
+                // forEach cria um loop: "Para cada transportadora dentro da lista, faça isso:"
+                transportadoras.forEach(transp => {
+                    // Só renderiza na tela se não houver erro na transportadora e se tiver preço cadastrado
+                    if (!transp.error && transp.price) {
+                        contagemAnimacao++;
+                        
+                        // Isso cria o "efeito cascata": o 1º card aparece em 0.1s, o 2º em 0.2s, etc.
+                        const delay = contagemAnimacao * 0.1; 
+                        
+                        // Montamos o card HTML e injetamos na tela adicionando ao que já existe (+=)
+                        resultadoDiv.innerHTML += `
+                            <div class="frete-card" style="animation-delay: ${delay}s">
+                                <span>R$ ${transp.price}</span>
+                                <p>${transp.name} (${transp.company.name}) — ⏳ ${transp.delivery_time} dias úteis</p>
+                            </div>
+                        `;
+                    }
+                });
+
+            } catch (error) {
+                // Se der erro aqui, muito provavelmente o terminal do Python foi fechado ou travou
+                resultadoDiv.innerHTML = "<p style='color: #ff4444; text-align: center;'>❌ Servidor Python está desligado ou inacessível.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

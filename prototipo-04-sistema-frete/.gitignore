@@ -1,0 +1,15 @@
+# Arquivos de variáveis de ambiente e segredos
+.env
+
+# Banco de dados local SQLite
+*.sqlite3
+banco_teste.sqlite3
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Ambientes virtuais (se houver)
+venv/
+.venv/
+env/
