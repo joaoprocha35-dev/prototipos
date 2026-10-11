@@ -1,1489 +1,1992 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studio Dalila Ruiz</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Dalila Ruiz - Nail Design Premium</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-  <style>
-    :root {
-      --bg: #06040a;
-      --surface: #110c1f;
-      --surface-2: #18122b;
-      --surface-3: #211a36;
-      --primary: #a855f7;
-      --secondary: #d946ef;
-      --text: #ffffff;
-      --muted: #aaa2bd;
-      --outline: #3b2d54;
-    }
+    <style>
+      :root {
+        --bg-primary: #f0e8f5;
+        --bg-secondary: #e8dff0;
+        --text-main: #2d1b3d;
+        --text-secondary: #6b5b7d;
+        --accent-pink: #e85d9c;
+        --accent-pink-light: #f9d6e8;
+        --card-bg: #ffffff;
+        --border-soft: #e0d1e0;
 
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-
-    body {
-      margin: 0;
-      font-family: "Montserrat", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 20% 5%, rgba(168, 85, 247, .16), transparent 35rem),
-        radial-gradient(circle at 80% 40%, rgba(217, 70, 239, .10), transparent 32rem),
-        var(--bg);
-      overflow-x: hidden;
-    }
-    html, body {
-    overflow-x: hidden;
-    }
-    
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .font-title { font-family: "Cormorant Garamond", serif; }
-    .section-padding { padding: 96px 0; }
-    .text-muted-custom { color: var(--muted); }
-
-    .text-gradient {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .eyebrow {
-      color: var(--primary);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .navbar {
-      min-height: 92px;
-      background: rgba(6, 4, 10, .78);
-      border-bottom: 1px solid rgba(59, 45, 84, .45);
-      backdrop-filter: blur(18px);
-      transition: .35s ease;
-    }
-
-    .navbar.nav-scrolled {
-      min-height: 72px;
-      background: rgba(6, 4, 10, .95);
-      box-shadow: 0 12px 34px rgba(0, 0, 0, .45);
-    }
-
-    .navbar-brand {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.6rem, 3vw, 2.1rem);
-      font-weight: 600;
-    }
-
-    .nav-link {
-      color: var(--muted);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .nav-link:hover { color: var(--primary); }
-    .navbar-toggler { border: 1px solid var(--outline); box-shadow: none !important; }
-    .navbar-toggler-icon { filter: invert(1); }
-
-    .btn-neon {
-      border: 0;
-      border-radius: 999px;
-      color: #fff;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      box-shadow: 0 4px 22px rgba(168, 85, 247, .42);
-      font-size: .76rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      transition: .3s ease;
-    }
-
-    .btn-neon:hover {
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 34px rgba(217, 70, 239, .56);
-    }
-
-    .btn-outline-soft {
-      border: 1px solid #4c3a6e;
-      border-radius: 999px;
-      color: #fff;
-      background: transparent;
-      font-size: .76rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .btn-outline-soft:hover {
-      color: var(--primary);
-      border-color: var(--primary);
-      background: rgba(255,255,255,.025);
-    }
-
-    .hero {
-      min-height: calc(100vh - 92px);
-      position: relative;
-      display: flex;
-      align-items: stretch;
-      padding: 64px 0 80px;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: .18;
-      background-image: radial-gradient(var(--primary) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-
-    .hero .row {
-      min-height: 100%;
-      align-items: stretch;
-    }
-
-    .hero .col-lg-5,
-    .hero .col-lg-7 {
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero .image-frame {
-      width: 100%;
-      height: 100%;
-      min-height: 640px;
-      display: flex;
-      align-items: stretch;
-      justify-content: stretch;
-    }
-
-    .hero .portrait {
-      flex: 1;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: stretch;
-      justify-content: stretch;
-    }
-
-    .hero h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(3rem, 8vw, 6.3rem);
-      font-weight: 300;
-      line-height: 1.04;
-    }
-
-    .chip {
-      display: inline-flex;
-      padding: .5rem .95rem;
-      border: 1px solid rgba(168, 85, 247, .35);
-      border-radius: 999px;
-      color: var(--primary);
-      background: rgba(168, 85, 247, .10);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-    }
-
-    .portrait {
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      min-height: 840px;
-      border-radius: 1.2rem;
-      background: transparent;
-    }
-
-    .portrait-full {
-      display: flex;
-      align-items: stretch;
-      justify-content: stretch;
-      height: 100%;
-      min-height: 640px;
-    }
-
-    .portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 1s ease;
-    }
-
-
-    .portrait:hover img { transform: scale(1.05); }
-
-    .surface-band {
-      background: var(--surface-2);
-      border-top: 1px solid var(--outline);
-      border-bottom: 1px solid var(--outline);
-    }
-
-    .premium-card {
-      height: 100%;
-      padding: 2rem;
-      border: 1px solid var(--outline);
-      border-radius: 1rem;
-      background: var(--surface);
-      transition: .35s ease;
-    }
-
-    .premium-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary);
-      background: rgba(33, 26, 54, .72);
-      box-shadow: 0 0 30px rgba(168, 85, 247, .15);
-    }
-
-    .icon-bubble {
-      width: 4rem;
-      height: 4rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(168, 85, 247, .28);
-      border-radius: 50%;
-      color: var(--primary);
-      background: rgba(168, 85, 247, .10);
-      font-size: 1.65rem;
-    }
-
-    .service-tab { display: none; }
-    .service-tab.active { display: grid; }
-
-    .service-item {
-      min-height: 134px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .price {
-      color: var(--secondary);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.45rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .filter-btn.active,
-    .service-btn.active {
-      border-color: transparent;
-      color: #fff;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-    }
-
-    .portfolio-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 330px;
-      border: 1px solid var(--outline);
-      border-radius: 1rem;
-      background: var(--surface);
-    }
-
-    .portfolio-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 330px;
-      object-fit: cover;
-      transition: .8s ease;
-    }
-
-    .portfolio-card:hover img {
-      transform: scale(1.06);
-      opacity: .74;
-    }
-
-    .portfolio-caption {
-      position: absolute;
-      left: 1.25rem;
-      right: 1.25rem;
-      bottom: 1.25rem;
-      padding: 1rem;
-      border-radius: .85rem;
-      background: rgba(6, 4, 10, .74);
-      backdrop-filter: blur(12px);
-    }
-
-    .portfolio-item.is-hidden { display: none; }
-    .step-number {
-      color: var(--secondary);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 3.2rem;
-      line-height: 1;
-    }
-
-    .testimonial-stars {
-      color: var(--secondary);
-      letter-spacing: .12rem;
-    }
-
-    /* Testimonials carousel track - small square boxes scrolling */
-    .testimonials-carousel { overflow: hidden; }
-    .testimonials-track { display: flex; gap: 1rem; align-items: center; }
-    .testimonials-track article {
-      width: 220px;
-      height: 220px;
-      flex: 0 0 auto;
-      border-radius: .6rem;
-      padding: 1rem;
-      box-sizing: border-box;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.04);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: .5rem;
-      text-align: left;
-    }
-    .testimonials-track article .testimonial-stars { font-size: .9rem; }
-    .testimonials-track article p { margin: 0; font-style: italic; color: var(--muted); }
-
-    @keyframes scrollLeft {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-    .testimonials-track.scrolling { animation: scrollLeft 22s linear infinite; }
-    .testimonials-track.scrolling:hover { animation-play-state: paused; }
-
-    /* About section background using Dalila image */
-    #about {
-      position: relative;
-      background: var(--surface);
-      min-height: 760px;
-      padding: 0;
-      color: var(--text);
-      overflow: hidden;
-    }
-    /* overlay to improve text readability */
-    #about::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(6,4,10,0.58) 18%, rgba(6,4,10,0.9) 65%);
-      pointer-events: none;
-    }
-    .about-image {
-      min-height: 620px;
-      border-radius: 1.75rem;
-      background: url('dalila2.png') center/cover no-repeat;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), 0 30px 80px rgba(0,0,0,0.35);
-    }
-
-    .about-panel {
-      position: relative;
-      z-index: 2;
-      max-width: 620px;
-      margin-left: auto;
-      margin-right: 3rem;
-      padding: 4rem 0;
-    }
-
-    .about-card {
-      background: rgba(6, 4, 10, 0.9);
-      border: 1px solid rgba(168, 85, 247, 0.18);
-      border-radius: 1.5rem;
-      padding: 2.75rem 2.5rem;
-      box-shadow: 0 32px 90px rgba(0,0,0,0.55);
-      backdrop-filter: blur(10px);
-    }
-
-    .about-card .eyebrow { color: var(--primary); font-weight:700; letter-spacing:.22em; }
-    .about-card h2 { margin-top: .5rem; margin-bottom: 1.25rem; }
-    .about-card p { color: rgba(255,255,255,0.94); line-height: 1.75; margin-bottom: 1.5rem; }
-    .about-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
-    .about-subtext { margin-top: 2rem; }
-    .about-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .about-stats .premium-card { background: rgba(9, 6, 18, 0.86); border-color: rgba(168,85,247,0.14); }
-
-    /* CTA / Vagas restritas — visual melhorado */
-    .cta-hero {
-      padding: 88px 0;
-      background: linear-gradient(180deg, rgba(25,14,36,1), rgba(16,10,24,1));
-      border-top: 1px solid rgba(168,85,247,0.06);
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(600px 200px at 10% 30%, rgba(168,85,247,0.06), transparent 18%, rgba(217,70,239,0.03) 40%);
-      pointer-events: none;
-    }
-    .cta-hero .btn-neon { padding: 1.2rem 3.5rem; font-size: .95rem; box-shadow: 0 18px 60px rgba(168,85,247,0.18); }
-    .cta-hero .font-title { font-size: clamp(2.4rem, 3.6vw, 3.6rem); }
-
-    /* Responsividade: em telas pequenas o background volta a cobrir e o conteúdo fica em bloco */
-    @media (max-width: 991.98px) {
-      #about { min-height: auto; padding: 56px 0; background: var(--surface); }
-      .about-image { min-height: 320px; border-radius: 1.25rem; }
-      .about-panel { margin: 0 auto; max-width: 100%; padding: 2rem 1rem 3rem; }
-      .about-card { padding: 2rem 1.25rem; }
-      .about-subtext { margin-top: 1.5rem; }
-      .about-stats { grid-template-columns: 1fr; }
-      .cta-hero { padding: 56px 0; }
-    }
-
-    .accordion-item {
-      border: 1px solid var(--outline) !important;
-      border-radius: 1rem !important;
-      overflow: hidden;
-      background: var(--surface);
-    }
-
-    .accordion-button {
-      color: #fff;
-      background: var(--surface);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.35rem;
-      font-weight: 600;
-      box-shadow: none !important;
-    }
-
-    .accordion-button:not(.collapsed) {
-      color: #fff;
-      background: var(--surface-3);
-    }
-
-    .accordion-button::after { filter: invert(1); }
-
-    .accordion-body {
-      color: var(--muted);
-      background: var(--surface);
-      line-height: 1.75;
-    }
-
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: .75s ease;
-    }
-
-    .scroll-reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      background: var(--bg);
-      border-top: 1px solid var(--outline);
-    }
-
-    @media (max-width: 991.98px) {
-      .navbar-collapse {
-        padding: 1rem 0 1.25rem;
-        background: rgba(6, 4, 10, .98);
+        /* Legacy para compatibilidade */
+        --bg: #f0e8f5;
+        --surface: #ffffff;
+        --surface-2: #e8dff0;
+        --surface-3: #e0d1e0;
+        --primary: #e85d9c;
+        --secondary: #f9d6e8;
+        --text: #2d1b3d;
+        --muted: #6b5b7d;
+        --outline: #e0d1e0;
       }
 
-      .nav-link {
-        padding-block: .9rem;
+      * {
+        box-sizing: border-box;
+        cursor:pointer;
+        
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-main);
+        background: var(--bg-primary);
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .font-title {
         font-family: "Cormorant Garamond", serif;
-        font-size: 1.45rem;
-        font-weight: 500;
-        letter-spacing: 0;
-        text-transform: none;
-        text-align: center;
       }
 
-      .hero { min-height: auto; padding-top: 3rem; }
-    }
+      .section-padding {
+        padding: 96px 0;
+      }
 
-    @media (max-width: 767.98px) {
-      .section-padding { padding: 68px 0; }
-      .hero h1 { font-size: clamp(2.8rem, 16vw, 4.25rem); }
-      .service-item { align-items: flex-start; flex-direction: column; gap: .75rem; }
-      .premium-card { padding: 1.5rem; }
-      .portfolio-card, .portfolio-card img { min-height: 280px; }
-    }
+      .text-muted-custom {
+        color: var(--text-secondary);
+      }
 
-    /*Animações do site*/  
+      .text-gradient {
+        background: linear-gradient(90deg, var(--accent-pink), #d88fa7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
 
-    .hero-text-animation {
-    opacity: 0;
-    transform: translateX(-150px);
-    filter: blur(8px);
-    animation: slideText 1.5s cubic-bezier(.22,1,.36,1) forwards;
-    }
+      .eyebrow {
+        color: var(--accent-pink);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
 
-    .hero-image-animation {
-    opacity: 0;
-    transform: translateX(150px);
-    filter: blur(8px);
-    animation: slideImage 1.5s cubic-bezier(.22,1,.36,1) forwards;
-    animation-delay: .2s;
-    }
+      /* ====== NAVBAR ====== */
+.navbar {
+  /* Posicionamento Flutuante */
+  position: fixed;
+  top: 25px; /* Desprende do topo */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza perfeitamente */
+  width: 92%; /* Não encosta nas bordas da tela */
+  max-width: 1200px;
+  min-height: 70px;
+  padding: 0.5rem 2rem; /* Espaçamento interno lateral */
+  
+  /* Formato Cápsula/Pílula */
+  border-radius: 50px; 
+  
+  /* Efeito Glassmorphism (Vidro Foco/Blur) */
+  background: rgba(255, 255, 255, 0.15); /* Fundo quase transparente */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); /* Suporte para Safari */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Borda sutil de vidro */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05); /* Sombra suave para destacar do fundo */
+  
+  transition: all 0.35s ease;
+  z-index: 1030;
+}
 
-    @keyframes slideText {
-    to {
+.navbar.nav-scrolled {
+  top: 15px; /* Sobe levemente ao rolar a página */
+  min-height: 65px;
+  /* Fica um pouco mais opaca no scroll para manter a legibilidade do menu */
+  background: rgba(255, 255, 255, 0.45); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+      /* ====== BOTÕES ====== */
+      .btn-neon {
+        border: 0;
+        border-radius: 8px;
+        color: #fff;
+        background: var(--accent-pink);
+        box-shadow: 0 4px 16px rgba(216, 143, 167, 0.24);
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        transition: 0.3s ease;
+        position: relative;
+        z-index: 11;
+        animation: slideInUp 0.8s ease-out 0.4s backwards;
+      }
+
+      .btn-neon:hover {
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(216, 143, 167, 0.36);
+        background: #c87a93;
+      }
+
+      .btn-outline-soft {
+        border: 1px solid var(--border-soft);
+        border-radius: 8px;
+        color: var(--text-main);
+        background: transparent;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        transition: 0.3s ease;
+        position: relative;
+        z-index: 11;
+      }
+
+      .btn-outline-soft:hover {
+        color: var(--accent-pink);
+        border-color: var(--accent-pink);
+        background: var(--accent-pink-light);
+      }
+
+      /* ====== HERO SECTION ====== */
+      .hero {
+        /* Garante que a seção ocupe a altura toda da tela e centraliza o conteúdo */
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center; /* Centraliza verticalmente (bem no meio) */
+        padding: 0;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        animation: heroSlideUp 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+
+      .hero-content-wrapper {
+  margin-top: 5vh; 
+  position: relative;
+  z-index: 11;
+  /* Move todo o bloco de texto para a esquerda. Aumente o valor negativo se quiser mais para a esquerda (ex: -60px) */
+  transform: translateX(-40px); 
+}
+
+.hero-title {
+  font-family: "Cormorant Garamond", serif;
+  /* Tamanhos aumentados: mínimo de 5rem, flexível de 8vw, máximo de 7.5rem */
+  font-size: clamp(5rem, 8vw, 7.5rem); 
+  font-weight: 700; 
+  line-height: 1.1;
+  color: #1A1A1A;
+  margin-bottom: 1.2rem;
+  animation: slideInUp 0.8s ease-out 0.2s backwards;
+}
+
+.hero-subtitle {
+  /* Tamanho do subtítulo aumentado para 1.5rem */
+  font-size: 1.5rem; 
+  font-weight: 500; 
+  color: #4A4A4A;
+  /* Largura máxima aumentada para acomodar a letra maior sem quebrar muitas linhas */
+  max-width: 600px; 
+  line-height: 1.6;
+  animation: slideInUp 0.8s ease-out 0.3s backwards;
+}
+      .hero-title .text-highlight {
+        color: #ee27ac;
+      }
+
+      .hero-subtitle {
+        font-size: 1.35rem; /* Aumentado de 1.15rem para 1.35rem */
+        font-weight: 500; /* Texto um pouco mais encorpado */
+        color: #4a4a4a;
+        max-width: 550px; /* Aumentei a largura máxima para o texto maior não quebrar muito as linhas */
+        line-height: 1.6;
+        animation: slideInUp 0.8s ease-out 0.3s backwards;
+      }
+
+      /* === BOTÕES ESTILO IMAGEM REFERÊNCIA === */
+      .btn-solid-pink {
+        background-color: #c90950;
+        color: #ffffff;
+        border-radius: 4px; /* Bordas levemente quadradas como na referência */
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        border: none;
+        animation: slideInUp 0.8s ease-out 0.4s backwards;
+      }
+
+      .btn-solid-pink:hover {
+        font-size: 10px;
+        background-color: #ff005d;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      .btn-text-link {
+        color: #ffffff;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s ease;
+        animation: slideInUp 0.8s ease-out 0.4s backwards;
+      }
+
+      .btn-text-link:hover {
+        color: #d64c7f;
+      }
+
+      @keyframes heroSlideUp {
+        from {
+          filter: blur(4px);
+          opacity: 0;
+        }
+        to {
+          filter: blur(0px);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ====== WHY SECTION ====== */
+      .why-section {
+        min-height: 90vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 120px 0;
+        overflow: hidden;
+      }
+
+      .why-background {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        z-index: 0;
+        animation: heroSlideUp 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+
+      .why-content {
+        position: relative;
+        z-index: 10;
+        max-width: 450px;
+        background: rgba(240, 127, 127, 0);
+        padding: 2.5rem;
+        border-radius: 12px;
+        backdrop-filter: blur(1px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Move o quadro mais para a esquerda no desktop */
+        transform: translateX(-470px);
+      }
+
+      .why-content .eyebrow {
+        color: #e85d9c;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        /* Escrita maior e alinhada mais para a direita */
+        font-size: 0.95rem;
+        text-align: right;
+        margin-bottom: 1.5rem;
+      }
+
+      .why-content h2 {
+        color: #ffffff;
+        font-weight: 300;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.02em;
+        display: none;
+      }
+
+      .why-content p {
+        color: #ffffff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        font-weight: 440;
         opacity: 1;
-        transform: translateX(0);
-        filter: blur(0);
-    }
-    }
+        /* Texto descritivo sutilmente maior para acompanhar o ajuste */
+        font-size: 20px;
+        line-height: 1.8;
+        margin: 0;
+      }
 
-    @keyframes slideImage {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-        filter: blur(0);
-    }
-    }
+      /* ====== SECTIONS ====== */
+      .surface-band {
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border-soft);
+        border-bottom: 1px solid var(--border-soft);
+      }
 
-    /*Animação efeito cascata*/
+      .premium-card {
+        height: 100%;
+        padding: 2rem;
+        border: 1px solid var(--border-soft);
+        border-radius: 12px;
+        background: var(--card-bg);
+        transition: 0.35s ease;
+      }
 
-    .cascade-item {
+      .premium-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-pink);
+        background: var(--card-bg);
+        box-shadow: 0 8px 32px rgba(216, 143, 167, 0.12);
+      }
+
+      .icon-bubble {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        background: var(--accent-pink-light);
+        color: var(--accent-pink);
+        font-size: 1.8rem;
+      }
+
+      .premium-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.6rem;
+        color: var(--text-main);
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+
+      .premium-card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* ====== PORTFOLIO / GALLERY ====== */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-soft);
+        transition: 0.35s ease;
+        cursor: pointer;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent-pink);
+        box-shadow: 0 16px 40px rgba(216, 143, 167, 0.15);
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .portfolio-item:hover img {
+        transform: scale(1.08);
+      }
+
+      .portfolio-content {
+        padding: 1.5rem;
+      }
+
+      .portfolio-category {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent-pink);
+        margin-bottom: 0.5rem;
+      }
+
+      .portfolio-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.3rem;
+        color: var(--text-main);
+        font-weight: 400;
+        margin: 0;
+      }
+
+      /* ====== FILTROS ====== */
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 0.65rem 1.5rem;
+        border: 1px solid var(--border-soft);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--accent-pink);
+        color: #fff;
+        border-color: var(--accent-pink);
+      }
+
+      .portfolio-item.is-hidden {
+        display: none;
+      }
+
+      /* ====== TABS / SERVIÇOS ====== */
+      .service-tabs {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .service-btn {
+        padding: 0.75rem 1.8rem;
+        border: 1px solid var(--border-soft);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .service-btn:hover,
+      .service-btn.active {
+        background: var(--accent-pink);
+        color: #fff;
+        border-color: var(--accent-pink);
+      }
+
+      .service-tab {
+        display: none;
+      }
+
+      .service-tab.active {
+        display: block;
+      }
+
+      /* ====== TESTIMONIALS ====== */
+      .testimonial-card {
+        padding: 2.5rem;
+        border: 1px solid var(--border-soft);
+        border-radius: 12px;
+        background: var(--card-bg);
+        transition: 0.35s ease;
+      }
+
+      .testimonial-card:hover {
+        box-shadow: 0 8px 32px rgba(216, 143, 167, 0.12);
+        border-color: var(--accent-pink);
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: var(--text-main);
+        font-size: 0.95rem;
+      }
+
+      .testimonial-role {
+        font-size: 0.8rem;
+        color: var(--accent-pink);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .stars {
+        color: var(--accent-pink);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      /* ====== ACCORDION ====== */
+      .accordion-button {
+        background: var(--card-bg);
+        color: var(--text-main);
+        font-weight: 600;
+        border: 1px solid var(--border-soft);
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background: var(--accent-pink-light);
+        color: var(--text-main);
+        border-color: var(--accent-pink);
+      }
+
+      .accordion-button:focus {
+        border-color: var(--accent-pink);
+        box-shadow: 0 0 0 0.25rem rgba(216, 143, 167, 0.15);
+      }
+
+      .accordion-body {
+        color: var(--text-secondary);
+        border: 1px solid var(--border-soft);
+        border-top: none;
+        background: var(--bg-secondary);
+      }
+
+      /* ====== FOOTER ====== */
+      footer {
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border-soft);
+        color: var(--text-main);
+      }
+
+      footer h2 {
+        color: var(--accent-pink);
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      footer .small {
+        color: var(--text-secondary);
+      }
+
+      /* ====== ANIMATIONS ====== */
+      .scroll-reveal {
         opacity: 0;
         transform: translateY(30px);
-        transition: opacity .6s ease, transform .6s ease;
-    }
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
 
-    .cascade-item.active {
+      .scroll-reveal.active {
         opacity: 1;
         transform: translateY(0);
-    }
-
-    /* ============================================================
-       NOVAS ANIMAÇÕES EXTRAS (zigue-zague, botões e títulos)
-       Apenas adições — usa transform/opacity (GPU) + IntersectionObserver
-       ============================================================ */
-
-    /* Base para os itens que farão o efeito zigue-zague (esquerda/direita) */
-    .zig-reveal {
-      opacity: 0;
-      will-change: transform, opacity;
-      transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
-      backface-visibility: hidden;
-    }
-
-    .zig-left {
-      transform: translate3d(-70px, 0, 0);
-    }
-
-    .zig-right {
-      transform: translate3d(70px, 0, 0);
-    }
-
-    .zig-reveal.zig-active {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-
-    /* Respeita preferências de acessibilidade */
-    @media (prefers-reduced-motion: reduce) {
-      .zig-reveal,
-      .zig-reveal.zig-active,
-      .scroll-reveal,
-      .scroll-reveal.active,
-      .cascade-item,
-      .cascade-item.active {
-        transition: none !important;
-        animation: none !important;
-        transform: none !important;
-        opacity: 1 !important;
       }
-    }
 
-    /* Micro animação suave em botões (pulso sutil + brilho) */
-    .btn-neon,
-    .btn-outline-soft {
-      will-change: transform;
-      transition: transform .28s cubic-bezier(.22,1,.36,1), box-shadow .28s ease, color .28s ease, border-color .28s ease, background .3s ease;
-    }
-
-    .btn-neon:active,
-    .btn-outline-soft:active {
-      transform: scale(.96);
-    }
-
-    @keyframes btnFadeInUp {
-      from { opacity: 0; transform: translate3d(0, 14px, 0); }
-      to   { opacity: 1; transform: translate3d(0, 0, 0); }
-    }
-
-    .btn-anim-init {
-      opacity: 0;
-      transform: translate3d(0, 14px, 0);
-    }
-
-    .btn-anim-init.btn-anim-active {
-      animation: btnFadeInUp .6s cubic-bezier(.22,1,.36,1) forwards;
-    }
-
-    /* Micro animação em títulos: leve entrada com espaçamento de letras */
-    @keyframes titleReveal {
-      from {
+      .cascade-item {
         opacity: 0;
-        transform: translate3d(0, 18px, 0);
-        letter-spacing: -.02em;
+        transform: translateY(30px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
       }
-      to {
+
+      .cascade-item.active {
         opacity: 1;
-        transform: translate3d(0, 0, 0);
-        letter-spacing: normal;
+        transform: translateY(0);
       }
-    }
 
-    .title-anim {
-      opacity: 0;
-      will-change: transform, opacity;
-    }
-
-    .title-anim.title-anim-active {
-      animation: titleReveal .85s cubic-bezier(.22,1,.36,1) forwards;
-    }
-
-    /* Leve "respiração" contínua nos ícones em destaque, discreta e performática */
-    @keyframes iconFloat {
-      0%, 100% { transform: translate3d(0, 0, 0); }
-      50% { transform: translate3d(0, -4px, 0); }
-    }
-
-    .icon-bubble {
-      will-change: transform;
-      animation: iconFloat 3.6s ease-in-out infinite;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .icon-bubble { animation: none; }
-      .title-anim, .title-anim.title-anim-active,
-      .btn-anim-init, .btn-anim-init.btn-anim-active {
-        opacity: 1 !important;
-        transform: none !important;
-        animation: none !important;
+      /* Zigzag animations */
+      .zig-reveal {
+        opacity: 0;
+        transition:
+          opacity 0.6s ease,
+          transform 0.7s ease;
       }
-    }
 
-  </style>
-</head>
+      .zig-reveal.zig-left {
+        transform: translateX(-50px);
+      }
 
-<body>
-  <nav id="mainNav" class="navbar navbar-expand-lg sticky-top">
-    <div class="container-xxl px-4">
-      <a class="navbar-brand text-gradient" href="#">Studio Dalila Ruiz</a>
+      .zig-reveal.zig-right {
+        transform: translateX(50px);
+      }
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      .zig-reveal.zig-active {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-      <div id="navbarMenu" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-          <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
-          <li class="nav-item"><a class="nav-link" href="#menu-servicos">Preços</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#process">Processo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#feedbacks">Feedbacks</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">A Artista</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-          <li class="nav-item mt-3 mt-lg-0">
-            <a class="btn btn-neon px-4 py-3 w-100" href="https://wa.me/5514998813787" target="_blank">Agendar Sessão</a>
-          </li>
-        </ul>
+      .title-anim {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .title-anim.title-anim-active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .btn-anim-init {
+        opacity: 0;
+        transform: translateY(15px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .btn-anim-active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* ====== RESPONSIVE ====== */
+      @media (max-width: 992px) {
+        .hero {
+          padding: 40px 0 60px;
+        }
+
+        .hero .col-lg-5,
+        .hero .col-lg-7 {
+          min-height: auto;
+        }
+
+        .hero h1 {
+          font-size: clamp(2.2rem, 6vw, 4rem);
+        }
+
+        .portrait {
+          min-height: 500px;
+        }
+
+        .hero .image-frame {
+          min-height: 500px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          min-height: 70px;
+        }
+
+        .navbar.nav-scrolled {
+          min-height: 70px;
+        }
+
+        .hero {
+          flex-direction: column;
+          padding: 30px 0 40px;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        .portrait {
+          min-height: 400px;
+          margin-top: 2rem;
+        }
+
+        .hero .image-frame {
+          min-height: 400px;
+        }
+
+        .why-section {
+          min-height: 60vh;
+          padding: 60px 0;
+        }
+
+        .why-content {
+          max-width: 100%;
+          transform: none; /* Retorna ao padrão no mobile */
+        }
+
+        .why-content h2 {
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .why-content p {
+          font-size: 0.95rem;
+        }
+
+        .section-padding {
+          padding: 60px 0;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 1.5rem;
+        }
+
+        .premium-card {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          padding: 20px 0 30px;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+          font-weight: 400;
+          margin-bottom: 1rem;
+        }
+
+        .hero p {
+          font-size: 1.05rem;
+          font-weight: 500;
+          margin-bottom: 3rem;
+          line-height: 1.7;
+        }
+
+        .chip {
+          font-size: 0.75rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+        }
+
+        .hero .d-flex {
+          flex-direction: column;
+          gap: 0.8rem;
+          margin-top: 4rem;
+        }
+
+        .hero .btn-neon,
+        .hero .btn-outline-soft {
+          width: 100%;
+          padding: 0.75rem 1.5rem !important;
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+        }
+
+        .section-padding {
+          padding: 50px 0;
+        }
+
+        .container-lg {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        /* Testimonials Mobile */
+        .testimonial-card {
+          padding: 1.5rem;
+          border-radius: 12px;
+        }
+
+        .testimonial-text {
+          font-size: 0.95rem;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+        }
+
+        .testimonial-author {
+          font-size: 0.95rem;
+        }
+
+        .testimonial-role {
+          font-size: 0.75rem;
+          margin-top: 0.5rem;
+        }
+
+        .stars {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        /* Portfolio Mobile */
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+
+        .portfolio-item img {
+          height: 250px;
+        }
+
+        .portfolio-content {
+          padding: 1.25rem;
+        }
+
+        .portfolio-title {
+          font-size: 1.1rem;
+        }
+
+        /* Cards Mobile */
+        .premium-card {
+          padding: 1.5rem;
+          border-radius: 12px;
+        }
+
+        .premium-card h3 {
+          font-size: 1.3rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .premium-card p {
+          font-size: 0.9rem;
+          line-height: 1.6;
+        }
+
+        .icon-bubble {
+          width: 3.5rem;
+          height: 3.5rem;
+          font-size: 1.5rem;
+        }
+
+        /* Filter & Tabs Mobile */
+        .filter-buttons,
+        .service-tabs {
+          gap: 0.75rem;
+          justify-content: center;
+        }
+
+        .filter-btn,
+        .service-btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.7rem;
+          border-radius: 999px;
+        }
+
+        /* Section Headings Mobile */
+        .font-title {
+          font-size: 1.8rem;
+        }
+
+        .eyebrow {
+          font-size: 0.65rem;
+        }
+
+        /* Why Section Mobile */
+        .why-section {
+          min-height: 60vh;
+          padding: 40px 0;
+        }
+
+        .why-content {
+          padding: 1.5rem;
+          max-width: 100%;
+          background: rgba(0, 0, 0, 0.55);
+          transform: none; /* Retorna ao padrão no mobile */
+        }
+
+        .why-content .eyebrow {
+          font-size: 0.85rem;
+          margin-bottom: 1rem;
+        }
+
+        .why-content p {
+          font-size: 15px;
+          line-height: 1.8;
+          font-weight: 400;
+        }
+
+        /* Accordion Mobile */
+        .accordion-button {
+          font-size: 0.9rem;
+          padding: 1rem;
+        }
+
+        .accordion-body {
+          font-size: 0.85rem;
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="mainNav" class="navbar navbar-expand-lg sticky-top">
+      <div class="container-lg px-4">
+        <a class="navbar-brand" href="#hero">Studio Da Duda</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#servicos">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Galeria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#processo">Processo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <main>
-    <section class="hero">
-      <div class="container-xxl px-4 position-relative">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-7 hero-text-animation">
-            <span class="chip mb-4">Studio de Beleza Especializado</span>
-            <h1 class="mb-4">Realce sua beleza natural com <span class="text-gradient fst-italic">sofisticação máxima</span></h1>
-            <p class="lead text-muted-custom mb-5 col-xl-10">
-              Descubra a alta costura do olhar e cuidados minuciosos com as unhas em um refúgio privativo, silencioso e desenhado para o seu descanso.
+    <main>
+      <!-- HERO SECTION -->
+      <section id="hero" class="hero d-flex align-items-center">
+        <div class="container-lg px-4">
+          <div class="row w-100">
+            <!-- Coluna ajustada para ficar mais alinhada e centralizada -->
+            <div class="col-lg-6 hero-content-wrapper">
+              <span class="chip-text mb-3 d-block"
+                >REALCE SUA BELEZA NATURAL</span
+              >
+
+              <h1 class="hero-title">
+                Transforme seu Visual com<br />
+                <span class="text-highlight">Unhas Perfeitas</span>
+              </h1>
+
+              <p class="hero-subtitle mb-4">
+                Descubra a excelência em design de unhas. Eleve sua autoestima e
+                sinta-se radiante todos os dias com um acabamento premium e
+                exclusivo feito para você.
+              </p>
+
+              <div class="d-flex gap-4 flex-wrap align-items-center">
+                <a
+                  class="btn btn-solid-pink px-4 py-3"
+                  href="https://wa.me/5514998813787"
+                  target="_blank"
+                >
+                  AGENDAR AGORA
+                </a>
+                <a class="btn btn-text-link fw-bold" href="#servicos">
+                  VER PRODUTOS
+                  <i class="bi bi-chevron-right" style="font-size: 0.8rem"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="sobre" class="section-padding surface-band">
+        <div class="container-lg px-4">
+          <div class="text-center mb-5" style="margin-bottom: 6rem">
+            <span class="eyebrow d-block mb-3">Por Que Escolher</span>
+            <h2
+              class="font-title h1 fw-light"
+              style="color: var(--text-main); margin-bottom: 3rem"
+            >
+              Studio Dalila Ruiz
+            </h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="premium-card">
+                <div class="icon-bubble">
+                  <i class="bi bi-hand-thumbs-up"></i>
+                </div>
+                <h3>Qualidade Superior</h3>
+                <p>
+                  Utilizamos apenas produtos de primeira linha, importados e
+                  certificados, garantindo durabilidade e saúde das unhas.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="premium-card">
+                <div class="icon-bubble">
+                  <i class="bi bi-palette"></i>
+                </div>
+                <h3>Design Personalizado</h3>
+                <p>
+                  Cada cliente é único. Criamos designs personalizados que
+                  refletem sua personalidade e estilo individual.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="premium-card">
+                <div class="icon-bubble">
+                  <i class="bi bi-heart"></i>
+                </div>
+                <h3>Experiência Premium</h3>
+                <p>
+                  Ambiente elegante, atendimento afetuoso e detalhado em cada
+                  etapa do processo de embelezamento.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- POR QUE ESCOLHER SEÇÃO -->
+      <section id="porque" class="why-section">
+        <div class="why-background" id="whyBackground"></div>
+        <div class="container-lg px-4">
+          <div class="row align-items-center">
+            <div class="col-lg-5 why-content">
+              <span class="eyebrow d-block">POR QUE ESCOLHER</span>
+
+              <p class="mb-4">
+                Com mais de uma década de experiência e dedicação, transformamos
+                cada sessão em um momento especial. Nossas clientes escolhem o
+                studio pela qualidade impecável e ambiente aconchegante que
+                reflete luxo e refinamento.
+              </p>
+
+              <!-- Novos tópicos de destaque -->
+              <ul
+                class="beneficios-lista"
+                style="list-style: none; padding: 0; margin: 0"
+              >
+                <li
+                  style="
+                    margin-bottom: 12px;
+                    display: flex;
+                    align-items: flex-start;
+                  "
+                >
+                  <span style="color: #e85d9c; margin-right: 10px">✦</span>
+                  <div>
+                    <strong style="color: #fff; font-size: 1.05rem"
+                      >Design Personalizado</strong
+                    >
+                    <p
+                      style="
+                        font-size: 0.9rem;
+                        margin: 2px 0 0 0;
+                        opacity: 0.85;
+                      "
+                    >
+                      Cada detalhe é pensado exclusivamente para realçar a sua
+                      beleza natural.
+                    </p>
+                  </div>
+                </li>
+
+                <li
+                  style="
+                    margin-bottom: 12px;
+                    display: flex;
+                    align-items: flex-start;
+                  "
+                >
+                  <span style="color: #e85d9c; margin-right: 10px">✦</span>
+                  <div>
+                    <strong style="color: #fff; font-size: 1.05rem"
+                      >Produtos Premium</strong
+                    >
+                    <p
+                      style="
+                        font-size: 0.9rem;
+                        margin: 2px 0 0 0;
+                        opacity: 0.85;
+                      "
+                    >
+                      Utilizamos apenas materiais de altíssima qualidade para
+                      garantir durabilidade e segurança.
+                    </p>
+                  </div>
+                </li>
+
+                <li
+                  style="
+                    margin-bottom: 0;
+                    display: flex;
+                    align-items: flex-start;
+                  "
+                >
+                  <span style="color: #e85d9c; margin-right: 10px">✦</span>
+                  <div>
+                    <strong style="color: #fff; font-size: 1.05rem"
+                      >Experiência de Luxo</strong
+                    >
+                    <p
+                      style="
+                        font-size: 0.9rem;
+                        margin: 2px 0 0 0;
+                        opacity: 0.85;
+                      "
+                    >
+                      Um momento de verdadeiro cuidado e elegância que
+                      transcende as expectativas.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVIÇOS -->
+      <section id="servicos" class="section-padding">
+        <div class="container-lg px-4">
+          <div class="text-center scroll-reveal mb-5">
+            <span class="eyebrow d-block mb-3">Nossos Serviços</span>
+            <h2
+              class="font-title h1 fw-light mb-4"
+              style="color: var(--text-main)"
+            >
+              Escolha o Estilo Perfeito
+            </h2>
+          </div>
+
+          <div class="service-tabs">
+            <button class="service-btn active" data-service="gel">
+              Design Gel
+            </button>
+            <button class="service-btn" data-service="acrilico">
+              Acrílico
+            </button>
+            <button class="service-btn" data-service="natural">Natural</button>
+          </div>
+
+          <!-- TAB: Design Gel -->
+          <div id="service-gel" class="service-tab active">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6 cascade-item">
+                <div class="premium-card">
+                  <div class="icon-bubble">
+                    <i class="bi bi-gem"></i>
+                  </div>
+                  <h3>Gel Premium</h3>
+                  <p>
+                    Cores vibrantes e brilhantes com durabilidade de até 3
+                    semanas. Acabamento espelhado ou fosco.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 cascade-item">
+                <div class="premium-card">
+                  <div class="icon-bubble">
+                    <i class="bi bi-star"></i>
+                  </div>
+                  <h3>Ombre e Degradê</h3>
+                  <p>
+                    Efeitos sofisticados de transição de cores, criando
+                    profundidade e elegância nas unhas.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 cascade-item">
+                <div class="premium-card">
+                  <div class="icon-bubble">
+                    <i class="bi bi-sparkles"></i>
+                  </div>
+                  <h3>Decorações Premium</h3>
+                  <p>
+                    Strass, foils, glitter e efeitos especiais para ocasiões
+                    especiais e looks únicos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB: Acrílico -->
+          <div id="service-acrilico" class="service-tab">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6 cascade-item">
+                <div class="premium-card">
+                  <div class="icon-bubble">
+                    <i class="bi bi-gem"></i>
+                  </div>
+                  <h3>Acrílico Alongado</h3>
+                  <p>
+                    Alongamentos elegantes e resistentes com formatos
+                    customizados para cada cliente.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 cascade-item">
+                <div class="premium-card">
+                  <div class="icon-bubble">
+                    <i class="bi bi-pencil-square"></i>
+                  </div>
+                  <h3>Nail Art Acrílica</h3>
+                  <p>
+                    Designs sofisticados pintados à mão com técnicas exclusivas
+                    e acabamentos premium.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 cascade-item">
+                <div class="premium-card">
+                  <div class="icon-bubble">
+                    <i class="bi bi-heart-pulse"></i>
+                  </div>
+                  <h3>Manutenção</h3>
+                  <p>
+                    Polimento, correção de falhas e revitalização para manter a
+                    beleza por mais tempo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB: Natural -->
+          <div id="service-natural" class="service-tab">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6 cascade-item">
+                <div class="premium-card">
+                  <div class="icon-bubble">
+                    <i class="bi bi-leaf"></i>
+                  </div>
+                  <h3>Manicure Premium</h3>
+                  <p>
+                    Cuidado completo com esfoliação, hidratação e esmaltação em
+                    tons sofisticados.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 cascade-item">
+                <div class="premium-card">
+                  <div class="icon-bubble">
+                    <i class="bi bi-flower1"></i>
+                  </div>
+                  <h3>Microblading Unhas</h3>
+                  <p>
+                    Design naturalista pintado à mão para quem prefere elegância
+                    discreta e refinada.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 cascade-item">
+                <div class="premium-card">
+                  <div class="icon-bubble">
+                    <i class="bi bi-spa"></i>
+                  </div>
+                  <h3>Tratamento Nutritivo</h3>
+                  <p>
+                    Fortalecimento e hidratação profunda com produtos naturais e
+                    altamente eficazes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA / PORTFOLIO -->
+      <section id="portfolio" class="section-padding surface-band">
+        <div class="container-lg px-4">
+          <div class="text-center scroll-reveal mb-5">
+            <span class="eyebrow d-block mb-3">Nossos Trabalhos</span>
+            <h2
+              class="font-title h1 fw-light mb-4"
+              style="color: var(--text-main)"
+            >
+              Galeria de Inspiração
+            </h2>
+          </div>
+
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="gel">Gel</button>
+            <button class="filter-btn" data-filter="acrilico">Acrílico</button>
+            <button class="filter-btn" data-filter="natural">Natural</button>
+          </div>
+
+          <div class="portfolio-grid">
+            <!-- Imagem 1 -->
+            <div class="portfolio-item cascade-item" data-category="gel">
+              <img src="./unha1.png" alt="Design Gel Premium" />
+              <div class="portfolio-content">
+                <div class="portfolio-category">Gel</div>
+                <h4 class="portfolio-title">Rose Gold</h4>
+              </div>
+            </div>
+
+            <!-- Imagem 2 -->
+            <div class="portfolio-item cascade-item" data-category="acrilico">
+              <img src="./unha2.png" alt="Acrílico Alongado" />
+              <div class="portfolio-content">
+                <div class="portfolio-category">Acrílico</div>
+                <h4 class="portfolio-title">Nude Elegante</h4>
+              </div>
+            </div>
+
+            <!-- Imagem 3 -->
+            <div class="portfolio-item cascade-item" data-category="natural">
+              <img src="./unha3.png" alt="Natural Premium" />
+              <div class="portfolio-content">
+                <div class="portfolio-category">Natural</div>
+                <h4 class="portfolio-title">Minimalista</h4>
+              </div>
+            </div>
+
+            <!-- Imagem 4 -->
+            <div class="portfolio-item cascade-item" data-category="gel">
+              <img src="./unha5.jpg" alt="Ombre Gel" />
+              <div class="portfolio-content">
+                <div class="portfolio-category">Gel</div>
+                <h4 class="portfolio-title">Ombre Rosa</h4>
+              </div>
+            </div>
+
+            <!-- Imagem 5 -->
+            <div class="portfolio-item cascade-item" data-category="acrilico">
+              <img src="./unha6.png" alt="Nail Art Acrílica" />
+              <div class="portfolio-content">
+                <div class="portfolio-category">Acrílico</div>
+                <h4 class="portfolio-title">Floral Delicado</h4>
+              </div>
+            </div>
+
+            <!-- Imagem 6 -->
+            <div class="portfolio-item cascade-item" data-category="natural">
+              <img src="./unha7.jpg" alt="Manicure Natural" />
+              <div class="portfolio-content">
+                <div class="portfolio-category">Natural</div>
+                <h4 class="portfolio-title">French Premium</h4>
+              </div>
+            </div>
+
+            <!-- Imagem 7 -->
+            <div class="portfolio-item cascade-item" data-category="gel">
+              <img src="./unha8.jpg" alt="Glitter Gel" />
+              <div class="portfolio-content">
+                <div class="portfolio-category">Gel</div>
+                <h4 class="portfolio-title">Brilho Premium</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESSO -->
+      <section id="processo" class="section-padding">
+        <div class="container-lg px-4">
+          <div class="text-center scroll-reveal mb-5">
+            <span class="eyebrow d-block mb-3">Como Trabalhamos</span>
+            <h2
+              class="font-title h1 fw-light mb-4"
+              style="color: var(--text-main)"
+            >
+              Processo Exclusivo
+            </h2>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6 cascade-item">
+              <div class="premium-card text-center">
+                <div
+                  style="
+                    font-size: 3rem;
+                    color: var(--accent-pink);
+                    margin-bottom: 1rem;
+                  "
+                >
+                  01
+                </div>
+                <h3>Consulta</h3>
+                <p>
+                  Entendemos seus desejos e analisamos o formato natural de suas
+                  unhas para design perfeito.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 cascade-item">
+              <div class="premium-card text-center">
+                <div
+                  style="
+                    font-size: 3rem;
+                    color: var(--accent-pink);
+                    margin-bottom: 1rem;
+                  "
+                >
+                  02
+                </div>
+                <h3>Preparação</h3>
+                <p>
+                  Higienização, esfoliação e tratamento preventivo para unhas
+                  saudáveis e fortes.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 cascade-item">
+              <div class="premium-card text-center">
+                <div
+                  style="
+                    font-size: 3rem;
+                    color: var(--accent-pink);
+                    margin-bottom: 1rem;
+                  "
+                >
+                  03
+                </div>
+                <h3>Aplicação</h3>
+                <p>
+                  Técnica precisa e detalhista aplicando produtos premium com
+                  acabamento impecável.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 cascade-item">
+              <div class="premium-card text-center">
+                <div
+                  style="
+                    font-size: 3rem;
+                    color: var(--accent-pink);
+                    margin-bottom: 1rem;
+                  "
+                >
+                  04
+                </div>
+                <h3>Finalização</h3>
+                <p>
+                  Cuidados finais, orientações de manutenção e agendamento da
+                  próxima manutenção.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIAIS -->
+      <section class="section-padding surface-band">
+        <div class="container-lg px-4">
+          <div class="text-center mb-5">
+            <span class="eyebrow d-block mb-3">Depoimentos</span>
+            <h2
+              class="font-title h1 fw-light mb-4"
+              style="color: var(--text-main)"
+            >
+              Clientes Satisfeitas
+            </h2>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                  "Dalila é uma artista! Minhas unhas ficaram perfeitas,
+                  exatamente como imaginei. Voltarei sempre!"
+                </p>
+                <div class="testimonial-author">Marina Silva</div>
+                <div class="testimonial-role">Cliente VIP</div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                  "Ambiente lindo, atendimento impecável e resultado que dura
+                  semanas. Recomendo muito!"
+                </p>
+                <div class="testimonial-author">Fernanda Costa</div>
+                <div class="testimonial-role">Cliente Frequente</div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                  "A qualidade dos produtos e a técnica são incomparáveis.
+                  Minhas unhas nunca estiveram tão bonitas!"
+                </p>
+                <div class="testimonial-author">Juliana Pereira</div>
+                <div class="testimonial-role">Cliente Nova</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section-padding">
+        <div class="container-lg px-4">
+          <div class="text-center scroll-reveal mb-5">
+            <span class="eyebrow d-block mb-3">Dúvidas?</span>
+            <h2
+              class="font-title h1 fw-light mb-4"
+              style="color: var(--text-main)"
+            >
+              Perguntas Frequentes
+            </h2>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqOne"
+                    >
+                      Quanto tempo dura o gel?
+                    </button>
+                  </h3>
+                  <div
+                    id="faqOne"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      O gel dura em média de 3 a 4 semanas, dependendo do
+                      crescimento natural da unha e do cuidado que você tiver.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqTwo"
+                    >
+                      É prejudicial às unhas?
+                    </button>
+                  </h3>
+                  <div
+                    id="faqTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      Não, desde que aplicado e removido corretamente. Usamos
+                      produtos de qualidade e seguimos protocolos de segurança
+                      rigorosos.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqThree"
+                    >
+                      Qual é o valor dos serviços?
+                    </button>
+                  </h3>
+                  <div
+                    id="faqThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      Os valores variam de acordo com o tipo de serviço e
+                      complexidade do design. Entre em contato conosco para um
+                      orçamento personalizado.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqFour"
+                    >
+                      Como faço para agendar?
+                    </button>
+                  </h3>
+                  <div
+                    id="faqFour"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      Clique em qualquer botão de agendamento para abrir o
+                      WhatsApp e escolher o melhor horário disponível.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="section-padding surface-band text-center">
+        <div class="container px-4 scroll-reveal">
+          <span class="eyebrow d-block mb-3">Vagas Restritas</span>
+          <h2
+            class="font-title h1 fw-light mb-4"
+            style="color: var(--text-main)"
+          >
+            Dê ao seu visual o toque de requinte que merece
+          </h2>
+          <p class="text-muted-custom col-lg-7 mx-auto mb-5">
+            Permita-se viver uma experiência personalizada de cuidados refinados
+            sob a assinatura estética do Studio Dalila Ruiz.
+          </p>
+          <a
+            class="btn btn-neon px-5 py-3"
+            href="https://wa.me/5514998813787"
+            target="_blank"
+          >
+            Agendar Horário Exclusivo <i class="bi bi-calendar2-heart ms-2"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="pt-5 pb-4">
+      <div class="container-lg px-4">
+        <div class="row g-4 text-center text-md-start mb-5">
+          <div class="col-md-4">
+            <h2 class="font-title h3 text-gradient">Studio Dalila Ruiz</h2>
+            <p class="small text-muted-custom mb-0">
+              Especialistas em ressaltar sua elegância natural com
+              responsabilidade técnica e insumos de alto padrão.
             </p>
-            <div class="d-flex flex-column flex-sm-row gap-3">
-              <a class="btn btn-neon px-4 py-3" href="https://wa.me/5514998813787" target="_blank">Agendar pelo WhatsApp <i class="bi bi-arrow-right ms-2"></i></a>
-              <a class="btn btn-outline-soft px-4 py-3" href="#portfolio">Ver Portfólio</a>
-            </div>
           </div>
 
-          <div class="col-lg-5">
-            <div class="portrait portrait-full hero-image-animation">
-              <img src="1.png" alt="Profissional de beleza">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-        <section id="services" class="section-padding">
-      <div class="container-xxl px-4">
-        <div class="text-center mb-5 scroll-reveal">
-          <h2 class="font-title display-5 fw-medium mb-3">Por Que Escolher Nosso Studio?</h2>
-          <p class="text-muted-custom text-uppercase small mb-0">
-            Experiência ultra premium estruturada em cada detalhe do atendimento.
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-xl">
-            <article class="premium-card text-center scroll-reveal cascade-item">
-              <span class="icon-bubble mb-4"><i class="bi bi-calendar2-heart"></i></span>
-              <h3 class="font-title h4">Agendamento Flex</h3>
-              <p class="text-muted-custom small mb-0">Praticidade para planejar, confirmar e reajustar seus horários de forma ágil.</p>
-            </article>
+          <div class="col-md-4 text-md-center">
+            <h2 class="font-title h3 text-gradient">Funcionamento</h2>
+            <p class="small text-muted-custom mb-1">
+              Terça a Sábado: 09h às 19h
+            </p>
+            <p class="small text-muted-custom mb-0">
+              Atendimento com hora marcada.
+            </p>
           </div>
 
-          <div class="col-md-6 col-xl">
-            <article class="premium-card text-center scroll-reveal cascade-item">
-              <span class="icon-bubble mb-4"><i class="bi bi-flower1"></i></span>
-              <h3 class="font-title h4">Naturalidade Real</h3>
-              <p class="text-muted-custom small mb-0">Técnicas contemporâneas que valorizam e respeitam seus traços originais.</p>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-xl">
-            <article class="premium-card text-center scroll-reveal cascade-item">
-              <span class="icon-bubble mb-4"><i class="bi bi-shield-check"></i></span>
-              <h3 class="font-title h4">Biossegurança</h3>
-              <p class="text-muted-custom small mb-0">Rigoroso protocolo de higienização e esterilização em autoclave.</p>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-xl">
-            <article class="premium-card text-center scroll-reveal cascade-item">
-              <span class="icon-bubble mb-4"><i class="bi bi-heart"></i></span>
-              <h3 class="font-title h4">Visagismo Único</h3>
-              <p class="text-muted-custom small mb-0">Estudo personalizado planejado para sua simetria facial.</p>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-xl">
-            <article class="premium-card text-center scroll-reveal cascade-item">
-              <span class="icon-bubble mb-4"><i class="bi bi-geo-alt"></i></span>
-              <h3 class="font-title h4">Espaço Exclusivo</h3>
-              <p class="text-muted-custom small mb-0">Ambiente climatizado, privativo e focado no acolhimento.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="menu-servicos" class="section-padding surface-band">
-      <div class="container px-4">
-        <div class="text-center mb-5 scroll-reveal">
-          <span class="eyebrow d-block mb-3">Menu Elegance</span>
-          <h2 class="font-title display-5 fw-medium mb-2">Nossos Procedimentos</h2>
-          <p class="text-muted-custom mb-0">Consulte nossa seleção de cuidados especializados.</p>
-        </div>
-
-        <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 scroll-reveal">
-          <button class="btn btn-outline-soft service-btn active px-4 py-3" type="button" data-service="olhar">Design de Sambrancelha</button>
-          <button class="btn btn-outline-soft service-btn px-4 py-3" type="button" data-service="unhas">Nail Design </button>
-        </div>
-
-        <div id="service-olhar" class="service-tab active row g-4">
-          <div class="col-md-6">
-            <article class="premium-card service-item scroll-reveal cascade-item">
-              <div>
-                <h3 class="font-title h4">Lash Lift Premium</h3>
-                <p class="text-muted-custom small mb-0">Curvatura, hidratação profunda e tingimento dos cílios naturais.</p>
-              </div>
-              <span class="price">R$ 160</span>
-            </article>
-          </div>
-
-          <div class="col-md-6">
-            <article class="premium-card service-item scroll-reveal cascade-item">
-              <div>
-                <h3 class="font-title h4">Brow Lamination</h3>
-                <p class="text-muted-custom small mb-0">Alinhamento e reconstrução dos fios da sobrancelha.</p>
-              </div>
-              <span class="price">R$ 150</span>
-            </article>
-          </div>
-
-          <div class="col-md-6">
-            <article class="premium-card service-item scroll-reveal cascade-item">
-              <div>
-                <h3 class="font-title h4">Design com Henna</h3>
-                <p class="text-muted-custom small mb-0">Mapeamento facial, limpeza e acabamento pigmentado.</p>
-              </div>
-              <span class="price">R$ 75</span>
-            </article>
-          </div>
-
-          <div class="col-md-6">
-            <article class="premium-card service-item scroll-reveal cascade-item">
-              <div>
-                <h3 class="font-title h4">Extensão Fio a Fio</h3>
-                <p class="text-muted-custom small mb-0">Aplicação delicada para volume natural e elegante.</p>
-              </div>
-              <span class="price">R$ 190</span>
-            </article>
+          <div class="col-md-4 text-md-end">
+            <h2 class="font-title h3 text-gradient">Contato</h2>
+            <p class="small text-muted-custom mb-1">
+              Atendimento Privativo - São Paulo, SP
+            </p>
+            <p class="small text-muted-custom mb-0">
+              WhatsApp: (14) 99881-3787
+            </p>
           </div>
         </div>
 
-        <div id="service-unhas" class="service-tab row g-4">
-          <div class="col-md-6">
-            <article class="premium-card service-item scroll-reveal cascade-item">
-              <div>
-                <h3 class="font-title h4">Banho de Gel</h3>
-                <p class="text-muted-custom small mb-0">Reforço estrutural com acabamento fino e resistente.</p>
-              </div>
-              <span class="price">R$ 140</span>
-            </article>
-          </div>
-
-          <div class="col-md-6">
-            <article class="premium-card service-item scroll-reveal cascade-item">
-              <div>
-                <h3 class="font-title h4">Esmaltação em Gel</h3>
-                <p class="text-muted-custom small mb-0">Brilho intenso, secagem imediata e longa durabilidade.</p>
-              </div>
-              <span class="price">R$ 90</span>
-            </article>
-          </div>
-
-          <div class="col-md-6">
-            <article class="premium-card service-item scroll-reveal cascade-item">
-              <div>
-                <h3 class="font-title h4">Alongamento Moldado</h3>
-                <p class="text-muted-custom small mb-0">Estrutura personalizada com curvatura sofisticada.</p>
-              </div>
-              <span class="price">R$ 220</span>
-            </article>
-          </div>
-
-          <div class="col-md-6">
-            <article class="premium-card service-item scroll-reveal cascade-item">
-              <div>
-                <h3 class="font-title h4">Manutenção Premium</h3>
-                <p class="text-muted-custom small mb-0">Correção, nivelamento e acabamento de alto padrão.</p>
-              </div>
-              <span class="price">R$ 120</span>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio" class="section-padding">
-      <div class="container-xxl px-4">
-        <div class="text-center mb-5 scroll-reveal">
-          <span class="eyebrow d-block mb-3">Resultados Reais</span>
-          <h2 class="font-title display-5 fw-medium mb-3">Portfólio com Fotos</h2>
-          <p class="text-muted-custom mb-0">
-            Uma seleção de trabalhos com acabamento natural, limpo e elegante.
-          </p>
-        </div>
-
-        <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 scroll-reveal">
-          <button class="btn btn-outline-soft filter-btn active px-4 py-3" type="button" data-filter="all">Todos</button>
-          <button class="btn btn-outline-soft filter-btn px-4 py-3" type="button" data-filter="olhar">Sambrancelha</button>
-          <button class="btn btn-outline-soft filter-btn px-4 py-3" type="button" data-filter="unhas">Unhas</button>
-        </div>
-
-        <div class="row g-4 portfolio-grid">
-          <div class="col-md-6 col-lg-4 portfolio-item" data-category="olhar">
-            <article class="portfolio-card scroll-reveal cascade-item">
-              <img src="foto01.png" alt="Olhar 01">
-              <div class="portfolio-caption">
-                <h3 class="font-title h4 mb-1">Olhar 01</h3>
-                <p class="small text-muted-custom mb-0">Sobrancelha modelada com precisão.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 portfolio-item" data-category="olhar">
-            <article class="portfolio-card scroll-reveal cascade-item">
-              <img src="foto02.png" alt="Olhar 02">
-              <div class="portfolio-caption">
-                <h3 class="font-title h4 mb-1">Olhar 02</h3>
-                <p class="small text-muted-custom mb-0">Acabamento natural e simétrico.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 portfolio-item" data-category="olhar">
-            <article class="portfolio-card scroll-reveal cascade-item">
-              <img src="foto03.png" alt="Olhar 03">
-              <div class="portfolio-caption">
-                <h3 class="font-title h4 mb-1">Olhar 03</h3>
-                <p class="small text-muted-custom mb-0">Definição precisa e impacto suave.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 portfolio-item" data-category="olhar">
-            <article class="portfolio-card scroll-reveal cascade-item">
-              <img src="foto04.png" alt="Olhar 04">
-              <div class="portfolio-caption">
-                <h3 class="font-title h4 mb-1">Olhar 04</h3>
-                <p class="small text-muted-custom mb-0">Harmonia entre fios e formato facial.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 portfolio-item" data-category="unhas">
-            <article class="portfolio-card scroll-reveal cascade-item">
-              <img src="unha1.png" alt="Unha 01">
-              <div class="portfolio-caption">
-                <h3 class="font-title h4 mb-1">Unha 01</h3>
-                <p class="small text-muted-custom mb-0">Acabamento em gel, brilho intenso.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 portfolio-item" data-category="unhas">
-            <article class="portfolio-card scroll-reveal cascade-item">
-              <img src="unha2.png" alt="Unha 02">
-              <div class="portfolio-caption">
-                <h3 class="font-title h4 mb-1">Unha 02</h3>
-                <p class="small text-muted-custom mb-0">Design elegante e resistente.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 portfolio-item" data-category="unhas">
-            <article class="portfolio-card scroll-reveal cascade-item">
-              <img src="unha3.png" alt="Unha 03">
-              <div class="portfolio-caption">
-                <h3 class="font-title h4 mb-1">Unha 03</h3>
-                <p class="small text-muted-custom mb-0">Detalhes finos e acabamento duradouro.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4 portfolio-item" data-category="unhas">
-            <article class="portfolio-card scroll-reveal cascade-item">
-              <img src="unha4.png" alt="Unha 04">
-              <div class="portfolio-caption">
-                <h3 class="font-title h4 mb-1">Unha 04</h3>
-                <p class="small text-muted-custom mb-0">Formato e brilho profissionais.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" class="section-padding surface-band">
-      <div class="container-xxl px-4">
-        <div class="text-center mb-5 scroll-reveal">
-          <span class="eyebrow d-block mb-3">Como Funciona</span>
-          <h2 class="font-title display-5 fw-medium mb-3">Processo de Atendimento</h2>
-          <p class="text-muted-custom mb-0">
-            Do agendamento ao pós-procedimento, tudo é feito com clareza e cuidado.
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-4">
-            <article class="premium-card scroll-reveal scroll-reveal cascade-item">
-              <div class="step-number mb-3">01</div>
-              <h3 class="font-title h3">Consultoria</h3>
-              <p class="text-muted-custom mb-0">
-                Entendemos seu estilo, rotina, preferências e referências antes de definir a técnica ideal.
-              </p>
-            </article>
-          </div>
-
-          <div class="col-md-4">
-            <article class="premium-card scroll-reveal scroll-reveal cascade-item">
-              <div class="step-number mb-3">02</div>
-              <h3 class="font-title h3">Execução</h3>
-              <p class="text-muted-custom mb-0">
-                Aplicação minuciosa com materiais certificados e protocolos rigorosos de biossegurança.
-              </p>
-            </article>
-          </div>
-
-          <div class="col-md-4">
-            <article class="premium-card scroll-reveal scroll-reveal cascade-item">
-              <div class="step-number mb-3">03</div>
-              <h3 class="font-title h3">Home Care</h3>
-              <p class="text-muted-custom mb-0">
-                Você recebe orientações simples para manter o resultado bonito por mais tempo.
-              </p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="feedbacks" class="section-padding">
-      <div class="container-xxl px-4">
-        <div class="text-center mb-5 scroll-reveal">
-          <span class="eyebrow d-block mb-3">Feedbacks</span>
-          <h2 class="font-title display-5 fw-medium mb-3">O Que as Clientes Dizem</h2>
-          <p class="text-muted-custom mb-0">
-            Depoimentos de clientes que viveram a experiência Studio Dalila Ruiz.
-          </p>
-        </div>
-
-        <div class="testimonials-carousel scroll-reveal">
-          <div class="testimonials-track scrolling" aria-hidden="false">
-            <article>
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Atendimento impecável! Resultado natural e elegante."</p>
-              <strong class="eyebrow">Mariana S.</strong>
-            </article>
-
-            <article>
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Esmaltação perfeita, dura muito e fica incrível."</p>
-              <strong class="eyebrow">Camila F.</strong>
-            </article>
-
-            <article>
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Design de sobrancelha que respeita o formato do meu rosto."</p>
-              <strong class="eyebrow">Juliana T.</strong>
-            </article>
-
-            <article>
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Ambiente acolhedor e técnica impecável — recomendo sem dúvidas."</p>
-              <strong class="eyebrow">Ana P.</strong>
-            </article>
-
-            <article>
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Profissional atenciosa e resultado que superou minhas expectativas."</p>
-              <strong class="eyebrow">Bárbara L.</strong>
-            </article>
-
-            <article>
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Unhas com acabamento perfeito e durabilidade excelente."</p>
-              <strong class="eyebrow">Carla M.</strong>
-            </article>
-
-            <article>
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Atendimento pontual e cuidados detalhados em cada etapa."</p>
-              <strong class="eyebrow">Débora R.</strong>
-            </article>
-
-            <article>
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Amei o resultado do lash lift — natural e duradouro."</p>
-              <strong class="eyebrow">Eduarda S.</strong>
-            </article>
-            <!-- duplicates for seamless loop -->
-            <article aria-hidden="true">
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Atendimento impecável! Resultado natural e elegante."</p>
-              <strong class="eyebrow">Mariana S.</strong>
-            </article>
-
-            <article aria-hidden="true">
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Esmaltação perfeita, dura muito e fica incrível."</p>
-              <strong class="eyebrow">Camila F.</strong>
-            </article>
-
-            <article aria-hidden="true">
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Design de sobrancelha que respeita o formato do meu rosto."</p>
-              <strong class="eyebrow">Juliana T.</strong>
-            </article>
-
-            <article aria-hidden="true">
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Ambiente acolhedor e técnica impecável — recomendo sem dúvidas."</p>
-              <strong class="eyebrow">Ana P.</strong>
-            </article>
-
-            <article aria-hidden="true">
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Profissional atenciosa e resultado que superou minhas expectativas."</p>
-              <strong class="eyebrow">Bárbara L.</strong>
-            </article>
-
-            <article aria-hidden="true">
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Unhas com acabamento perfeito e durabilidade excelente."</p>
-              <strong class="eyebrow">Carla M.</strong>
-            </article>
-
-            <article aria-hidden="true">
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Atendimento pontual e cuidados detalhados em cada etapa."</p>
-              <strong class="eyebrow">Débora R.</strong>
-            </article>
-
-            <article aria-hidden="true">
-              <div class="testimonial-stars mb-2">★★★★★</div>
-              <p>"Amei o resultado do lash lift — natural e duradouro."</p>
-              <strong class="eyebrow">Eduarda S.</strong>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-        <section id="about" class="section-padding surface-band">
-      <div class="container-xxl px-4">
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-6">
-            <div class="about-image scroll-reveal"></div>
-          </div>
-          <div class="col-lg-6">
-            <div class="about-panel scroll-reveal">
-              <article class="about-card">
-                <span class="eyebrow d-block mb-3">A Artista por Trás do Olhar</span>
-                <h2 class="font-title display-5 fw-medium mb-4">Dalila Ruiz</h2>
-
-                <div class="about-actions mb-4">
-                  <a class="btn btn-neon px-4 py-3" href="https://wa.me/5514998813787" target="_blank">Agendar Sessão</a>
-                </div>
-
-                <p>Especialista dedicada à alta performance na estética do olhar e embelezamento estrutural das unhas. Minha filosofia evita resultados artificiais: busco identificar a geometria singular de cada rosto para valorizar o que há de mais elegante em você.</p>
-
-                <p>Com certificações avançadas e atualização contínua, aplico matérias-primas hipoalergênicas licenciadas, assegurando saúde biológica junto à estética de luxo.</p>
-              </article>
-
-              <div class="about-subtext">
-                <div class="row g-4">
-                  <div class="col-sm-6">
-                    <article class="premium-card">
-                      <div class="d-flex gap-3 align-items-start">
-                        <i class="bi bi-award fs-3 text-gradient"></i>
-                        <div>
-                          <h3 class="font-title h4 mb-1">Titulada Internacional</h3>
-                          <p class="small text-muted-custom mb-0">Especializações contínuas em Lash & Brow Design.</p>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-sm-6">
-                    <article class="premium-card">
-                      <div class="d-flex gap-3 align-items-start">
-                        <i class="bi bi-stars fs-3 text-gradient"></i>
-                        <div>
-                          <h3 class="font-title h4 mb-1">Materiais Certificados</h3>
-                          <p class="small text-muted-custom mb-0">Insumos importados rigorosamente testados.</p>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-4">
-                <a class="btn btn-outline-soft px-4 py-3" href="https://wa.me/5514998813787" target="_blank">Conheça o Espaço Físico</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="section-padding">
-      <div class="container px-4">
-        <div class="text-center mb-5 scroll-reveal">
-          <h2 class="font-title display-5 fw-medium mb-3">Dúvidas Frequentes</h2>
-          <p class="text-muted-custom text-uppercase small mb-0">
-            Respostas para as principais questões contratuais e técnicas.
-          </p>
-        </div>
-
-        <div class="accordion d-grid gap-3 scroll-reveal" id="faqAccordion">
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
-                Quanto tempo dura a extensão de cílios?
-              </button>
-            </h3>
-            <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                A durabilidade média varia entre 20 e 30 dias, dependendo do ciclo natural dos fios e dos cuidados em casa.
-                Indicamos manutenções a cada 15 ou 20 dias.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
-                A esmaltação em gel danifica as unhas?
-              </button>
-            </h3>
-            <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Não, desde que aplicada e removida corretamente. A remoção controlada preserva a integridade da unha natural.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
-                Como funciona a higiene dos materiais?
-              </button>
-            </h3>
-            <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Itens não descartáveis passam por lavagem química, embalagem individual e esterilização em autoclave após cada sessão.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
-                Como faço para agendar um horário?
-              </button>
-            </h3>
-            <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Clique em qualquer botão de agendamento para abrir o WhatsApp e escolher o melhor horário disponível.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-padding surface-band text-center cta-hero">
-      <div class="container px-4 scroll-reveal">
-        <span class="eyebrow d-block mb-3" style="color: var(--secondary);">
-          Vagas Restritas para esta Semana
-        </span>
-
-        <h2 class="font-title display-4 fw-light mb-4">
-          Dê ao seu visual o toque de requinte que ele merece
-        </h2>
-
-        <p class="text-muted-custom col-lg-7 mx-auto mb-5">
-          Permita-se viver uma experiência personalizada de cuidados refinados sob a assinatura estética do Studio Dalila Ruiz.
-        </p>
-
-        <a class="btn btn-neon px-5 py-3" href="https://wa.me/5514998813787" target="_blank">
-          Agendar meu Horário Exclusivo <i class="bi bi-calendar2-heart ms-2"></i>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="pt-5 pb-4">
-    <div class="container-xxl px-4">
-      <div class="row g-4 text-center text-md-start mb-5">
-        <div class="col-md-4">
-          <h2 class="font-title h3 text-gradient">Studio Dalila Ruiz</h2>
+        <div
+          class="border-top pt-4 text-center"
+          style="border-color: var(--border-soft) !important"
+        >
           <p class="small text-muted-custom mb-0">
-            Especialistas em ressaltar sua elegância natural com responsabilidade técnica e insumos de alto padrão.
+            &copy; 2026 Studio Dalila Ruiz. Todos os direitos reservados.
           </p>
         </div>
-
-        <div class="col-md-4 text-md-center">
-          <h2 class="font-title h3 text-gradient">Funcionamento</h2>
-          <p class="small text-muted-custom mb-1">Terça a Sábado: 09h às 19h</p>
-          <p class="small text-muted-custom mb-0">Atendimento com hora marcada.</p>
-        </div>
-
-        <div class="col-md-4 text-md-end">
-          <h2 class="font-title h3 text-gradient">Contato</h2>
-          <p class="small text-muted-custom mb-1">Atendimento Privativo - São Paulo, SP</p>
-          <p class="small text-muted-custom mb-0">WhatsApp: (00) 00000-0000</p>
-        </div>
       </div>
+    </footer>
 
-      <div class="border-top pt-4 text-center" style="border-color: rgba(59,45,84,.7) !important;">
-        <p class="small text-muted-custom mb-0">
-          &copy; 2026 Studio Dalila Ruiz. Todos os direitos reservados.
-        </p>
-      </div>
-    </div>
-  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // ============================================
+      // HERO IMAGE LOADER (Dinâmica - Desktop/Mobile)
+      // ============================================
+      (function () {
+        const heroSection = document.getElementById("hero");
 
-  <script>
-    const nav = document.getElementById("mainNav");
-    const navbarMenu = document.getElementById("navbarMenu");
-    const navLinks = document.querySelectorAll(".nav-link");
-    const serviceButtons = document.querySelectorAll(".service-btn");
-    const serviceTabs = document.querySelectorAll(".service-tab");
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const portfolioItems = document.querySelectorAll(".portfolio-item");
-    const revealElements = document.querySelectorAll(".scroll-reveal");
-
-    window.addEventListener("scroll", () => {
-      nav.classList.toggle("nav-scrolled", window.scrollY > 40);
-    });
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        const collapse = bootstrap.Collapse.getInstance(navbarMenu);
-        if (collapse) {
-          collapse.hide();
+        function setHeroImage() {
+          const isMobile = window.innerWidth <= 768;
+          const imagePath = isMobile ? "./hero-celular.png" : "./hero.png";
+          heroSection.style.backgroundImage = `url('${imagePath}')`;
         }
-      });
-    });
 
-    serviceButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const selected = button.dataset.service;
+        setHeroImage();
+        window.addEventListener("resize", setHeroImage);
+      })();
 
-        serviceButtons.forEach((item) => {
-          item.classList.toggle("active", item === button);
-        });
+      // ============================================
+      // WHY SECTION IMAGE LOADER (Dinâmica)
+      // ============================================
+      (function () {
+        const whyBackground = document.getElementById("whyBackground");
 
-        serviceTabs.forEach((tab) => {
-          tab.classList.toggle("active", tab.id === `service-${selected}`);
-        });
-      });
-    });
-
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const selected = button.dataset.filter;
-
-        filterButtons.forEach((item) => {
-          item.classList.toggle("active", item === button);
-        });
-
-        portfolioItems.forEach((item) => {
-          const shouldShow = selected === "all" || item.dataset.category === selected;
-          item.classList.toggle("is-hidden", !shouldShow);
-        });
-      });
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          observer.unobserve(entry.target);
+        function setWhyImage() {
+          const isMobile = window.innerWidth <= 768;
+          const imagePath = isMobile
+            ? "./hero-porque-mobile.png"
+            : "./hero-porque-desketop.png";
+          whyBackground.style.backgroundImage = `url('${imagePath}')`;
         }
-      });
-    }, {
-      threshold: 0.20,
-      rootMargin: "0px 0px -40px 0px"
-    });
 
-    revealElements.forEach((element) => observer.observe(element));
+        setWhyImage();
+        window.addEventListener("resize", setWhyImage);
+      })();
 
-    /*animação cascata*/
-    const cascadeItems = document.querySelectorAll(".cascade-item");
+      // ============================================
+      // NAVEGAÇÃO E SCROLL
+      // ============================================
+      const nav = document.getElementById("mainNav");
+      const navbarMenu = document.getElementById("navbarMenu");
+      const navLinks = document.querySelectorAll(".nav-link");
 
-    cascadeItems.forEach((item, index) => {
-    item.style.transitionDelay = `${index * 120}ms`;
-    });
-  </script>
-
-  <script>
-    /* ============================================================
-       NOVAS ANIMAÇÕES EXTRAS — Zigue-zague, botões e títulos
-       Script totalmente aditivo: não altera o comportamento original.
-       Compatível com desktop, mobile (toque) e rolagem.
-       ============================================================ */
-    (function () {
-      "use strict";
-
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      // Seletores de grupos de "cards" que receberão o efeito zigue-zague
-      const zigzagGroups = [
-        "#services .row.g-4 > div",
-        "#service-olhar.row.g-4 > div",
-        "#service-unhas.row.g-4 > div",
-        "#portfolio .portfolio-grid > div",
-        "#process .row.g-4 > div",
-        "#faqAccordion .accordion-item"
-      ];
-
-      const zigzagElements = [];
-      zigzagGroups.forEach((selector) => {
-        const nodes = document.querySelectorAll(selector);
-        nodes.forEach((node, index) => {
-          // Alterna a direção: índices pares vêm da esquerda, ímpares da direita
-          const direction = index % 2 === 0 ? "zig-left" : "zig-right";
-          node.classList.add("zig-reveal", direction);
-          node.style.transitionDelay = `${(index % 6) * 90}ms`;
-          zigzagElements.push(node);
-        });
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("nav-scrolled", window.scrollY > 40);
       });
 
-      // Títulos que recebem pequena animação de entrada
-      const titleSelectors = [
-        "h1", "h2.font-title", "h3.font-title"
-      ];
-      const titleElements = [];
-      titleSelectors.forEach((selector) => {
-        document.querySelectorAll(selector).forEach((el) => {
-          if (!el.classList.contains("title-anim")) {
-            el.classList.add("title-anim");
-            titleElements.push(el);
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const collapse = bootstrap.Collapse.getInstance(navbarMenu);
+          if (collapse) {
+            collapse.hide();
           }
         });
       });
 
-      // Botões que recebem pequena animação de entrada suave
-      const buttonElements = [];
-      document.querySelectorAll(".btn-neon, .btn-outline-soft").forEach((btn) => {
-        btn.classList.add("btn-anim-init");
-        buttonElements.push(btn);
-      });
+      // ============================================
+      // TABS DE SERVIÇOS
+      // ============================================
+      const serviceButtons = document.querySelectorAll(".service-btn");
+      const serviceTabs = document.querySelectorAll(".service-tab");
 
-      if (prefersReducedMotion) {
-        // Se o usuário prefere menos movimento, apenas garante visibilidade total
-        zigzagElements.forEach((el) => el.classList.add("zig-active"));
-        titleElements.forEach((el) => el.classList.add("title-anim-active"));
-        buttonElements.forEach((el) => el.classList.add("btn-anim-active"));
-        return;
-      }
+      serviceButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const selected = button.dataset.service;
 
-      // Observer para o efeito zigue-zague (cards)
-      const zigObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("zig-active");
-            zigObserver.unobserve(entry.target);
-          }
+          serviceButtons.forEach((item) => {
+            item.classList.toggle("active", item === button);
+          });
+
+          serviceTabs.forEach((tab) => {
+            tab.classList.toggle("active", tab.id === `service-${selected}`);
+          });
         });
-      }, {
-        threshold: 0.18,
-        rootMargin: "0px 0px -30px 0px"
       });
-      zigzagElements.forEach((el) => zigObserver.observe(el));
 
-      // Observer para títulos
-      const titleObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("title-anim-active");
-            titleObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.3,
-        rootMargin: "0px 0px -20px 0px"
-      });
-      titleElements.forEach((el) => titleObserver.observe(el));
+      // ============================================
+      // FILTROS DO PORTFOLIO
+      // ============================================
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const portfolioItems = document.querySelectorAll(".portfolio-item");
 
-      // Observer para botões (entrada suave ao aparecerem na tela)
-      const btnObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("btn-anim-active");
-            btnObserver.unobserve(entry.target);
-          }
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const selected = button.dataset.filter;
+
+          filterButtons.forEach((item) => {
+            item.classList.toggle("active", item === button);
+          });
+
+          portfolioItems.forEach((item) => {
+            const shouldShow =
+              selected === "all" || item.dataset.category === selected;
+            item.classList.toggle("is-hidden", !shouldShow);
+          });
         });
-      }, {
-        threshold: 0.4,
-        rootMargin: "0px 0px -20px 0px"
       });
-      buttonElements.forEach((el) => btnObserver.observe(el));
-    })();
-  </script>
-</body>
+
+      // ============================================
+      // SCROLL REVEAL ANIMATIONS
+      // ============================================
+      const revealElements = document.querySelectorAll(".scroll-reveal");
+      const cascadeItems = document.querySelectorAll(".cascade-item");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+          rootMargin: "0px 0px -40px 0px",
+        },
+      );
+
+      revealElements.forEach((element) => observer.observe(element));
+
+      // Cascade animation delays
+      cascadeItems.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 120}ms`;
+      });
+
+      // ============================================
+      // ZIGZAG + TITLE + BUTTON ANIMATIONS
+      // ============================================
+      (function () {
+        "use strict";
+
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        const zigzagGroups = [
+          "#servicos .row.g-4 > div",
+          "#portfolio .portfolio-grid > div",
+          "#processo .row.g-4 > div",
+        ];
+
+        const zigzagElements = [];
+        zigzagGroups.forEach((selector) => {
+          const nodes = document.querySelectorAll(selector);
+          nodes.forEach((node, index) => {
+            const direction = index % 2 === 0 ? "zig-left" : "zig-right";
+            node.classList.add("zig-reveal", direction);
+            node.style.transitionDelay = `${(index % 6) * 90}ms`;
+            zigzagElements.push(node);
+          });
+        });
+
+        const titleSelectors = ["h1", "h2.font-title", "h3.font-title"];
+        const titleElements = [];
+        titleSelectors.forEach((selector) => {
+          document.querySelectorAll(selector).forEach((el) => {
+            if (!el.classList.contains("title-anim")) {
+              el.classList.add("title-anim");
+              titleElements.push(el);
+            }
+          });
+        });
+
+        const buttonElements = [];
+        document
+          .querySelectorAll(".btn-neon, .btn-outline-soft")
+          .forEach((btn) => {
+            btn.classList.add("btn-anim-init");
+            buttonElements.push(btn);
+          });
+
+        if (prefersReducedMotion) {
+          zigzagElements.forEach((el) => el.classList.add("zig-active"));
+          titleElements.forEach((el) => el.classList.add("title-anim-active"));
+          buttonElements.forEach((el) => el.classList.add("btn-anim-active"));
+          return;
+        }
+
+        const zigObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("zig-active");
+                zigObserver.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.18,
+            rootMargin: "0px 0px -30px 0px",
+          },
+        );
+        zigzagElements.forEach((el) => zigObserver.observe(el));
+
+        const titleObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("title-anim-active");
+                titleObserver.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.3,
+            rootMargin: "0px 0px -20px 0px",
+          },
+        );
+        titleElements.forEach((el) => titleObserver.observe(el));
+
+        const btnObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("btn-anim-active");
+                btnObserver.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.4,
+            rootMargin: "0px 0px -20px 0px",
+          },
+        );
+        buttonElements.forEach((el) => btnObserver.observe(el));
+      })();
+    </script>
+  </body>
 </html>
