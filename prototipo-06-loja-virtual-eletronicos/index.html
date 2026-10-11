@@ -1,11 +1,369 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="MobilePro: loja premium de iPhones, AirPods, carregadores, películas, smartwatches e acessórios de tecnologia."
+    >
+    <title>MobilePro | Tecnologia & Acessórios</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="top-promo" role="banner">
+        OFERTAS ESPECIAIS TODOS OS DIAS | TECNOLOGIA E INOVAÇÃO PARA VOCÊ!
+      </div>
+
+      <nav class="navbar navbar-expand-lg main-navbar" aria-label="Navegação principal">
+        <div class="container">
+          <a class="navbar-brand brand-mark" href="#inicio" aria-label="MobilePro, voltar para o início">
+            <span class="brand-title">Mobile<span>Pro</span></span>
+            <small>TECNOLOGIA &amp; ACESSÓRIOS</small>
+          </a>
+
+          <div class="mobile-navbar-actions">
+            <button
+              class="nav-icon-btn cart-trigger"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#cartOffcanvas"
+              aria-controls="cartOffcanvas"
+              aria-label="Abrir carrinho"
+            >
+              <i class="bi bi-bag"></i>
+              <span class="cart-count" aria-live="polite">0</span>
+            </button>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainNav"
+              aria-controls="mainNav"
+              aria-expanded="false"
+              aria-label="Abrir menu de navegação"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0">
+              <li class="nav-item"><a class="nav-link active" href="#inicio">Início</a></li>
+              <li class="nav-item"><a class="nav-link" href="#produtos" data-show-all>Produtos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#categorias">Categorias</a></li>
+              <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
+              <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+
+            <form class="mobile-search-form d-lg-none" data-search-form role="search">
+              <label class="visually-hidden" for="mobileSearch">Buscar produtos</label>
+              <input id="mobileSearch" type="search" name="busca" placeholder="Buscar produtos">
+              <button type="submit" aria-label="Buscar">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
+
+            <div class="desktop-navbar-actions">
+              <form class="nav-search-form" data-search-form role="search">
+                <label class="visually-hidden" for="desktopSearch">Buscar produtos</label>
+                <input id="desktopSearch" type="search" name="busca" placeholder="Buscar produtos">
+              </form>
+              <button
+                class="nav-icon-btn search-toggle"
+                type="button"
+                aria-label="Abrir busca"
+                aria-expanded="false"
+              >
+                <i class="bi bi-search"></i>
+              </button>
+              <button class="nav-icon-btn user-action" type="button" aria-label="Área do cliente">
+                <i class="bi bi-person"></i>
+              </button>
+              <button
+                class="nav-icon-btn cart-trigger"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#cartOffcanvas"
+                aria-controls="cartOffcanvas"
+                aria-label="Abrir carrinho"
+              >
+                <i class="bi bi-bag"></i>
+                <span class="cart-count" aria-live="polite">0</span>
+              </button>
+              <a class="btn btn-primary-soft" href="#produtos" data-show-all>Comprar agora</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero-section" aria-labelledby="heroTitle">
+        <div class="hero-bg-layer" aria-hidden="true"></div>
+        <div class="container hero-container">
+          <div class="hero-content">
+            <p class="section-kicker hero-animate">TECNOLOGIA PREMIUM PARA O SEU DIA A DIA</p>
+            <h1 id="heroTitle" class="hero-title hero-animate">
+              <span>Mais tecnologia.</span>
+              <span>Mais possibilidades.</span>
+            </h1>
+            <p class="hero-description hero-animate">
+              Descubra iPhones, AirPods e acessórios que unem inovação, estilo e desempenho.
+              Tudo o que você precisa para levar sua experiência digital a outro nível.
+            </p>
+            <div class="hero-actions hero-animate">
+              <a class="btn btn-orange" href="#produtos" data-show-all>Comprar agora <span aria-hidden="true">→</span></a>
+              <a class="btn btn-play" href="#produtos" data-show-all>
+                <span class="play-icon" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                Explorar produtos
+              </a>
+            </div>
+            <div class="hero-note hero-animate">
+              <i class="bi bi-star-fill" aria-hidden="true"></i>
+              <div>
+                <strong>Produtos selecionados para você</strong>
+                <span>Tecnologia, qualidade e estilo em um só lugar.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits-strip" aria-label="Benefícios da MobilePro">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-12 col-sm-6 col-lg-3 benefit-item">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+              <div>
+                <h2>Qualidade Selecionada</h2>
+                <p>Produtos escolhidos com atenção aos detalhes.</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 benefit-item">
+              <i class="bi bi-bag-check" aria-hidden="true"></i>
+              <div>
+                <h2>Compra Prática</h2>
+                <p>Encontre seus acessórios de forma simples.</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 benefit-item">
+              <i class="bi bi-headset" aria-hidden="true"></i>
+              <div>
+                <h2>Atendimento</h2>
+                <p>Conte com suporte para suas dúvidas.</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 benefit-item">
+              <i class="bi bi-lock" aria-hidden="true"></i>
+              <div>
+                <h2>Experiência Segura</h2>
+                <p>Navegue com conforto e praticidade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="categorias" class="section section-light" aria-labelledby="categoriesTitle">
+        <div class="container">
+          <div class="section-heading text-center">
+            <div class="heading-with-lines">
+              <span aria-hidden="true"></span>
+              <h2 id="categoriesTitle">Explore nossas categorias</h2>
+              <span aria-hidden="true"></span>
+            </div>
+            <p>Encontre a tecnologia ideal para acompanhar todos os momentos do seu dia.</p>
+          </div>
+
+          <div id="categoryGrid" class="row g-3 g-md-4 category-grid">
+          </div>
+
+          <div class="admin-demo-link-wrap">
+            <a class="btn btn-outline-orange admin-demo-link" href="./adm.html">
+              <i class="bi bi-sliders" aria-hidden="true"></i>
+              Painel administrativo (demonstração)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="ofertas" class="section section-light section-promo" aria-labelledby="promoTitle">
+        <div class="container">
+          <div class="promo-banner reveal-item">
+            <div class="promo-bg-layer" aria-hidden="true"></div>
+            <div class="promo-content">
+              <p class="section-kicker">BLACK FRIDAY MOBILEPRO</p>
+              <h2 id="promoTitle">ATÉ <span><span data-discount-counter>40</span>% OFF</span></h2>
+              <h3>Seu próximo upgrade começa aqui.</h3>
+              <p>
+                Aproveite condições especiais para renovar seus acessórios favoritos.
+                Mais tecnologia, mais estilo e oportunidades para economizar.
+              </p>
+              <a class="btn btn-orange" href="#produtos" data-show-all>Aproveitar ofertas <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="produtos" class="section section-light products-section" aria-labelledby="productsTitle">
+        <div class="container">
+          <div class="products-heading">
+            <div>
+              <h2 id="productsTitle">Os mais desejados</h2>
+              <p>Uma seleção especial de tecnologia para transformar sua rotina.</p>
+            </div>
+            <button class="btn btn-outline-orange" type="button" data-show-all>Ver todos <span aria-hidden="true">→</span></button>
+          </div>
+
+          <div id="productStatus" class="product-status" aria-live="polite"></div>
+          <div id="productGrid" class="row g-3 g-md-4 product-grid"></div>
+        </div>
+      </section>
+
+      <section class="benefits-strip benefits-strip-lower" aria-label="Mais benefícios da MobilePro">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-12 col-sm-6 col-lg-3 benefit-item">
+              <i class="bi bi-stars" aria-hidden="true"></i>
+              <div>
+                <h2>Qualidade Selecionada</h2>
+                <p>Produtos escolhidos com atenção aos detalhes.</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 benefit-item">
+              <i class="bi bi-phone" aria-hidden="true"></i>
+              <div>
+                <h2>Compra Prática</h2>
+                <p>Encontre seus acessórios de forma simples.</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 benefit-item">
+              <i class="bi bi-chat-dots" aria-hidden="true"></i>
+              <div>
+                <h2>Atendimento</h2>
+                <p>Conte com suporte para suas dúvidas.</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 benefit-item">
+              <i class="bi bi-check2-circle" aria-hidden="true"></i>
+              <div>
+                <h2>Experiência Segura</h2>
+                <p>Navegue com conforto e praticidade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contato" class="site-footer">
+      <div class="container">
+        <div class="row gy-4 align-items-start">
+          <div class="col-lg-5" id="sobre">
+            <a class="brand-mark footer-brand" href="#inicio" aria-label="MobilePro, voltar para o início">
+              <span class="brand-title">Mobile<span>Pro</span></span>
+              <small>TECNOLOGIA &amp; ACESSÓRIOS</small>
+            </a>
+            <p>
+              Uma experiência premium para encontrar iPhones, AirPods e acessórios
+              que combinam tecnologia, estilo e praticidade.
+            </p>
+          </div>
+          <div class="col-6 col-lg-3">
+            <h2>Navegação</h2>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#categorias">Categorias</a></li>
+              <li><a href="#ofertas">Ofertas</a></li>
+              <li><a href="#produtos" data-show-all>Produtos</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-4">
+            <h2>Contato</h2>
+            <p class="footer-contact">Fale com a MobilePro para conhecer as melhores opções para o seu dia a dia.</p>
+            <a class="footer-link" href="mailto:contato@mobilepro.com.br">contato@mobilepro.com.br</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 MobilePro. Todos os direitos reservados.</span>
+          <span>Tecnologia premium para a sua rotina.</span>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="offcanvas offcanvas-end cart-panel"
+      tabindex="-1"
+      id="cartOffcanvas"
+      aria-labelledby="cartOffcanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <div>
+          <p class="cart-kicker">Seu carrinho</p>
+          <h2 class="offcanvas-title" id="cartOffcanvasLabel">Produtos adicionados</h2>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar carrinho"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="cartItems" class="cart-items"></div>
+        <div id="cartEmpty" class="cart-empty">
+          <i class="bi bi-bag" aria-hidden="true"></i>
+          <p>Seu carrinho está vazio.</p>
+          <span>Adicione produtos para ver o total aqui.</span>
+        </div>
+      </div>
+      <div class="cart-summary">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <strong id="cartTotal">R$ 0,00</strong>
+        </div>
+        <a class="btn btn-orange w-100" href="./carrinho.html">Finalizar pedido</a>
+        <button class="btn btn-cart-secondary w-100" type="button" data-bs-dismiss="offcanvas">Continuar comprando</button>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="appToast"
+        class="toast app-toast"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        data-bs-delay="2600"
+      >
+        <div class="toast-body">
+          <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+          <span id="toastMessage">Produto adicionado ao carrinho.</span>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./mobilepro-store.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>

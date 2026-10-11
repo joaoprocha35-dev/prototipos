@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Painel administrativo demonstrativo da loja MobilePro.">
+    <title>Painel administrativo | MobilePro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./adm.css">
+  </head>
+  <body>
+    <div class="admin-shell">
+      <aside class="admin-sidebar" id="adminSidebar">
+        <a class="admin-logo" href="./adm.html">
+          <span>Mobile<span>Pro</span></span>
+          <small>Admin</small>
+        </a>
+
+        <nav aria-label="Navegação administrativa">
+          <a class="sidebar-link" href="#overview"><i class="bi bi-grid" aria-hidden="true"></i>Visão geral</a>
+          <a class="sidebar-link active" href="#produtos"><i class="bi bi-box-seam" aria-hidden="true"></i>Produtos</a>
+          <a class="sidebar-link" href="#categorias"><i class="bi bi-tags" aria-hidden="true"></i>Categorias</a>
+          <button class="sidebar-link button-link" type="button" data-open-product-modal>
+            <i class="bi bi-plus-circle" aria-hidden="true"></i>Adicionar produto
+          </button>
+          <a class="sidebar-link" href="#configuracoes"><i class="bi bi-gear" aria-hidden="true"></i>Configurações</a>
+          <a class="sidebar-link" href="./index.html"><i class="bi bi-arrow-left" aria-hidden="true"></i>Voltar à loja</a>
+        </nav>
+
+        <p class="sidebar-note">Painel demonstrativo com dados salvos apenas neste navegador.</p>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <button class="mobile-sidebar-toggle" type="button" aria-label="Abrir menu administrativo" data-toggle-sidebar>
+            <i class="bi bi-list" aria-hidden="true"></i>
+          </button>
+          <div class="admin-search">
+            <i class="bi bi-search" aria-hidden="true"></i>
+            <input id="adminSearch" type="search" placeholder="Buscar produto...">
+          </div>
+          <div class="admin-user">
+            <button type="button" aria-label="Notificações"><i class="bi bi-bell" aria-hidden="true"></i></button>
+            <span class="admin-avatar">MP</span>
+            <span>Admin</span>
+          </div>
+        </header>
+
+        <section id="overview" class="admin-hero">
+          <div>
+            <p class="section-kicker">Catálogo MobilePro</p>
+            <h1>Gerenciamento de produtos</h1>
+            <p>Cadastre, organize e atualize os produtos exibidos na sua loja.</p>
+          </div>
+          <button class="btn btn-orange" type="button" data-open-product-modal>
+            <i class="bi bi-plus-lg" aria-hidden="true"></i>
+            Adicionar produto
+          </button>
+        </section>
+
+        <section class="admin-stats" aria-label="Resumo do painel">
+          <article>
+            <span id="statProducts">0</span>
+            <p>Produtos cadastrados</p>
+          </article>
+          <article>
+            <span id="statAvailable">0</span>
+            <p>Produtos disponíveis</p>
+          </article>
+          <article>
+            <span id="statCategories">0</span>
+            <p>Categorias</p>
+          </article>
+        </section>
+
+        <section id="produtos" class="admin-card">
+          <div class="admin-section-heading">
+            <div>
+              <h2>Produtos da loja</h2>
+              <p>Use filtros para localizar e editar os itens do catálogo demonstrativo.</p>
+            </div>
+            <div class="admin-filters">
+              <select id="categoryFilter" aria-label="Filtrar por categoria"></select>
+              <select id="availabilityFilter" aria-label="Filtrar por disponibilidade">
+                <option value="all">Todas as disponibilidades</option>
+                <option value="available">Disponíveis</option>
+                <option value="unavailable">Indisponíveis</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="adminProductGrid" class="admin-product-grid"></div>
+          <div id="adminEmptyState" class="admin-empty" hidden>Nenhum produto encontrado.</div>
+        </section>
+
+        <section id="categorias" class="admin-card">
+          <div class="admin-section-heading">
+            <div>
+              <h2>Categorias</h2>
+              <p>Organize os grupos exibidos na página inicial.</p>
+            </div>
+          </div>
+
+          <form id="categoryForm" class="category-form">
+            <input id="categoryName" type="text" placeholder="Nome da nova categoria" aria-label="Nome da categoria">
+            <input id="categoryImage" type="text" placeholder="./categorias/imagem.png ou URL pública" aria-label="Imagem da categoria">
+            <button class="btn btn-outline-orange" type="submit">Adicionar categoria</button>
+          </form>
+
+          <div id="adminCategoryGrid" class="admin-category-grid"></div>
+        </section>
+
+        <section id="configuracoes" class="admin-card admin-note-card">
+          <h2>Configurações</h2>
+          <p>Este painel é um protótipo front-end. Os dados são persistidos no navegador via localStorage e não representam autenticação ou armazenamento em servidor.</p>
+        </section>
+      </main>
+    </div>
+
+    <div class="admin-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle" hidden>
+      <div class="admin-modal-dialog">
+        <form id="productForm" class="admin-modal-content" novalidate>
+          <div class="admin-modal-header">
+            <div>
+              <p class="section-kicker">Produto</p>
+              <h2 id="productModalTitle">Adicionar produto</h2>
+            </div>
+            <button class="modal-close" type="button" aria-label="Fechar formulário" data-close-product-modal></button>
+          </div>
+
+          <input type="hidden" id="productId">
+          <div class="form-grid">
+            <label>
+              Nome do produto
+              <input id="productName" type="text" placeholder="Ex.: Cabo USB-C reforçado" required>
+            </label>
+            <label>
+              Categoria
+              <select id="productCategory" required></select>
+            </label>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              Preço
+              <input id="productPrice" type="text" inputmode="decimal" placeholder="R$ 0,00" required>
+            </label>
+            <label>
+              Imagem do produto
+              <input id="productImage" type="text" placeholder="./produtos/produto.png ou URL pública" required>
+            </label>
+          </div>
+
+          <label>
+            Descrição
+            <textarea id="productDescription" rows="3" placeholder="Descreva o produto de forma objetiva."></textarea>
+          </label>
+
+          <div class="image-preview-row">
+            <label class="file-preview-label">
+              Selecionar imagem para prévia
+              <input id="productImageFile" type="file" accept="image/*">
+            </label>
+            <div class="image-preview">
+              <img id="productPreview" alt="Prévia do produto" hidden>
+              <span id="previewHint">Prévia local. Para salvar, informe um caminho ou URL no campo de imagem.</span>
+            </div>
+          </div>
+
+          <div class="switch-grid">
+            <label class="switch-field">
+              <input id="productAvailable" type="checkbox" checked>
+              <span>Disponível</span>
+            </label>
+            <label class="switch-field">
+              <input id="productFeatured" type="checkbox" checked>
+              <span>Produto em destaque</span>
+            </label>
+            <label class="switch-field">
+              <input id="productPromotional" type="checkbox">
+              <span>Oferta promocional</span>
+            </label>
+          </div>
+
+          <div class="form-message" id="productFormMessage" aria-live="polite"></div>
+
+          <div class="modal-actions">
+            <button class="btn btn-outline-orange" type="button" data-close-product-modal>Cancelar</button>
+            <button class="btn btn-orange" type="submit">Salvar produto</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="admin-modal" id="deleteModal" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle" hidden>
+      <div class="admin-modal-dialog modal-sm">
+        <div class="admin-modal-content">
+          <div class="admin-modal-header">
+            <div>
+              <p class="section-kicker">Confirmação</p>
+              <h2 id="deleteModalTitle">Excluir produto?</h2>
+            </div>
+            <button class="modal-close" type="button" aria-label="Fechar confirmação" data-close-delete-modal></button>
+          </div>
+          <p>Tem certeza de que deseja excluir este produto? Esta ação removerá o item do catálogo demonstrativo.</p>
+          <div class="modal-actions">
+            <button class="btn btn-outline-orange" type="button" data-close-delete-modal>Cancelar</button>
+            <button class="btn btn-danger-soft" type="button" id="confirmDelete">Excluir produto</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="adminToast" class="toast admin-toast" role="status" aria-live="polite" aria-atomic="true" data-bs-delay="2600">
+        <div class="toast-body">
+          <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+          <span id="adminToastMessage">Ação realizada.</span>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./mobilepro-store.js"></script>
+    <script src="./adm.js"></script>
+  </body>
+</html>
