@@ -13,6 +13,7 @@
 
 * {
   box-sizing: border-box;
+  cursor:pointer;
 }
 
 [hidden] {
@@ -33,6 +34,35 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+a,
+button,
+select,
+summary,
+[role="button"],
+[type="button"],
+[type="submit"],
+[type="reset"],
+[type="checkbox"],
+[type="radio"],
+label[for],
+.btn,
+.sidebar-link,
+.mobile-sidebar-toggle,
+.sidebar-close,
+.admin-sidebar-backdrop,
+.card-actions button,
+.file-preview-label,
+.switch-field,
+.admin-product-card {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"],
+.disabled {
+  cursor: not-allowed;
 }
 
 img {
@@ -401,7 +431,7 @@ textarea:focus {
 input[readonly] {
   color: var(--color-muted);
   background: #f8fafc;
-  cursor: default;
+  cursor: pointer;
 }
 
 .admin-product-grid {

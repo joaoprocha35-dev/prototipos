@@ -24,6 +24,7 @@
 
 * {
   box-sizing: border-box;
+  cursor:pointer;
 }
 
 html {
@@ -79,6 +80,34 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+a,
+button,
+select,
+summary,
+[role="button"],
+[type="button"],
+[type="submit"],
+[type="reset"],
+[type="checkbox"],
+[type="radio"],
+label[for],
+.btn,
+.nav-link,
+.navbar-toggler,
+.category-card,
+.product-card,
+.add-cart-btn,
+.qty-btn,
+.remove-cart-item {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"],
+.disabled {
+  cursor: not-allowed;
 }
 
 :focus-visible {
