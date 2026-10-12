@@ -66,9 +66,15 @@ a {
 }
 
 .admin-shell {
+  --sidebar-width: 280px;
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   min-height: 100vh;
+  transition: grid-template-columns 260ms ease;
+}
+
+.admin-shell.sidebar-collapsed {
+  grid-template-columns: 0 minmax(0, 1fr);
 }
 
 .admin-sidebar {
@@ -78,10 +84,23 @@ a {
   height: 100vh;
   flex-direction: column;
   gap: 24px;
+  width: var(--sidebar-width);
   border-right: 1px solid var(--color-border);
   background: var(--color-white);
   padding: 28px 20px;
-  animation: sidebarEnter 520ms ease both;
+  overflow: hidden auto;
+  transition: opacity 240ms ease, transform 260ms ease, visibility 240ms ease;
+}
+
+.admin-shell.sidebar-collapsed .admin-sidebar {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+}
+
+.sidebar-close {
+  display: none;
 }
 
 .admin-logo {
@@ -160,10 +179,6 @@ a {
   margin-bottom: 22px;
 }
 
-.mobile-sidebar-toggle {
-  display: none;
-}
-
 .admin-search {
   display: flex;
   align-items: center;
@@ -191,7 +206,8 @@ a {
 }
 
 .admin-user button,
-.mobile-sidebar-toggle {
+.mobile-sidebar-toggle,
+.sidebar-close {
   display: grid;
   width: 42px;
   height: 42px;
@@ -200,6 +216,22 @@ a {
   border-radius: 999px;
   color: var(--color-text);
   background: var(--color-white);
+}
+
+.admin-sidebar .sidebar-close {
+  display: none;
+}
+
+.mobile-sidebar-toggle i {
+  transition: transform 220ms ease;
+}
+
+.admin-shell.sidebar-collapsed .mobile-sidebar-toggle i {
+  transform: rotate(180deg);
+}
+
+.admin-sidebar-backdrop {
+  display: none;
 }
 
 .admin-avatar {
@@ -364,6 +396,12 @@ textarea:focus {
   border-color: var(--color-orange);
   box-shadow: 0 0 0 4px rgba(255, 122, 26, 0.13);
   outline: 0;
+}
+
+input[readonly] {
+  color: var(--color-muted);
+  background: #f8fafc;
+  cursor: default;
 }
 
 .admin-product-grid {
@@ -660,17 +698,6 @@ label {
   color: var(--color-orange);
 }
 
-@keyframes sidebarEnter {
-  from {
-    opacity: 0;
-    transform: translateX(-18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes cardEnter {
   from {
     opacity: 0;
@@ -707,17 +734,49 @@ label {
   .admin-sidebar {
     position: fixed;
     z-index: 1060;
+    left: 0;
+    top: 0;
     width: min(280px, 88vw);
+    max-width: 88vw;
     transform: translateX(-100%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
     transition: transform 260ms ease;
   }
 
-  .admin-sidebar.is-open {
+  .admin-shell.sidebar-open .admin-sidebar {
     transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
   }
 
-  .mobile-sidebar-toggle {
+  .sidebar-close {
     display: grid;
+    align-self: flex-end;
+    margin-bottom: -8px;
+  }
+
+  .admin-sidebar-backdrop {
+    position: fixed;
+    z-index: 1050;
+    inset: 0;
+    display: block;
+    border: 0;
+    background: rgba(5, 13, 22, 0.48);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 240ms ease;
+  }
+
+  .admin-shell.sidebar-open .admin-sidebar-backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .admin-shell.sidebar-collapsed .admin-sidebar {
+    transform: translateX(-100%);
   }
 
   .admin-product-grid,

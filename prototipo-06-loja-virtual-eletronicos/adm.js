@@ -4,11 +4,14 @@ let products = [];
 let categories = [];
 let editingProductId = "";
 let pendingDeleteId = "";
+let selectedProductImage = "";
+const sidebarMedia = window.matchMedia("(max-width: 980px)");
 
 document.addEventListener("DOMContentLoaded", () => {
   products = Store.loadProducts();
   categories = Store.loadCategories();
   bindEvents();
+  updateSidebarToggle();
   populateCategoryControls();
   renderDashboard();
 });
@@ -39,24 +42,75 @@ function bindEvents() {
   document.getElementById("categoryFilter").addEventListener("change", renderProducts);
   document.getElementById("availabilityFilter").addEventListener("change", renderProducts);
   document.getElementById("categoryForm").addEventListener("submit", saveCategory);
-  document.querySelector("[data-toggle-sidebar]").addEventListener("click", () => {
-    document.getElementById("adminSidebar").classList.toggle("is-open");
+  document.querySelector("[data-toggle-sidebar]").addEventListener("click", toggleSidebar);
+  document.querySelectorAll("[data-close-sidebar]").forEach((button) => {
+    button.addEventListener("click", closeSidebar);
   });
+  document.querySelectorAll(".admin-sidebar .sidebar-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (sidebarMedia.matches) {
+        closeSidebar();
+      }
+    });
+  });
+  sidebarMedia.addEventListener("change", resetSidebarState);
 
   document.getElementById("productImageFile").addEventListener("change", previewSelectedImage);
-  document.getElementById("productImage").addEventListener("input", () => {
-    document.getElementById("productPreview").src = document.getElementById("productImage").value;
-    document.getElementById("productPreview").hidden = false;
-    document.getElementById("previewHint").hidden = true;
-  });
-
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeProductModal();
       closeDeleteModal();
-      document.getElementById("adminSidebar").classList.remove("is-open");
+      closeSidebar();
     }
   });
+}
+
+function getSidebarElements() {
+  return {
+    shell: document.getElementById("adminShell"),
+    toggle: document.querySelector("[data-toggle-sidebar]"),
+  };
+}
+
+function toggleSidebar() {
+  const { shell } = getSidebarElements();
+
+  if (sidebarMedia.matches) {
+    shell.classList.toggle("sidebar-open");
+  } else {
+    shell.classList.toggle("sidebar-collapsed");
+  }
+
+  updateSidebarToggle();
+}
+
+function closeSidebar() {
+  const { shell } = getSidebarElements();
+
+  if (sidebarMedia.matches) {
+    shell.classList.remove("sidebar-open");
+  } else {
+    shell.classList.add("sidebar-collapsed");
+  }
+
+  updateSidebarToggle();
+}
+
+function resetSidebarState() {
+  const { shell } = getSidebarElements();
+  shell.classList.remove("sidebar-open");
+  shell.classList.remove("sidebar-collapsed");
+  updateSidebarToggle();
+}
+
+function updateSidebarToggle() {
+  const { shell, toggle } = getSidebarElements();
+  const isExpanded = sidebarMedia.matches
+    ? shell.classList.contains("sidebar-open")
+    : !shell.classList.contains("sidebar-collapsed");
+
+  toggle.setAttribute("aria-expanded", String(isExpanded));
+  toggle.setAttribute("aria-label", isExpanded ? "Fechar menu administrativo" : "Abrir menu administrativo");
 }
 
 function populateCategoryControls() {
@@ -154,6 +208,7 @@ function openProductModal(productId = "") {
   const title = document.getElementById("productModalTitle");
   const message = document.getElementById("productFormMessage");
   const product = products.find((item) => item.id === productId);
+  selectedProductImage = "";
 
   document.getElementById("productForm").reset();
   document.getElementById("productId").value = productId;
@@ -169,6 +224,7 @@ function openProductModal(productId = "") {
     document.getElementById("productCategory").value = product.category;
     document.getElementById("productPrice").value = Store.formatCurrency(product.price);
     document.getElementById("productImage").value = product.image;
+    selectedProductImage = product.image;
     document.getElementById("productDescription").value = product.description || "";
     document.getElementById("productAvailable").checked = product.available;
     document.getElementById("productFeatured").checked = product.featured;
@@ -194,10 +250,10 @@ function saveProduct(event) {
   const name = document.getElementById("productName").value.trim();
   const category = document.getElementById("productCategory").value;
   const price = Store.toNumber(document.getElementById("productPrice").value);
-  const image = document.getElementById("productImage").value.trim();
+  const image = selectedProductImage || document.getElementById("productImage").value.trim();
 
   if (!name || !category || price < 0 || !image) {
-    message.textContent = "Preencha nome, categoria, preço válido e imagem do produto.";
+    message.textContent = "Preencha nome, categoria, preço válido e selecione uma imagem do produto.";
     return;
   }
 
@@ -291,11 +347,23 @@ function previewSelectedImage(event) {
     return;
   }
 
-  const preview = document.getElementById("productPreview");
-  preview.src = URL.createObjectURL(file);
-  preview.hidden = false;
-  document.getElementById("previewHint").hidden = false;
-  showToast("Prévia carregada. Para persistir, informe um caminho ou URL no campo de imagem.");
+  if (!file.type.startsWith("image/")) {
+    showToast("Selecione um arquivo de imagem válido.");
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    selectedProductImage = reader.result;
+    document.getElementById("productImage").value = file.name;
+
+    const preview = document.getElementById("productPreview");
+    preview.src = selectedProductImage;
+    preview.hidden = false;
+    document.getElementById("previewHint").hidden = true;
+    showToast("Imagem carregada. Ao salvar, ela aparecerá na tela principal.");
+  });
+  reader.readAsDataURL(file);
 }
 
 function showToast(message) {

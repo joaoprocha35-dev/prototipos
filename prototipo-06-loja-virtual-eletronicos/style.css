@@ -27,11 +27,16 @@
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
   min-width: 320px;
   overflow-x: hidden;
   margin: 0;
@@ -39,6 +44,24 @@ body {
   background: var(--color-light);
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+.site-header,
+main,
+.site-footer,
+.hero-section,
+.section,
+.benefits-strip {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {
@@ -68,6 +91,7 @@ select {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: 16px;
+  overflow-x: clip;
 }
 
 .row {
@@ -181,9 +205,11 @@ select {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  min-width: 0;
 }
 
 .navbar-brand {
+  min-width: 0;
   margin-right: 1rem;
   padding: 0;
 }
@@ -393,7 +419,7 @@ select {
 
 .brand-mark {
   display: inline-flex;
-  min-width: max-content;
+  min-width: 0;
   flex-direction: column;
   line-height: 1;
 }
@@ -1246,8 +1272,24 @@ body.icons-fallback .bi-check-circle-fill::before {
 }
 
 .admin-demo-link {
-  min-height: 40px;
-  font-size: 0.9rem;
+  min-height: clamp(50px, 5vw, 58px);
+  border: 2px solid var(--color-black);
+  border-radius: 12px;
+  color: var(--color-orange);
+  background: var(--color-black);
+  padding: 14px clamp(22px, 4vw, 34px);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  font-weight: 900;
+  box-shadow: 0 16px 32px rgba(5, 13, 22, 0.16);
+}
+
+.admin-demo-link:hover,
+.admin-demo-link:focus-visible {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+  background: #000;
+  box-shadow: 0 18px 38px rgba(5, 13, 22, 0.24);
+  transform: translateY(-2px);
 }
 
 .benefits-strip-lower {
@@ -1590,7 +1632,7 @@ body.motion-ready .product-card.reveal-item.is-visible:focus-within {
       linear-gradient(180deg, rgba(5, 13, 22, 0.96) 0%, rgba(5, 13, 22, 0.82) 39%, rgba(5, 13, 22, 0.18) 70%, rgba(5, 13, 22, 0.02) 100%),
       var(--hero-image);
     background-position: center bottom;
-    transform: translateX(32px);
+    transform: translateX(0);
   }
 
   .hero-container {
@@ -1667,7 +1709,7 @@ body.motion-ready .product-card.reveal-item.is-visible:focus-within {
       linear-gradient(180deg, rgba(5, 13, 22, 0.96) 0%, rgba(5, 13, 22, 0.86) 36%, rgba(5, 13, 22, 0.18) 64%, rgba(5, 13, 22, 0.02) 100%),
       var(--promo-image);
     background-position: center bottom;
-    transform: translateX(28px);
+    transform: translateX(0);
   }
 
   .promo-content {

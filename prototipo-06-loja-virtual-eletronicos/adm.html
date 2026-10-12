@@ -22,8 +22,12 @@
     <link rel="stylesheet" href="./adm.css">
   </head>
   <body>
-    <div class="admin-shell">
+    <div class="admin-shell" id="adminShell">
       <aside class="admin-sidebar" id="adminSidebar">
+        <button class="sidebar-close" type="button" aria-label="Fechar menu lateral" data-close-sidebar>
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+
         <a class="admin-logo" href="./adm.html">
           <span>Mobile<span>Pro</span></span>
           <small>Admin</small>
@@ -43,9 +47,18 @@
         <p class="sidebar-note">Painel demonstrativo com dados salvos apenas neste navegador.</p>
       </aside>
 
+      <button class="admin-sidebar-backdrop" type="button" aria-label="Fechar menu lateral" data-close-sidebar></button>
+
       <main class="admin-main">
         <header class="admin-topbar">
-          <button class="mobile-sidebar-toggle" type="button" aria-label="Abrir menu administrativo" data-toggle-sidebar>
+          <button
+            class="mobile-sidebar-toggle"
+            type="button"
+            aria-label="Alternar menu administrativo"
+            aria-controls="adminSidebar"
+            aria-expanded="true"
+            data-toggle-sidebar
+          >
             <i class="bi bi-list" aria-hidden="true"></i>
           </button>
           <div class="admin-search">
@@ -159,8 +172,8 @@
               <input id="productPrice" type="text" inputmode="decimal" placeholder="R$ 0,00" required>
             </label>
             <label>
-              Imagem do produto
-              <input id="productImage" type="text" placeholder="./produtos/produto.png ou URL pública" required>
+              Imagem salva do produto
+              <input id="productImage" type="text" placeholder="Escolha uma imagem abaixo ou cole uma URL" readonly>
             </label>
           </div>
 
@@ -171,12 +184,12 @@
 
           <div class="image-preview-row">
             <label class="file-preview-label">
-              Selecionar imagem para prévia
+              Selecionar imagem do produto
               <input id="productImageFile" type="file" accept="image/*">
             </label>
             <div class="image-preview">
               <img id="productPreview" alt="Prévia do produto" hidden>
-              <span id="previewHint">Prévia local. Para salvar, informe um caminho ou URL no campo de imagem.</span>
+              <span id="previewHint">Escolha uma imagem para usar como capa deste produto na loja.</span>
             </div>
           </div>
 
