@@ -1,0 +1,15 @@
+# Pastas de referência e ferramentas internas (não precisam ir ao servidor)
+referencias/
+ferramentas/
+
+# Documentação interna
+*.md
+!README.md
+
+# Arquivos de configuração
+.gitignore
+package.json
+
+# Imagens originais PNG (só os WebP responsivos vão ao ar)
+public/imagens/*.png
+public/imagens/*.PNG

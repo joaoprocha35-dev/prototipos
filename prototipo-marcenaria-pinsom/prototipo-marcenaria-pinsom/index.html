@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marcenaria Pinson — Móveis planejados sob medida</title>
+  <meta name="description" content="Marcenaria Pinson: projetos sob medida que unem funcionalidade, acabamento e a identidade de cada espaço. Solicite seu orçamento pelo WhatsApp.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="public/imagens/responsivas/logo-96.webp" type="image/webp">
+
+  <!-- Open Graph / WhatsApp preview -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Marcenaria Pinson — Móveis planejados sob medida">
+  <meta property="og:description" content="Projetos sob medida que unem funcionalidade, acabamento e a identidade de cada espaço. Solicite seu orçamento.">
+  <meta property="og:image"       content="public/imagens/responsivas/marcenaria-sobre-computador-1200.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:locale"      content="pt_BR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Hero Intro Reveal: estado inicial aplicado ANTES da primeira pintura, só quando há JavaScript.
+       hero-intro.js remove a classe ao animar; o temporizador abaixo é a recuperação caso módulos,
+       CDN ou vídeo falhem. Não roda com movimento reduzido nem ao abrir direto em uma âncora. -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      if (location.hash || !window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      root.classList.add('hero-intro-pending');
+      window.setTimeout(function () { root.classList.remove('hero-intro-pending'); }, 6000);
+    })();
+  </script>
+
+  <!-- Three.js r170 (jsDelivr) para o guarda-roupa 3D, carregado sob demanda por import() dinâmico. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body class="site">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Elementos fixos ficam fora de #smooth-wrapper.
+       Nota: a rolagem usa ScrollToPlugin (js/navigation.js), não ScrollSmoother. -->
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner container">
+      <a class="brand" href="#inicio" aria-label="Marcenaria Pinson — voltar ao início">
+        <span class="brand__logo"><img src="public/imagens/responsivas/logo-384.webp" srcset="public/imagens/responsivas/logo-96.webp 96w, public/imagens/responsivas/logo-192.webp 192w, public/imagens/responsivas/logo-384.webp 384w" sizes="54px" alt="" width="1254" height="1254"></span>
+        <span class="brand__name">Marcenaria Pinson</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu" data-menu-toggle>
+        <svg class="menu-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path data-menu-icon d="M4 7L20 7M4 12L20 12M4 17L20 17"
+                data-shape-closed="M4 7L20 7M4 12L20 12M4 17L20 17"
+                data-shape-open="M6 6L18 18M12 12L12 12M6 18L18 6"/>
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal" data-menu-panel data-state="closed">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#antes-depois" data-nav-link>Antes e depois</a></li>
+          <li><a class="site-nav__link" href="#servicos" data-nav-link>Serviços</a></li>
+          <li><a class="site-nav__link" href="#projetos" data-nav-link>Projetos</a></li>
+          <li><a class="site-nav__link" href="#como-funciona" data-nav-link>Como funciona</a></li>
+          <li><a class="site-nav__link" href="#sobre" data-nav-link>Sobre</a></li>
+        </ul>
+        <a class="button button--primary site-nav__cta" href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main id="conteudo" tabindex="-1">
+
+        <!-- 1. Hero -->
+        <section id="inicio" class="hero" aria-labelledby="hero-titulo" data-hero>
+          <!-- Painel: recebe só o transform da transição entre seções (section-transitions.js). -->
+          <div class="hero__panel section__panel" data-section-panel>
+            <!-- Janela da abertura: recebe só o clip-path do Hero Intro Reveal (hero-intro.js). -->
+            <div class="hero__frame" data-hero-intro-frame>
+              <div class="hero__media">
+                <!-- hero-video.js escolhe a fonte conforme a largura (>= 768px: 16:9; abaixo: 9:16). -->
+                <video class="hero__video" muted playsinline loop preload="none" disablepictureinpicture
+                       data-hero-video
+                       data-src-desktop="public/videos/hero-desktop-16x9.mp4"
+                       data-src-mobile="public/videos/hero-mobile-9x16.mp4">
+                  <source src="public/videos/hero-desktop-16x9.mp4" type="video/mp4" media="(min-width: 768px)">
+                  <source src="public/videos/hero-mobile-9x16.mp4" type="video/mp4">
+                </video>
+                <div class="hero__overlay" aria-hidden="true"></div>
+              </div>
+
+              <div class="hero__content container">
+                <p class="eyebrow eyebrow--light">Móveis planejados sob medida</p>
+                <!-- Legendas sincronizadas com video.currentTime (hero-captions.js). Sem JS, só o h1 aparece. -->
+                <div class="hero__captions" data-hero-captions data-no-split>
+                  <h1 id="hero-titulo" class="hero__title hero__caption" data-caption-start="0" data-caption-end="4">Marcenaria planejada para transformar o seu ambiente.</h1>
+                  <p class="hero__title hero__caption" data-caption-start="6" data-caption-end="12">Acabamentos que valorizam cada detalhe.</p>
+                  <p class="hero__title hero__caption" data-caption-start="12" data-caption-end="18">Funcionalidade e beleza, sob medida para você.</p>
+                </div>
+                <p class="hero__text">Projetos sob medida que unem funcionalidade, acabamento e a identidade de cada espaço.</p>
+                <div class="hero__actions">
+                  <a class="button button--light" href="#projetos">Conheça nossos projetos</a>
+                  <a class="button button--primary" href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento</a>
+                </div>
+              </div>
+
+              <button class="hero__video-toggle" type="button" aria-label="Pausar vídeo" data-hero-video-toggle data-state="playing">
+                <svg class="icon icon--pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5h3v14H8zM13 5h3v14h-3z"/></svg>
+                <svg class="icon icon--play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z"/></svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Antes e depois (obrigatoriamente entre Hero e Serviços) -->
+        <section id="antes-depois" class="section section--compare" aria-labelledby="antes-depois-titulo" data-section>
+          <div class="section__panel" data-section-panel>
+            <div class="container">
+              <header class="section-header section-header--center" data-reveal-block>
+                <p class="eyebrow">Antes e depois</p>
+                <h2 id="antes-depois-titulo" class="section-title">Veja a transformação do seu ambiente.</h2>
+                <p class="section-lead">Arraste o controle para comparar cada ambiente antes e depois do projeto planejado.</p>
+              </header>
+
+              <!-- Um comparador por ambiente, empilhados (cozinha em cima, escritório embaixo) no celular e no
+                   computador. Cada card é animado como um conjunto para manter as duas imagens alinhadas. -->
+              <div class="compare-list">
+              <div class="compare" data-reveal-block data-reveal="card">
+                <h3 class="compare__title">Cozinha</h3>
+                <div class="compare__frame" data-compare data-compare-subject="da cozinha planejada" style="--compare-pos: 75%">
+                  <img class="compare__img" src="public/imagens/responsivas/antes-depois/cozinha-antes-960.webp" srcset="public/imagens/responsivas/antes-depois/cozinha-antes-480.webp 480w, public/imagens/responsivas/antes-depois/cozinha-antes-960.webp 960w, public/imagens/responsivas/antes-depois/cozinha-antes-1440.webp 1440w, public/imagens/responsivas/antes-depois/cozinha-antes-full.webp 1536w" sizes="(min-width: 1180px) 1080px, 94vw" width="1536" height="1024" loading="lazy" decoding="async" draggable="false"
+                       alt="Cozinha antes do projeto: parede lisa, bancada de pedra com pia e fogão, sem armários.">
+                  <div class="compare__after" data-compare-after>
+                    <img class="compare__img" src="public/imagens/responsivas/antes-depois/cozinha-depois-960.webp" srcset="public/imagens/responsivas/antes-depois/cozinha-depois-480.webp 480w, public/imagens/responsivas/antes-depois/cozinha-depois-960.webp 960w, public/imagens/responsivas/antes-depois/cozinha-depois-1440.webp 1440w, public/imagens/responsivas/antes-depois/cozinha-depois-full.webp 1536w" sizes="(min-width: 1180px) 1080px, 94vw" width="1536" height="1024" loading="lazy" decoding="async" draggable="false"
+                         alt="Cozinha planejada: armários claros superiores e inferiores, painel ripado de madeira, iluminação embutida e torre lateral.">
+                  </div>
+
+                  <span class="compare__label compare__label--before" data-compare-label="before"><strong>Antes</strong><span class="compare__label-detail"> · Cozinha antes do projeto</span></span>
+                  <span class="compare__label compare__label--after" data-compare-label="after"><strong>Depois</strong><span class="compare__label-detail"> · Cozinha planejada</span></span>
+
+                  <!-- Pontos de material (só no lado "Depois"; somem quando o divisor os cobre). Textos ilustrativos. -->
+                  <div class="compare__hotspots" data-hotspots>
+                    <div class="hotspot" data-hotspot data-x="37" data-side="right" style="--x: 37%; --y: 22%">
+                      <button class="hotspot__button" type="button" aria-expanded="false" aria-controls="ponto-cozinha-armarios" aria-label="Armários superiores: ver material"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+                      <div class="hotspot__card" id="ponto-cozinha-armarios" data-hotspot-card>
+                        <p class="hotspot__name">Armários superiores</p>
+                        <p class="hotspot__desc">Portas off-white foscas com puxador preto.</p>
+                      </div>
+                    </div>
+                    <div class="hotspot" data-hotspot data-x="47.3" data-side="right" style="--x: 47.3%; --y: 47%">
+                      <button class="hotspot__button" type="button" aria-expanded="false" aria-controls="ponto-cozinha-torneira" aria-label="Torneira: ver material"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+                      <div class="hotspot__card" id="ponto-cozinha-torneira" data-hotspot-card>
+                        <p class="hotspot__name">Torneira</p>
+                        <p class="hotspot__desc">Monocomando de bica alta em inox escovado.</p>
+                      </div>
+                    </div>
+                    <div class="hotspot" data-hotspot data-x="31.2" data-side="right" style="--x: 31.2%; --y: 55.8%">
+                      <button class="hotspot__button" type="button" aria-expanded="false" aria-controls="ponto-cozinha-bancada" aria-label="Bancada: ver material"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+                      <div class="hotspot__card" id="ponto-cozinha-bancada" data-hotspot-card>
+                        <p class="hotspot__name">Bancada</p>
+                        <p class="hotspot__desc">Pedra clara com cuba de inox embutida.</p>
+                      </div>
+                    </div>
+                    <div class="hotspot" data-hotspot data-x="66.7" data-side="left" style="--x: 66.7%; --y: 42%">
+                      <button class="hotspot__button" type="button" aria-expanded="false" aria-controls="ponto-cozinha-ripado" aria-label="Painel ripado: ver material"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+                      <div class="hotspot__card" id="ponto-cozinha-ripado" data-hotspot-card>
+                        <p class="hotspot__name">Painel ripado</p>
+                        <p class="hotspot__desc">Ripas em madeira natural com LED quente sob os armários.</p>
+                      </div>
+                    </div>
+                    <div class="hotspot" data-hotspot data-x="91.7" data-side="left" style="--x: 91.7%; --y: 31%">
+                      <button class="hotspot__button" type="button" aria-expanded="false" aria-controls="ponto-cozinha-torre" aria-label="Torre de armários: ver material"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+                      <div class="hotspot__card" id="ponto-cozinha-torre" data-hotspot-card>
+                        <p class="hotspot__name">Torre de armários</p>
+                        <p class="hotspot__desc">Madeira natural do piso ao teto, puxador longo preto.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <input class="compare__range" type="range" min="0" max="100" step="1" value="75"
+                         aria-label="Comparador da cozinha: mova para a esquerda para revelar a cozinha planejada"
+                         aria-valuetext="25% da cozinha planejada visível" data-compare-range>
+                  <div class="compare__divider" aria-hidden="true">
+                    <span class="compare__handle">
+                      <svg viewBox="0 0 24 24" focusable="false"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+                    </span>
+                  </div>
+                </div>
+                <p class="compare__hint">Arraste o divisor para a esquerda — ou use as setas do teclado — para ver a cozinha planejada. Toque nos pontos <span class="compare__hint-dot" aria-hidden="true">+</span> para ver os materiais (ilustrativos).</p>
+              </div>
+
+              <div class="compare" data-reveal-block data-reveal="card">
+                <h3 class="compare__title">Escritório</h3>
+                <div class="compare__frame compare__frame--wide" data-compare data-compare-subject="do escritório planejado" style="--compare-pos: 75%">
+                  <img class="compare__img" src="public/imagens/responsivas/antes-depois/escritorio-antes-960.webp" srcset="public/imagens/responsivas/antes-depois/escritorio-antes-480.webp 480w, public/imagens/responsivas/antes-depois/escritorio-antes-960.webp 960w, public/imagens/responsivas/antes-depois/escritorio-antes-full.webp 1344w" sizes="(min-width: 1180px) 1080px, 94vw" width="1344" height="752" loading="lazy" decoding="async" draggable="false"
+                       alt="Escritório antes do projeto: sala vazia com paredes lisas, mesa de madeira com pés pretos e três cadeiras.">
+                  <div class="compare__after" data-compare-after>
+                    <img class="compare__img" src="public/imagens/responsivas/antes-depois/escritorio-depois-960.webp" srcset="public/imagens/responsivas/antes-depois/escritorio-depois-480.webp 480w, public/imagens/responsivas/antes-depois/escritorio-depois-960.webp 960w, public/imagens/responsivas/antes-depois/escritorio-depois-full.webp 1344w" sizes="(min-width: 1180px) 1080px, 94vw" width="1344" height="752" loading="lazy" decoding="async" draggable="false"
+                         alt="Escritório planejado: armários escuros do piso ao teto, estante com fundo ripado em madeira e iluminação embutida, nichos revestidos e painel ripado com TV.">
+                  </div>
+
+                  <span class="compare__label compare__label--before" data-compare-label="before"><strong>Antes</strong><span class="compare__label-detail"> · Escritório antes do projeto</span></span>
+                  <span class="compare__label compare__label--after" data-compare-label="after"><strong>Depois</strong><span class="compare__label-detail"> · Escritório planejado</span></span>
+
+                  <!-- Pontos de material (só no lado "Depois"; somem quando o divisor os cobre). Textos ilustrativos. -->
+                  <div class="compare__hotspots" data-hotspots>
+                    <div class="hotspot" data-hotspot data-x="18.8" data-side="right" style="--x: 18.8%; --y: 42.8%">
+                      <button class="hotspot__button" type="button" aria-expanded="false" aria-controls="ponto-escritorio-armarios" aria-label="Armários do piso ao teto: ver material"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+                      <div class="hotspot__card" id="ponto-escritorio-armarios" data-hotspot-card>
+                        <p class="hotspot__name">Armários do piso ao teto</p>
+                        <p class="hotspot__desc">Preto fosco, portas lisas sem puxador aparente.</p>
+                      </div>
+                    </div>
+                    <div class="hotspot" data-hotspot data-x="53.1" data-side="right" style="--x: 53.1%; --y: 40%">
+                      <button class="hotspot__button" type="button" aria-expanded="false" aria-controls="ponto-escritorio-estante" aria-label="Estante iluminada: ver material"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+                      <div class="hotspot__card" id="ponto-escritorio-estante" data-hotspot-card>
+                        <p class="hotspot__name">Estante iluminada</p>
+                        <p class="hotspot__desc">Fundo ripado em madeira e LED quente nas prateleiras.</p>
+                      </div>
+                    </div>
+                    <div class="hotspot" data-hotspot data-x="71.9" data-side="left" style="--x: 71.9%; --y: 43.8%">
+                      <button class="hotspot__button" type="button" aria-expanded="false" aria-controls="ponto-escritorio-nichos" aria-label="Nichos revestidos: ver material"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+                      <div class="hotspot__card" id="ponto-escritorio-nichos" data-hotspot-card>
+                        <p class="hotspot__name">Nichos revestidos</p>
+                        <p class="hotspot__desc">Pedra escura com spots embutidos.</p>
+                      </div>
+                    </div>
+                    <div class="hotspot" data-hotspot data-x="83.3" data-side="left" style="--x: 83.3%; --y: 67%">
+                      <button class="hotspot__button" type="button" aria-expanded="false" aria-controls="ponto-escritorio-painel" aria-label="Painel ripado: ver material"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v12M6 12h12"/></svg></button>
+                      <div class="hotspot__card" id="ponto-escritorio-painel" data-hotspot-card>
+                        <p class="hotspot__name">Painel ripado</p>
+                        <p class="hotspot__desc">Ripas verticais em madeira com nicho iluminado para a TV.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <input class="compare__range" type="range" min="0" max="100" step="1" value="75"
+                         aria-label="Comparador do escritório: mova para a esquerda para revelar o escritório planejado"
+                         aria-valuetext="25% do escritório planejado visível" data-compare-range>
+                  <div class="compare__divider" aria-hidden="true">
+                    <span class="compare__handle">
+                      <svg viewBox="0 0 24 24" focusable="false"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+                    </span>
+                  </div>
+                </div>
+                <p class="compare__hint">Arraste o divisor para a esquerda — ou use as setas do teclado — para ver o escritório planejado. Toque nos pontos <span class="compare__hint-dot" aria-hidden="true">+</span> para ver os materiais (ilustrativos).</p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Serviços: carrossel de cards; cada card tem fotos que trocam a cada 3 s (js/servicos-carrossel.js).
+             Fotos novas (ex.: geradas no Higgsfield) entram como outro <figure data-photo-slide> no card. -->
+        <section id="servicos" class="section section--services" aria-labelledby="servicos-titulo" data-section data-services>
+          <div class="section__panel" data-section-panel>
+            <div class="container">
+              <header class="section-header services-header" data-reveal-block>
+                <div>
+                  <p class="eyebrow">Serviços</p>
+                  <h2 id="servicos-titulo" class="section-title">Marcenaria pensada para a sua rotina.</h2>
+                </div>
+                <div class="services-controls">
+                  <button class="pill-button" type="button" data-photos-toggle aria-pressed="false">Pausar fotos</button>
+                  <button class="icon-button" type="button" data-services-prev aria-controls="servicos-lista" aria-label="Ambientes anteriores"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+                  <button class="icon-button" type="button" data-services-next aria-controls="servicos-lista" aria-label="Próximos ambientes"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></button>
+                </div>
+              </header>
+
+              <ul class="services-track" id="servicos-lista" role="list" aria-label="Ambientes planejados" data-services-track data-reveal-block>
+                  <li class="service-card card-ref card-ref--flush" data-service-card data-reveal="card">
+                    <div class="photo-carousel" data-photo-carousel role="region" aria-roledescription="carrossel" aria-label="Fotos: Cozinhas planejadas">
+                      <div class="photo-carousel__slides">
+                          <figure class="photo-carousel__slide is-active" data-photo-slide>
+                            <img src="public/imagens/responsivas/projetos/cozinha-960.webp" srcset="public/imagens/responsivas/projetos/cozinha-480.webp 480w, public/imagens/responsivas/projetos/cozinha-960.webp 960w, public/imagens/responsivas/projetos/cozinha-full.webp 1344w" sizes="(min-width: 1100px) 420px, (min-width: 768px) 46vw, 86vw" width="1344" height="752" loading="lazy" decoding="async" data-accent
+                                 alt="Cozinha planejada com armários brancos, ilha revestida em madeira e banquetas.">
+                          </figure>
+                          <figure class="photo-carousel__slide" data-photo-slide aria-hidden="true">
+                            <img src="public/imagens/responsivas/antes-depois/cozinha-depois-960.webp" srcset="public/imagens/responsivas/antes-depois/cozinha-depois-480.webp 480w, public/imagens/responsivas/antes-depois/cozinha-depois-960.webp 960w, public/imagens/responsivas/antes-depois/cozinha-depois-1440.webp 1440w, public/imagens/responsivas/antes-depois/cozinha-depois-full.webp 1536w" sizes="(min-width: 1100px) 420px, (min-width: 768px) 46vw, 86vw" width="1536" height="1024" loading="lazy" decoding="async" data-accent
+                                 alt="Cozinha planejada com armários claros, painel ripado de madeira e iluminação embutida.">
+                          </figure>
+                      </div>
+                      <button class="photo-carousel__arrow photo-carousel__arrow--prev" type="button" data-photo-prev aria-label="Foto anterior de Cozinhas planejadas"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+                      <button class="photo-carousel__arrow photo-carousel__arrow--next" type="button" data-photo-next aria-label="Próxima foto de Cozinhas planejadas"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></button>
+                      <div class="photo-carousel__dots" data-photo-dots aria-hidden="true"></div>
+                      <p class="visually-hidden" data-photo-status aria-live="polite"></p>
+                    </div>
+                    <div class="service-card__body">
+                      <h3 class="service-card__title">Cozinhas planejadas</h3>
+                      <p class="service-card__text">Ambientes funcionais, elegantes e pensados para a sua rotina.</p>
+                      <a class="button button--primary service-card__cta" href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20cozinha%20planejada." target="_blank" rel="noopener">Pedir orçamento de cozinha</a>
+                    </div>
+                  </li>
+                  <li class="service-card card-ref card-ref--flush" data-service-card data-reveal="card">
+                    <div class="photo-carousel" data-photo-carousel role="region" aria-roledescription="carrossel" aria-label="Fotos: Quartos e closets planejados">
+                      <div class="photo-carousel__slides">
+                          <figure class="photo-carousel__slide is-active" data-photo-slide>
+                            <img src="public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-960.webp" srcset="public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-960.webp 960w, public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-full.webp 1254w" sizes="(min-width: 1100px) 420px, (min-width: 768px) 46vw, 86vw" width="1254" height="1254" loading="lazy" decoding="async" data-accent
+                                 alt="Guarda-roupa planejado com portas de correr brancas e espelhadas.">
+                          </figure>
+                          <figure class="photo-carousel__slide" data-photo-slide aria-hidden="true">
+                            <img src="public/imagens/responsivas/projetos/quarto-960.webp" srcset="public/imagens/responsivas/projetos/quarto-480.webp 480w, public/imagens/responsivas/projetos/quarto-960.webp 960w, public/imagens/responsivas/projetos/quarto-1440.webp 1440w, public/imagens/responsivas/projetos/quarto-1920.webp 1920w" sizes="(min-width: 1100px) 420px, (min-width: 768px) 46vw, 86vw" width="3840" height="2160" loading="lazy" decoding="async" data-accent
+                                 alt="Quarto com guarda-roupa planejado, nichos abertos e escrivaninha em madeira com gavetas.">
+                          </figure>
+                          <figure class="photo-carousel__slide" data-photo-slide aria-hidden="true">
+                            <img src="public/imagens/responsivas/servicos/quartos-corredor-armarios-960.webp" srcset="public/imagens/responsivas/servicos/quartos-corredor-armarios-480.webp 480w, public/imagens/responsivas/servicos/quartos-corredor-armarios-960.webp 960w, public/imagens/responsivas/servicos/quartos-corredor-armarios-full.webp 1344w" sizes="(min-width: 1100px) 420px, (min-width: 768px) 46vw, 86vw" width="1344" height="752" loading="lazy" decoding="async" data-accent
+                                 alt="Corredor com armários planejados do piso ao teto e painel ripado de madeira.">
+                          </figure>
+                          <figure class="photo-carousel__slide" data-photo-slide aria-hidden="true">
+                            <img src="public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-960.webp" srcset="public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-960.webp 960w, public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-full.webp 1312w" sizes="(min-width: 1100px) 420px, (min-width: 768px) 46vw, 86vw" width="1312" height="1199" loading="lazy" decoding="async" data-accent
+                                 alt="Interior de guarda-roupa planejado com prateleiras, cabideiros e gavetas.">
+                          </figure>
+                      </div>
+                      <button class="photo-carousel__arrow photo-carousel__arrow--prev" type="button" data-photo-prev aria-label="Foto anterior de Quartos e closets planejados"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+                      <button class="photo-carousel__arrow photo-carousel__arrow--next" type="button" data-photo-next aria-label="Próxima foto de Quartos e closets planejados"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></button>
+                      <div class="photo-carousel__dots" data-photo-dots aria-hidden="true"></div>
+                      <p class="visually-hidden" data-photo-status aria-live="polite"></p>
+                    </div>
+                    <div class="service-card__body">
+                      <h3 class="service-card__title">Quartos e closets planejados</h3>
+                      <p class="service-card__text">Organização, conforto e aproveitamento inteligente de cada espaço.</p>
+                      <a class="button button--primary service-card__cta" href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20quarto%20ou%20closet%20planejado." target="_blank" rel="noopener">Pedir orçamento de quarto ou closet</a>
+                    </div>
+                  </li>
+                  <li class="service-card card-ref card-ref--flush" data-service-card data-reveal="card">
+                    <div class="photo-carousel" data-photo-carousel role="region" aria-roledescription="carrossel" aria-label="Fotos: Salas e painéis de TV">
+                      <div class="photo-carousel__slides">
+                          <figure class="photo-carousel__slide is-active" data-photo-slide>
+                            <img src="public/imagens/responsivas/projetos/projeto-painel-tv-960.webp" srcset="public/imagens/responsivas/projetos/projeto-painel-tv-480.webp 480w, public/imagens/responsivas/projetos/projeto-painel-tv-960.webp 960w, public/imagens/responsivas/projetos/projeto-painel-tv-1440.webp 1440w, public/imagens/responsivas/projetos/projeto-painel-tv-full.webp 1448w" sizes="(min-width: 1100px) 420px, (min-width: 768px) 46vw, 86vw" width="1448" height="1086" loading="lazy" decoding="async" data-accent
+                                 alt="Painel de TV em madeira com prateleiras iluminadas e rack suspenso claro.">
+                          </figure>
+                      </div>
+                      <button class="photo-carousel__arrow photo-carousel__arrow--prev" type="button" data-photo-prev aria-label="Foto anterior de Salas e painéis de TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+                      <button class="photo-carousel__arrow photo-carousel__arrow--next" type="button" data-photo-next aria-label="Próxima foto de Salas e painéis de TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></button>
+                      <div class="photo-carousel__dots" data-photo-dots aria-hidden="true"></div>
+                      <p class="visually-hidden" data-photo-status aria-live="polite"></p>
+                    </div>
+                    <div class="service-card__body">
+                      <h3 class="service-card__title">Salas e painéis de TV</h3>
+                      <p class="service-card__text">Design integrado para uma sala mais leve, funcional e acolhedora.</p>
+                      <a class="button button--primary service-card__cta" href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20sala%20ou%20painel%20de%20TV%20planejado." target="_blank" rel="noopener">Pedir orçamento de sala ou painel</a>
+                    </div>
+                  </li>
+                  <li class="service-card card-ref card-ref--flush" data-service-card data-reveal="card">
+                    <div class="photo-carousel" data-photo-carousel role="region" aria-roledescription="carrossel" aria-label="Fotos: Home office">
+                      <div class="photo-carousel__slides">
+                          <figure class="photo-carousel__slide is-active" data-photo-slide>
+                            <img src="public/imagens/responsivas/projetos/projeto-home-office-960.webp" srcset="public/imagens/responsivas/projetos/projeto-home-office-480.webp 480w, public/imagens/responsivas/projetos/projeto-home-office-960.webp 960w, public/imagens/responsivas/projetos/projeto-home-office-full.webp 1122w" sizes="(min-width: 1100px) 420px, (min-width: 768px) 46vw, 86vw" width="1122" height="1402" loading="lazy" decoding="async" data-accent
+                                 alt="Home office planejado com bancada em madeira, armários superiores claros, nichos iluminados e painel ripado.">
+                          </figure>
+                          <figure class="photo-carousel__slide" data-photo-slide aria-hidden="true">
+                            <img src="public/imagens/responsivas/servicos/home-office-quarto-960.webp" srcset="public/imagens/responsivas/servicos/home-office-quarto-480.webp 480w, public/imagens/responsivas/servicos/home-office-quarto-960.webp 960w, public/imagens/responsivas/servicos/home-office-quarto-1440.webp 1440w, public/imagens/responsivas/servicos/home-office-quarto-1920.webp 1920w" sizes="(min-width: 1100px) 420px, (min-width: 768px) 46vw, 86vw" width="3840" height="2160" loading="lazy" decoding="async" data-accent
+                                 alt="Quarto com escrivaninha integrada à marcenaria em madeira e iluminação embutida.">
+                          </figure>
+                      </div>
+                      <button class="photo-carousel__arrow photo-carousel__arrow--prev" type="button" data-photo-prev aria-label="Foto anterior de Home office"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+                      <button class="photo-carousel__arrow photo-carousel__arrow--next" type="button" data-photo-next aria-label="Próxima foto de Home office"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></button>
+                      <div class="photo-carousel__dots" data-photo-dots aria-hidden="true"></div>
+                      <p class="visually-hidden" data-photo-status aria-live="polite"></p>
+                    </div>
+                    <div class="service-card__body">
+                      <h3 class="service-card__title">Home office</h3>
+                      <p class="service-card__text">Um espaço de trabalho planejado para produtividade e conforto.</p>
+                      <a class="button button--primary service-card__cta" href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20home%20office%20planejado." target="_blank" rel="noopener">Pedir orçamento de home office</a>
+                    </div>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Projetos -->
+        <section id="projetos" class="section section--projects" aria-labelledby="projetos-titulo" data-section>
+          <div class="section__panel" data-section-panel>
+            <div class="container">
+              <header class="section-header section-header--split" data-reveal-block>
+                <div>
+                  <p class="eyebrow">Projetos</p>
+                  <h2 id="projetos-titulo" class="section-title">Ambientes que mostram as possibilidades do planejado.</h2>
+                </div>
+                <p class="section-note">Imagens ilustrativas de ambientes planejados.</p>
+              </header>
+
+              <ul class="projects-grid" role="list" data-reveal-block>
+                <li class="project-card project-card--kitchen" data-reveal="card">
+                  <figure class="project-card__figure media-frame card-ref card-ref--flush">
+                    <img src="public/imagens/responsivas/projetos/cozinha-960.webp" srcset="public/imagens/responsivas/projetos/cozinha-480.webp 480w, public/imagens/responsivas/projetos/cozinha-960.webp 960w, public/imagens/responsivas/projetos/cozinha-full.webp 1344w" sizes="(min-width: 1400px) 880px, (min-width: 901px) 64vw, 100vw" width="1344" height="752" loading="lazy" decoding="async" data-accent
+                         alt="Cozinha planejada com marcenaria branca, nichos em madeira e ilha central com banquetas.">
+                    <figcaption class="project-card__caption">
+                      <h3 class="project-card__title">Cozinha planejada</h3>
+                      <p>Materiais, iluminação e soluções sob medida para o coração da casa.</p>
+                    </figcaption>
+                  </figure>
+                </li>
+                <li class="project-card project-card--office" data-reveal="card">
+                  <figure class="project-card__figure media-frame card-ref card-ref--flush">
+                    <img src="public/imagens/responsivas/projetos/projeto-home-office-960.webp" srcset="public/imagens/responsivas/projetos/projeto-home-office-480.webp 480w, public/imagens/responsivas/projetos/projeto-home-office-960.webp 960w, public/imagens/responsivas/projetos/projeto-home-office-full.webp 1122w" sizes="(min-width: 901px) 600px, (min-width: 768px) 50vw, 100vw" width="1122" height="1402" loading="lazy" decoding="async" data-accent
+                         alt="Home office planejado com bancada em madeira, armários superiores claros, nichos iluminados e painel ripado.">
+                    <figcaption class="project-card__caption">
+                      <h3 class="project-card__title">Home office</h3>
+                      <p>Um espaço de trabalho planejado para produtividade e conforto.</p>
+                    </figcaption>
+                  </figure>
+                </li>
+                <li class="project-card project-card--bedroom" data-reveal="card">
+                  <figure class="project-card__figure media-frame card-ref card-ref--flush">
+                    <img src="public/imagens/responsivas/projetos/quarto-960.webp" srcset="public/imagens/responsivas/projetos/quarto-480.webp 480w, public/imagens/responsivas/projetos/quarto-960.webp 960w, public/imagens/responsivas/projetos/quarto-1440.webp 1440w, public/imagens/responsivas/projetos/quarto-1920.webp 1920w" sizes="(min-width: 901px) 640px, (min-width: 768px) 50vw, 100vw" width="3840" height="2160" loading="lazy" decoding="async" data-accent
+                         alt="Quarto com guarda-roupa planejado, nichos abertos, escrivaninha em madeira com gavetas e iluminação embutida.">
+                    <figcaption class="project-card__caption">
+                      <h3 class="project-card__title">Quarto e closet</h3>
+                      <p>Marcenaria que organiza e valoriza o seu espaço de descanso.</p>
+                    </figcaption>
+                  </figure>
+                </li>
+                <li class="project-card project-card--tv" data-reveal="card">
+                  <figure class="project-card__figure media-frame card-ref card-ref--flush">
+                    <img src="public/imagens/responsivas/projetos/projeto-painel-tv-960.webp" srcset="public/imagens/responsivas/projetos/projeto-painel-tv-480.webp 480w, public/imagens/responsivas/projetos/projeto-painel-tv-960.webp 960w, public/imagens/responsivas/projetos/projeto-painel-tv-1440.webp 1440w, public/imagens/responsivas/projetos/projeto-painel-tv-full.webp 1448w" sizes="(min-width: 901px) 640px, (min-width: 768px) 50vw, 100vw" width="1448" height="1086" loading="lazy" decoding="async" data-accent
+                         alt="Painel de TV em madeira com prateleiras iluminadas e rack suspenso claro.">
+                    <figcaption class="project-card__caption">
+                      <h3 class="project-card__title">Painel de TV</h3>
+                      <p>Design integrado para uma sala mais leve, funcional e acolhedora.</p>
+                    </figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Como funciona: narrativa do guarda-roupa 3D ligada à rolagem (etapas-narrativa.js) -->
+        <section id="como-funciona" class="section section--process" aria-labelledby="como-funciona-titulo" data-section>
+          <div class="section__panel" data-section-panel>
+            <!-- Ambiente finalizado: depois da instalação o 3D some e esta foto cobre a seção inteira
+                 (opacidade em --process-final, controlada por js/etapas-narrativa.js). A foto fica fixa
+                 (sticky) na tela enquanto o fim da seção passa. Horizontal em telas deitadas; vertical em pé. -->
+            <div class="process-final" data-process-final aria-hidden="true">
+              <picture class="process-final__media">
+                <source media="(min-aspect-ratio: 1/1)" srcset="public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-960.webp 960w, public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-full.webp 1344w" sizes="100vw" width="1344" height="752">
+                <img src="public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-celular-full.webp" srcset="public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-celular-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-celular-full.webp 752w" sizes="100vw" width="752" height="1344" loading="lazy" decoding="async" alt="">
+              </picture>
+            </div>
+            <div class="container">
+              <header class="section-header" data-reveal-block>
+                <p class="eyebrow">Como funciona</p>
+                <h2 id="como-funciona-titulo" class="section-title">Etapas da marcenaria, do primeiro contato à instalação.</h2>
+              </header>
+
+              <!-- .process é a trilha de rolagem; .process__stage fica fixo (sticky) abaixo do header
+                   enquanto a trilha passa. Sem a classe .is-narrative, tudo fica em fluxo normal. -->
+              <div class="process" data-process>
+                <div class="process__stage" data-process-stage>
+                  <ol class="process__steps" role="list" aria-label="Etapas da marcenaria" data-reveal-block>
+                    <li class="process-step card-ref is-active" data-step data-reveal="card">
+                      <span class="process-step__number" aria-hidden="true">01</span>
+                      <h3 class="process-step__title" data-reveal-element><button class="process-step__button" type="button" data-step-button aria-controls="wardrobe-stage">Conversa e medição</button></h3>
+                      <p class="process-step__text" data-no-split>Entendemos suas necessidades e avaliamos o ambiente para aproveitar cada detalhe.</p>
+                      <!-- Detalhes: aparecem só na etapa atual (card preto em destaque). -->
+                      <ul class="process-step__details" role="list" data-no-split>
+                        <li>Conversa sobre a sua rotina, o seu estilo e o que precisa ser guardado.</li>
+                        <li>Medição do ambiente para aproveitar cada centímetro.</li>
+                      </ul>
+                    </li>
+                    <li class="process-step card-ref" data-step data-reveal="card">
+                      <span class="process-step__number" aria-hidden="true">02</span>
+                      <h3 class="process-step__title" data-reveal-element><button class="process-step__button" type="button" data-step-button aria-controls="wardrobe-stage">Projeto e aprovação</button></h3>
+                      <p class="process-step__text" data-no-split>Transformamos as ideias em um projeto alinhado ao seu estilo, orçamento e rotina.</p>
+                      <!-- Detalhes: aparecem só na etapa atual (card preto em destaque). -->
+                      <ul class="process-step__details" role="list" data-no-split>
+                        <li>Divisões internas, materiais e acabamentos definidos com você.</li>
+                        <li>Ajustes até o projeto ficar do seu jeito antes da produção.</li>
+                      </ul>
+                    </li>
+                    <li class="process-step card-ref" data-step data-reveal="card">
+                      <span class="process-step__number" aria-hidden="true">03</span>
+                      <h3 class="process-step__title" data-reveal-element><button class="process-step__button" type="button" data-step-button aria-controls="wardrobe-stage">Fabricação</button></h3>
+                      <p class="process-step__text" data-no-split>Cada peça é produzida com atenção ao acabamento, à funcionalidade e à qualidade.</p>
+                      <!-- Detalhes: aparecem só na etapa atual (card preto em destaque). -->
+                      <ul class="process-step__details" role="list" data-no-split>
+                        <li>Peças cortadas e preparadas conforme o projeto aprovado.</li>
+                        <li>Atenção ao acabamento e ao funcionamento de portas e gavetas.</li>
+                      </ul>
+                    </li>
+                    <li class="process-step card-ref" data-step data-reveal="card">
+                      <span class="process-step__number" aria-hidden="true">04</span>
+                      <h3 class="process-step__title" data-reveal-element><button class="process-step__button" type="button" data-step-button aria-controls="wardrobe-stage">Instalação</button></h3>
+                      <p class="process-step__text" data-no-split>Finalizamos o projeto no seu ambiente, garantindo cuidado em cada etapa da montagem.</p>
+                      <!-- Detalhes: aparecem só na etapa atual (card preto em destaque). -->
+                      <ul class="process-step__details" role="list" data-no-split>
+                        <li>Montagem no local, com nivelamento e ajuste de portas e gavetas.</li>
+                        <li>O ambiente pronto para usar — como na foto ao final desta etapa.</li>
+                      </ul>
+                    </li>
+                  </ol>
+
+                  <div class="wardrobe" id="wardrobe-stage" data-wardrobe>
+                    <!-- O canvas 3D é inserido aqui por guarda-roupa-3d.js e só substitui a galeria após o primeiro frame. -->
+                    <div class="wardrobe__canvas" data-wardrobe-canvas role="img" aria-label="Modelo 3D de um guarda-roupa planejado de quatro módulos com portas de correr."></div>
+                    <p class="wardrobe__status" data-wardrobe-status aria-live="polite"></p>
+
+                    <!-- Inspeção de materiais (js/guarda-roupa-inspecao.js); aparece só com o 3D ativo. -->
+                    <div class="material-tools" data-material-tools data-no-split hidden>
+                      <div class="material-chips" role="group" aria-label="Inspecionar materiais do guarda-roupa">
+                        <span class="material-chips__label" aria-hidden="true">Materiais</span>
+                        <button class="material-chip" type="button" data-material-category="madeira" aria-controls="material-painel" aria-pressed="false">Madeira</button>
+                        <button class="material-chip" type="button" data-material-category="vidro" aria-controls="material-painel" aria-pressed="false">Vidro</button>
+                        <button class="material-chip" type="button" data-material-category="ferragens" aria-controls="material-painel" aria-pressed="false">Ferragens</button>
+                      </div>
+                      <p class="material-tools__hint">Clique ou toque em uma peça para ver o material.</p>
+                      <div class="material-panel" id="material-painel" data-material-panel hidden>
+                        <span class="material-panel__swatch" data-material-swatch aria-hidden="true"></span>
+                        <div class="material-panel__body">
+                          <p class="material-panel__component" data-material-component></p>
+                          <p class="material-panel__name" data-material-name></p>
+                          <p class="material-panel__finish" data-material-finish></p>
+                          <p class="material-panel__desc" data-material-desc></p>
+                          <p class="material-panel__note" data-material-note></p>
+                        </div>
+                        <button class="material-panel__close" type="button" data-material-close aria-label="Fechar informações do material">
+                          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="wardrobe-gallery" data-wardrobe-gallery aria-roledescription="carrossel" aria-label="Referências do guarda-roupa planejado">
+                      <div class="wardrobe-gallery__viewport media-frame">
+                        <figure class="wardrobe-gallery__slide is-active" data-gallery-slide>
+                          <img src="public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-960.webp" srcset="public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-960.webp 960w, public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-full.webp 1254w" sizes="(min-width: 900px) 640px, 100vw" width="1254" height="1254" loading="lazy" decoding="async"
+                               alt="Guarda-roupa visto de frente, fechado, com portas brancas e espelhadas.">
+                          <figcaption>Frente com portas fechadas</figcaption>
+                        </figure>
+                        <figure class="wardrobe-gallery__slide" data-gallery-slide hidden>
+                          <img src="public/imagens/responsivas/etapas-marcenaria/02-lateral-960.webp" srcset="public/imagens/responsivas/etapas-marcenaria/02-lateral-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/02-lateral-960.webp 960w, public/imagens/responsivas/etapas-marcenaria/02-lateral-full.webp 1254w" sizes="(min-width: 900px) 640px, 100vw" width="1254" height="1254" loading="lazy" decoding="async"
+                               alt="Guarda-roupa visto pela lateral.">
+                          <figcaption>Vista lateral</figcaption>
+                        </figure>
+                        <figure class="wardrobe-gallery__slide" data-gallery-slide hidden>
+                          <img src="public/imagens/responsivas/etapas-marcenaria/03-perspectiva-960.webp" srcset="public/imagens/responsivas/etapas-marcenaria/03-perspectiva-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/03-perspectiva-960.webp 960w, public/imagens/responsivas/etapas-marcenaria/03-perspectiva-full.webp 1254w" sizes="(min-width: 900px) 640px, 100vw" width="1254" height="1254" loading="lazy" decoding="async"
+                               alt="Guarda-roupa em perspectiva.">
+                          <figcaption>Perspectiva</figcaption>
+                        </figure>
+                        <figure class="wardrobe-gallery__slide" data-gallery-slide hidden>
+                          <img src="public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-960.webp" srcset="public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-960.webp 960w, public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-full.webp 1312w" sizes="(min-width: 900px) 640px, 100vw" width="1312" height="1199" loading="lazy" decoding="async"
+                               alt="Guarda-roupa com as portas abertas, mostrando prateleiras e cabideiros.">
+                          <figcaption>Portas abertas</figcaption>
+                        </figure>
+                        <figure class="wardrobe-gallery__slide" data-gallery-slide hidden>
+                          <img src="public/imagens/responsivas/etapas-marcenaria/05-gavetas-abertas-960.webp" srcset="public/imagens/responsivas/etapas-marcenaria/05-gavetas-abertas-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/05-gavetas-abertas-960.webp 960w, public/imagens/responsivas/etapas-marcenaria/05-gavetas-abertas-full.webp 1312w" sizes="(min-width: 900px) 640px, 100vw" width="1312" height="1199" loading="lazy" decoding="async"
+                               alt="Guarda-roupa com as gavetas abertas.">
+                          <figcaption>Gavetas abertas</figcaption>
+                        </figure>
+                        <figure class="wardrobe-gallery__slide" data-gallery-slide hidden>
+                          <img src="public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-960.webp" srcset="public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-480.webp 480w, public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-960.webp 960w, public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-full.webp 1344w" sizes="(min-width: 900px) 640px, 100vw" width="1344" height="752" loading="lazy" decoding="async"
+                               alt="Quarto planejado finalizado: cama com cabeceira, armários e gaveteiros em madeira e guarda-roupa com portas de correr em madeira e vidro fumê.">
+                          <figcaption>Ambiente finalizado</figcaption>
+                        </figure>
+                      </div>
+                      <div class="wardrobe-gallery__controls">
+                        <button class="icon-button" type="button" data-gallery-prev aria-label="Imagem anterior">
+                          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg>
+                        </button>
+                        <p class="wardrobe-gallery__status" aria-live="polite" data-gallery-status>1 de 6 · Frente com portas fechadas</p>
+                        <button class="icon-button" type="button" data-gallery-next aria-label="Próxima imagem">
+                          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Diferenciais -->
+        <section id="diferenciais" class="section section--features" aria-labelledby="diferenciais-titulo" data-section>
+          <div class="section__panel" data-section-panel>
+            <div class="container">
+              <header class="section-header section-header--center" data-reveal-block>
+                <p class="eyebrow">Diferenciais</p>
+                <h2 id="diferenciais-titulo" class="section-title">Cuidado em cada decisão do projeto.</h2>
+              </header>
+              <ul class="features-grid" role="list" data-reveal-block>
+                <li class="feature card-ref" data-reveal="card">
+                  <svg class="feature__icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 27V9l11-5 11 5v18M5 27h22M11 27v-9h10v9"/></svg>
+                  <p>Projeto pensado para o seu espaço.</p>
+                </li>
+                <li class="feature card-ref" data-reveal="card">
+                  <svg class="feature__icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 8h20v16H6zM6 13h20M6 19h20M14 8v16"/></svg>
+                  <p>Materiais e acabamentos escolhidos com cuidado.</p>
+                </li>
+                <li class="feature card-ref" data-reveal="card">
+                  <svg class="feature__icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 5h20v22H6zM6 16h20M13 10.5h6M13 21.5h6"/></svg>
+                  <p>Soluções funcionais para o dia a dia.</p>
+                </li>
+                <li class="feature card-ref" data-reveal="card">
+                  <svg class="feature__icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 16h6l3-7 6 14 3-7h6"/></svg>
+                  <p>Atendimento direto do planejamento à instalação.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. Sobre -->
+        <section id="sobre" class="section section--about" aria-labelledby="sobre-titulo" data-section>
+          <div class="section__panel" data-section-panel>
+            <!-- Foto de fundo da seção inteira (horizontal a partir de 1024px; vertical abaixo).
+                 Os textos ficam por cima (z-index) sobre uma sobreposição escura. -->
+            <picture class="about__bg">
+              <source media="(min-width: 1024px)" srcset="public/imagens/responsivas/sobre/marcenaria-sobre-computador-480.webp 480w, public/imagens/responsivas/sobre/marcenaria-sobre-computador-full.webp 960w" sizes="100vw" width="960" height="540">
+              <img src="public/imagens/responsivas/sobre/marcenaria-sobre-celular-full.webp" srcset="public/imagens/responsivas/sobre/marcenaria-sobre-celular-480.webp 480w, public/imagens/responsivas/sobre/marcenaria-sobre-celular-full.webp 752w" sizes="100vw" width="752" height="1344" loading="lazy" decoding="async"
+                   alt="Equipe da Marcenaria Pinson em uma cozinha planejada em madeira clara com iluminação embutida.">
+            </picture>
+            <div class="about__overlay" aria-hidden="true"></div>
+            <div class="container about">
+              <div class="about__text">
+                <p class="eyebrow eyebrow--light">Sobre nós</p>
+                <h2 id="sobre-titulo" class="section-title">Sobre a Marcenaria Pinson</h2>
+                <p class="section-lead">Na Marcenaria Pinson, cada projeto nasce para atender o seu espaço, a sua rotina e o seu estilo. Trabalhamos com soluções planejadas que valorizam o ambiente e tornam o dia a dia mais prático.</p>
+                <ul class="about__highlights" role="list">
+                  <li class="about__highlight" data-reveal-element><strong>Projeto personalizado</strong><span>pensado para o seu espaço, a sua rotina e o seu estilo</span></li>
+                  <li class="about__highlight" data-reveal-element><strong>Acabamento cuidadoso</strong><span>materiais e acabamentos escolhidos com cuidado</span></li>
+                  <li class="about__highlight" data-reveal-element><strong>Atendimento direto</strong><span>do planejamento à instalação</span></li>
+                </ul>
+                <div class="about__actions">
+                  <a class="button button--accent" href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+                  <a class="text-link" href="https://www.instagram.com/marcenariapinson/" target="_blank" rel="noopener">Instagram @marcenariapinson <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Parcerias: NOMES FICTÍCIOS solicitados pelo cliente para o protótipo.
+                 Substituir pelas empresas e lojas reais antes de publicar (js/marquee.js monta o loop). -->
+            <div class="partners">
+              <div class="container partners__head">
+                <p class="eyebrow eyebrow--light">Parcerias</p>
+                <h3 class="partners__title">Empresas e lojas parceiras.</h3>
+              </div>
+              <div class="marquee" data-marquee>
+                <div class="marquee__track" data-marquee-track>
+                  <ul class="marquee__list" role="list" aria-label="Empresas e lojas parceiras" data-marquee-list>
+                      <li class="marquee__card marquee__card--serif">Casa Aurora</li>
+                      <li class="marquee__card marquee__card--caps">Atelier Norte</li>
+                      <li class="marquee__card marquee__card--bold">lumina<span>interiores</span></li>
+                      <li class="marquee__card marquee__card--italic">Madeira Viva</li>
+                      <li class="marquee__card marquee__card--caps">Vértice Home</li>
+                      <li class="marquee__card marquee__card--serif">Pedra &amp; Linho</li>
+                      <li class="marquee__card marquee__card--bold">Estúdio Ipê</li>
+                  </ul>
+                </div>
+                <button class="marquee__toggle" type="button" data-marquee-toggle aria-pressed="false" aria-label="Pausar a faixa de parceiros">
+                  <svg class="icon icon--pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5h3v14H8zM13 5h3v14h-3z"/></svg>
+                  <svg class="icon icon--play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z"/></svg>
+                </button>
+              </div>
+              <p class="partners__note">Marcas ilustrativas.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. CTA final -->
+        <section id="contato" class="section section--cta" aria-labelledby="contato-titulo" data-section>
+          <div class="section__panel" data-section-panel>
+            <!-- Foto provisória (imagens já existentes) até a geração do escritório de advocacia no Higgsfield.
+                 Trocar pelos arquivos de public/imagens/cta/ (16:9 e 9:16) — ver referencias/prompts-higgsfield.md. -->
+            <picture class="cta__media">
+              <source media="(max-width: 767px)" srcset="public/imagens/responsivas/projetos/projeto-home-office-480.webp 480w, public/imagens/responsivas/projetos/projeto-home-office-960.webp 960w, public/imagens/responsivas/projetos/projeto-home-office-full.webp 1122w" sizes="100vw" width="1122" height="1402">
+              <img src="public/imagens/responsivas/projetos/projeto-painel-tv-960.webp" srcset="public/imagens/responsivas/projetos/projeto-painel-tv-480.webp 480w, public/imagens/responsivas/projetos/projeto-painel-tv-960.webp 960w, public/imagens/responsivas/projetos/projeto-painel-tv-1440.webp 1440w, public/imagens/responsivas/projetos/projeto-painel-tv-full.webp 1448w" sizes="100vw" width="1448" height="1086" loading="lazy" decoding="async" alt="">
+            </picture>
+            <div class="cta__overlay" aria-hidden="true"></div>
+            <div class="container cta" data-reveal-block>
+              <p class="eyebrow eyebrow--light">Contato</p>
+              <h2 id="contato-titulo" class="cta__title">Vamos transformar o seu ambiente?</h2>
+              <p class="cta__text">Conte sua ideia e solicite um orçamento pelo WhatsApp.</p>
+              <div class="cta__actions">
+                <a class="button button--whatsapp button--large" href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg class="button__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm4.6 12.6c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1a14 14 0 0 1-1.5-.6 11.6 11.6 0 0 1-4.4-3.9c-.5-.7-1-1.6-1-2.6 0-1 .5-1.5.7-1.7.2-.2.4-.3.6-.3h.4c.1 0 .3 0 .5.4l.7 1.6c.1.1.1.3 0 .4l-.2.4-.4.4c-.1.1-.2.3-.1.5.2.3.7 1.1 1.4 1.8.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>Falar no WhatsApp</a>
+                <a class="cta__link" href="https://www.instagram.com/marcenariapinson/" target="_blank" rel="noopener">Instagram @marcenariapinson</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container site-footer__inner">
+          <div class="site-footer__brand">
+            <span class="brand__logo brand__logo--large"><img src="public/imagens/responsivas/logo-384.webp" srcset="public/imagens/responsivas/logo-96.webp 96w, public/imagens/responsivas/logo-192.webp 192w, public/imagens/responsivas/logo-384.webp 384w" sizes="84px" alt="" width="1254" height="1254" loading="lazy" decoding="async"></span>
+            <div><p class="site-footer__name">Marcenaria Pinson</p><p class="site-footer__tagline">Móveis planejados sob medida.</p></div>
+          </div>
+          <div class="site-footer__col">
+            <h2 class="site-footer__heading">Contato</h2>
+            <ul class="site-footer__list" role="list">
+              <li><a href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">WhatsApp: (14) 99881-3787</a></li>
+              <li><a href="https://www.instagram.com/marcenariapinson/" target="_blank" rel="noopener">Instagram: @marcenariapinson</a></li>
+            </ul>
+          </div>
+          <nav class="site-footer__col" aria-label="Links rápidos">
+            <h2 class="site-footer__heading">Links rápidos</h2>
+            <ul class="site-footer__list" role="list">
+              <li><a href="#antes-depois">Antes e depois</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#projetos">Projetos</a></li>
+              <li><a href="#como-funciona">Como funciona</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-footer__bottom container">
+          <p class="site-footer__legal">© 2026 Marcenaria Pinson. Imagens ilustrativas de ambientes planejados.</p>
+          <!-- Painel administrativo (demonstração com dados fictícios, sem login nesta fase). -->
+          <a class="button button--outline-light site-footer__admin" href="admin.html">
+            <svg class="button__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            Painel administrativo
+          </a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <a class="whatsapp-float is-pulsing" href="https://wa.me/5514998813787?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Marcenaria%20Pinson%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Solicitar orçamento pelo WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm4.6 12.6c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1a14 14 0 0 1-1.5-.6 11.6 11.6 0 0 1-4.4-3.9c-.5-.7-1-1.6-1-2.6 0-1 .5-1.5.7-1.7.2-.2.4-.3.6-.3h.4c.1 0 .3 0 .5.4l.7 1.6c.1.1.1.3 0 .4l-.2.4-.4.4c-.1.1-.2.3-.1.5.2.3.7 1.1 1.4 1.8.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>
+  </a>
+
+  <!-- GSAP 3.13.0 (jsDelivr). Scripts clássicos com defer executam antes de main.js (módulo), na ordem do documento.
+       Uma falha aqui não impede menu, conteúdo nem contatos: os módulos verificam window.gsap. -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "marcenaria-pinson",
+  "private": true,
+  "description": "Site institucional Marcenaria Pinson — HTML, CSS e JS puro.",
+  "scripts": {
+    "dev": "node ferramentas/servidor-local.mjs",
+    "imagens": "node ferramentas/gerar-imagens-responsivas.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel administrativo — Marcenaria Pinson</title>
+  <!-- Painel interno de demonstração: fora dos buscadores. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="public/imagens/responsivas/logo-96.webp" type="image/webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap">
+
+  <!-- Mesma identidade do site público (tokens, botões, cards) + estilos próprios do painel. -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin">
+  <a class="skip-link" href="#painel">Pular para o conteúdo</a>
+
+  <header class="admin-header">
+    <div class="container admin-header__inner">
+      <a class="brand" href="index.html" aria-label="Marcenaria Pinson — voltar ao site">
+        <span class="brand__logo"><img src="public/imagens/responsivas/logo-384.webp" srcset="public/imagens/responsivas/logo-96.webp 96w, public/imagens/responsivas/logo-192.webp 192w, public/imagens/responsivas/logo-384.webp 384w" sizes="46px" alt="" width="1254" height="1254"></span>
+        <span class="brand__name">Marcenaria Pinson</span>
+      </a>
+      <p class="admin-header__title">Painel administrativo</p>
+      <a class="button button--outline-light admin-header__site" href="index.html">Ver site</a>
+    </div>
+    <nav class="admin-tabs" aria-label="Seções do painel">
+      <div class="container">
+        <ul class="admin-tabs__list" role="list">
+          <li><a class="admin-tabs__link" href="#visao-geral" data-admin-tab>Visão geral</a></li>
+          <li><a class="admin-tabs__link" href="#faturamento" data-admin-tab>Faturamento</a></li>
+          <li><a class="admin-tabs__link" href="#projetos" data-admin-tab>Projetos</a></li>
+          <li><a class="admin-tabs__link" href="#funcionarios" data-admin-tab>Funcionários</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="painel" class="admin-main" tabindex="-1">
+    <!-- 1. Visão geral -->
+    <section id="visao-geral" class="admin-panel" aria-labelledby="visao-titulo">
+      <div class="container">
+        <div class="admin-panel__head">
+          <div>
+            <p class="eyebrow">Visão geral</p>
+            <h1 id="visao-titulo" class="admin-title">Resumo de <span data-month-title>outubro de 2026</span></h1>
+            <p class="admin-demo-note"><strong>Demonstração:</strong> dados fictícios, editáveis e salvos só neste navegador.</p>
+          </div>
+          <label class="admin-field admin-field--compact">
+            <span class="admin-field__label">Mês de referência</span>
+            <select data-month-select></select>
+          </label>
+        </div>
+        <ul class="kpi-grid" role="list" data-kpis></ul>
+      </div>
+    </section>
+
+    <!-- 2. Faturamento e gráficos -->
+    <section id="faturamento" class="admin-panel" aria-labelledby="faturamento-titulo">
+      <div class="container">
+        <div class="admin-panel__head">
+          <div>
+            <p class="eyebrow">Faturamento</p>
+            <h2 id="faturamento-titulo" class="admin-title">Faturamento e produção</h2>
+          </div>
+        </div>
+        <div class="chart-grid">
+          <figure class="card-ref chart-card chart-card--wide">
+            <figcaption class="chart-card__title">Faturamento dos últimos 12 meses <span class="chart-card__hint">valor dos projetos fechados em cada mês</span></figcaption>
+            <div class="chart" data-chart-revenue></div>
+          </figure>
+          <figure class="card-ref chart-card">
+            <figcaption class="chart-card__title">Projetos por ambiente <span class="chart-card__hint" data-month-label>outubro de 2026</span></figcaption>
+            <div class="chart" data-chart-ambientes></div>
+          </figure>
+          <figure class="card-ref chart-card">
+            <figcaption class="chart-card__title">Projetos em andamento por etapa <span class="chart-card__hint">todos os meses</span></figcaption>
+            <div class="chart" data-chart-etapas></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Projetos -->
+    <section id="projetos" class="admin-panel" aria-labelledby="projetos-titulo">
+      <div class="container">
+        <div class="admin-panel__head">
+          <div>
+            <p class="eyebrow">Projetos</p>
+            <h2 id="projetos-titulo" class="admin-title">Projetos</h2>
+          </div>
+          <button class="button button--primary" type="button" data-new-project>
+            <svg class="button__icon admin-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg>
+            Novo projeto
+          </button>
+        </div>
+
+        <div class="admin-toolbar" role="group" aria-label="Filtrar projetos">
+          <label class="admin-field">
+            <span class="admin-field__label">Mês</span>
+            <select data-filter-month></select>
+          </label>
+          <label class="admin-field">
+            <span class="admin-field__label">Etapa</span>
+            <select data-filter-stage></select>
+          </label>
+          <label class="admin-field admin-field--grow">
+            <span class="admin-field__label">Buscar cliente ou responsável</span>
+            <input type="search" data-filter-search autocomplete="off" placeholder="Ex.: Ana">
+          </label>
+        </div>
+        <p class="admin-count" data-projects-count aria-live="polite"></p>
+
+        <div class="table-wrap">
+          <table class="admin-table">
+            <caption class="visually-hidden">Lista de projetos</caption>
+            <thead>
+              <tr>
+                <th scope="col">Cliente</th>
+                <th scope="col">Ambiente</th>
+                <th scope="col" class="is-number">Valor</th>
+                <th scope="col">Fechamento</th>
+                <th scope="col">Etapa</th>
+                <th scope="col">Responsável</th>
+                <th scope="col"><span class="visually-hidden">Ações</span></th>
+              </tr>
+            </thead>
+            <tbody data-projects-body></tbody>
+          </table>
+        </div>
+        <p class="admin-empty" data-projects-empty hidden>Nenhum projeto encontrado com esses filtros.</p>
+      </div>
+    </section>
+
+    <!-- 4. Funcionários -->
+    <section id="funcionarios" class="admin-panel" aria-labelledby="funcionarios-titulo">
+      <div class="container">
+        <div class="admin-panel__head">
+          <div>
+            <p class="eyebrow">Equipe</p>
+            <h2 id="funcionarios-titulo" class="admin-title">Funcionários</h2>
+          </div>
+          <button class="button button--primary" type="button" data-new-employee>
+            <svg class="button__icon admin-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg>
+            Novo funcionário
+          </button>
+        </div>
+
+        <ul class="team-summary" role="list" data-team-summary></ul>
+
+        <div class="table-wrap">
+          <table class="admin-table">
+            <caption class="visually-hidden">Lista de funcionários</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Função</th>
+                <th scope="col">Situação</th>
+                <th scope="col">Admissão</th>
+                <th scope="col" class="is-number">Projetos em andamento</th>
+                <th scope="col" class="is-number">Salário</th>
+                <th scope="col"><span class="visually-hidden">Ações</span></th>
+              </tr>
+            </thead>
+            <tbody data-employees-body></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Dados da demonstração -->
+    <section class="admin-panel admin-panel--note" aria-labelledby="dados-titulo">
+      <div class="container admin-note">
+        <div>
+          <h2 id="dados-titulo" class="admin-note__title">Sobre estes dados</h2>
+          <p>Todos os clientes, valores e funcionários são fictícios. Nesta fase o painel não tem servidor nem login: as alterações ficam salvas apenas neste navegador.</p>
+        </div>
+        <button class="button button--ghost" type="button" data-reset-data>Restaurar dados de exemplo</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer admin-footer">
+    <div class="container site-footer__bottom">
+      <p class="site-footer__legal">© 2026 Marcenaria Pinson · Painel de demonstração.</p>
+      <a class="button button--outline-light" href="index.html">Voltar ao site</a>
+    </div>
+  </footer>
+
+  <!-- Formulário de projeto -->
+  <dialog class="admin-dialog" data-project-dialog aria-labelledby="projeto-dialog-titulo">
+    <form class="admin-form" data-project-form novalidate>
+      <div class="admin-form__head">
+        <h2 id="projeto-dialog-titulo" class="admin-form__title" data-dialog-title>Novo projeto</h2>
+        <button class="admin-icon-button" type="button" data-dialog-close aria-label="Fechar">
+          <svg class="admin-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <label class="admin-field admin-field--full">
+        <span class="admin-field__label">Cliente</span>
+        <input name="cliente" required maxlength="60" autocomplete="off" autofocus>
+      </label>
+      <label class="admin-field">
+        <span class="admin-field__label">Ambiente</span>
+        <select name="ambiente" required data-options="ambientes"></select>
+      </label>
+      <label class="admin-field">
+        <span class="admin-field__label">Valor (R$)</span>
+        <input name="valor" type="number" min="0" step="100" required inputmode="numeric">
+      </label>
+      <label class="admin-field">
+        <span class="admin-field__label">Data de fechamento</span>
+        <input name="data" type="date" required>
+      </label>
+      <label class="admin-field">
+        <span class="admin-field__label">Etapa</span>
+        <select name="etapa" required data-options="etapas"></select>
+      </label>
+      <label class="admin-field admin-field--full">
+        <span class="admin-field__label">Responsável</span>
+        <select name="responsavelId" data-options="funcionarios"></select>
+      </label>
+      <p class="admin-form__error" data-form-error role="alert" hidden></p>
+      <div class="admin-form__actions">
+        <button class="button button--ghost" type="button" data-dialog-close>Cancelar</button>
+        <button class="button button--primary" type="submit">Salvar projeto</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Formulário de funcionário -->
+  <dialog class="admin-dialog" data-employee-dialog aria-labelledby="funcionario-dialog-titulo">
+    <form class="admin-form" data-employee-form novalidate>
+      <div class="admin-form__head">
+        <h2 id="funcionario-dialog-titulo" class="admin-form__title" data-dialog-title>Novo funcionário</h2>
+        <button class="admin-icon-button" type="button" data-dialog-close aria-label="Fechar">
+          <svg class="admin-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <label class="admin-field admin-field--full">
+        <span class="admin-field__label">Nome</span>
+        <input name="nome" required maxlength="60" autocomplete="off" autofocus>
+      </label>
+      <label class="admin-field">
+        <span class="admin-field__label">Função</span>
+        <select name="funcao" required data-options="funcoes"></select>
+      </label>
+      <label class="admin-field">
+        <span class="admin-field__label">Situação</span>
+        <select name="status" required data-options="status"></select>
+      </label>
+      <label class="admin-field">
+        <span class="admin-field__label">Admissão</span>
+        <input name="admissao" type="date" required>
+      </label>
+      <label class="admin-field">
+        <span class="admin-field__label">Salário (R$)</span>
+        <input name="salario" type="number" min="0" step="50" required inputmode="numeric">
+      </label>
+      <p class="admin-form__error" data-form-error role="alert" hidden></p>
+      <div class="admin-form__actions">
+        <button class="button button--ghost" type="button" data-dialog-close>Cancelar</button>
+        <button class="button button--primary" type="submit">Salvar funcionário</button>
+      </div>
+    </form>
+  </dialog>
+
+  <p class="admin-toast" role="status" aria-live="polite" data-admin-toast></p>
+
+  <script type="module" src="js/admin/painel.js"></script>
+</body>
+</html>

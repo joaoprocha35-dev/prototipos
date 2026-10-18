@@ -1,0 +1,452 @@
+{
+  "antes-depois/cozinha-antes": {
+    "origem": "public/imagens/antes-depois/cozinha-antes.png",
+    "largura": 1536,
+    "altura": 1024,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/cozinha-antes-480.webp",
+        "largura": 480,
+        "altura": 320
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/cozinha-antes-960.webp",
+        "largura": 960,
+        "altura": 640
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/cozinha-antes-1440.webp",
+        "largura": 1440,
+        "altura": 960
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/cozinha-antes-full.webp",
+        "largura": 1536,
+        "altura": 1024
+      }
+    ]
+  },
+  "antes-depois/cozinha-depois": {
+    "origem": "public/imagens/antes-depois/cozinha-depois.png",
+    "largura": 1536,
+    "altura": 1024,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/cozinha-depois-480.webp",
+        "largura": 480,
+        "altura": 320
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/cozinha-depois-960.webp",
+        "largura": 960,
+        "altura": 640
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/cozinha-depois-1440.webp",
+        "largura": 1440,
+        "altura": 960
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/cozinha-depois-full.webp",
+        "largura": 1536,
+        "altura": 1024
+      }
+    ]
+  },
+  "etapas-marcenaria/01-frente-fechado": {
+    "origem": "public/imagens/etapas-marcenaria/01-frente-fechado.png",
+    "largura": 1254,
+    "altura": 1254,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-480.webp",
+        "largura": 480,
+        "altura": 480
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-960.webp",
+        "largura": 960,
+        "altura": 960
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/01-frente-fechado-full.webp",
+        "largura": 1254,
+        "altura": 1254
+      }
+    ]
+  },
+  "etapas-marcenaria/02-lateral": {
+    "origem": "public/imagens/etapas-marcenaria/02-lateral.png",
+    "largura": 1254,
+    "altura": 1254,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/02-lateral-480.webp",
+        "largura": 480,
+        "altura": 480
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/02-lateral-960.webp",
+        "largura": 960,
+        "altura": 960
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/02-lateral-full.webp",
+        "largura": 1254,
+        "altura": 1254
+      }
+    ]
+  },
+  "etapas-marcenaria/03-perspectiva": {
+    "origem": "public/imagens/etapas-marcenaria/03-perspectiva.png",
+    "largura": 1254,
+    "altura": 1254,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/03-perspectiva-480.webp",
+        "largura": 480,
+        "altura": 480
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/03-perspectiva-960.webp",
+        "largura": 960,
+        "altura": 960
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/03-perspectiva-full.webp",
+        "largura": 1254,
+        "altura": 1254
+      }
+    ]
+  },
+  "etapas-marcenaria/04-portas-abertas": {
+    "origem": "public/imagens/etapas-marcenaria/04-portas-abertas.png",
+    "largura": 1312,
+    "altura": 1199,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-480.webp",
+        "largura": 480,
+        "altura": 439
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-960.webp",
+        "largura": 960,
+        "altura": 877
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/04-portas-abertas-full.webp",
+        "largura": 1312,
+        "altura": 1199
+      }
+    ]
+  },
+  "etapas-marcenaria/05-gavetas-abertas": {
+    "origem": "public/imagens/etapas-marcenaria/05-gavetas-abertas.png",
+    "largura": 1312,
+    "altura": 1199,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/05-gavetas-abertas-480.webp",
+        "largura": 480,
+        "altura": 439
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/05-gavetas-abertas-960.webp",
+        "largura": 960,
+        "altura": 877
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/05-gavetas-abertas-full.webp",
+        "largura": 1312,
+        "altura": 1199
+      }
+    ]
+  },
+  "logo": {
+    "origem": "public/imagens/logo.png",
+    "largura": 1254,
+    "altura": 1254,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/logo-96.webp",
+        "largura": 96,
+        "altura": 96
+      },
+      {
+        "arquivo": "public/imagens/responsivas/logo-192.webp",
+        "largura": 192,
+        "altura": 192
+      },
+      {
+        "arquivo": "public/imagens/responsivas/logo-384.webp",
+        "largura": 384,
+        "altura": 384
+      }
+    ]
+  },
+  "projetos/cozinha": {
+    "origem": "public/imagens/projetos/cozinha.png",
+    "largura": 1344,
+    "altura": 752,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/projetos/cozinha-480.webp",
+        "largura": 480,
+        "altura": 269
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/cozinha-960.webp",
+        "largura": 960,
+        "altura": 537
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/cozinha-full.webp",
+        "largura": 1344,
+        "altura": 752
+      }
+    ]
+  },
+  "projetos/projeto-home-office": {
+    "origem": "public/imagens/projetos/projeto-home-office.png",
+    "largura": 1122,
+    "altura": 1402,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/projetos/projeto-home-office-480.webp",
+        "largura": 480,
+        "altura": 600
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/projeto-home-office-960.webp",
+        "largura": 960,
+        "altura": 1200
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/projeto-home-office-full.webp",
+        "largura": 1122,
+        "altura": 1402
+      }
+    ]
+  },
+  "projetos/projeto-painel-tv": {
+    "origem": "public/imagens/projetos/projeto-painel-tv.png",
+    "largura": 1448,
+    "altura": 1086,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/projetos/projeto-painel-tv-480.webp",
+        "largura": 480,
+        "altura": 360
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/projeto-painel-tv-960.webp",
+        "largura": 960,
+        "altura": 720
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/projeto-painel-tv-1440.webp",
+        "largura": 1440,
+        "altura": 1080
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/projeto-painel-tv-full.webp",
+        "largura": 1448,
+        "altura": 1086
+      }
+    ]
+  },
+  "projetos/quarto": {
+    "origem": "public/imagens/projetos/quarto.png",
+    "largura": 3840,
+    "altura": 2160,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/projetos/quarto-480.webp",
+        "largura": 480,
+        "altura": 270
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/quarto-960.webp",
+        "largura": 960,
+        "altura": 540
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/quarto-1440.webp",
+        "largura": 1440,
+        "altura": 810
+      },
+      {
+        "arquivo": "public/imagens/responsivas/projetos/quarto-1920.webp",
+        "largura": 1920,
+        "altura": 1080
+      }
+    ]
+  },
+  "servicos/quartos-corredor-armarios": {
+    "origem": "public/imagens/servicos/quartos-corredor-armarios.png",
+    "largura": 1344,
+    "altura": 752,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/servicos/quartos-corredor-armarios-480.webp",
+        "largura": 480,
+        "altura": 269
+      },
+      {
+        "arquivo": "public/imagens/responsivas/servicos/quartos-corredor-armarios-960.webp",
+        "largura": 960,
+        "altura": 537
+      },
+      {
+        "arquivo": "public/imagens/responsivas/servicos/quartos-corredor-armarios-full.webp",
+        "largura": 1344,
+        "altura": 752
+      }
+    ]
+  },
+  "servicos/home-office-quarto": {
+    "origem": "public/imagens/servicos/home-office-quarto.png",
+    "largura": 3840,
+    "altura": 2160,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/servicos/home-office-quarto-480.webp",
+        "largura": 480,
+        "altura": 270
+      },
+      {
+        "arquivo": "public/imagens/responsivas/servicos/home-office-quarto-960.webp",
+        "largura": 960,
+        "altura": 540
+      },
+      {
+        "arquivo": "public/imagens/responsivas/servicos/home-office-quarto-1440.webp",
+        "largura": 1440,
+        "altura": 810
+      },
+      {
+        "arquivo": "public/imagens/responsivas/servicos/home-office-quarto-1920.webp",
+        "largura": 1920,
+        "altura": 1080
+      }
+    ]
+  },
+  "antes-depois/escritorio-antes": {
+    "origem": "public/imagens/antes-depois/escritorio-antes.png",
+    "largura": 1344,
+    "altura": 752,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/escritorio-antes-480.webp",
+        "largura": 480,
+        "altura": 269
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/escritorio-antes-960.webp",
+        "largura": 960,
+        "altura": 537
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/escritorio-antes-full.webp",
+        "largura": 1344,
+        "altura": 752
+      }
+    ]
+  },
+  "antes-depois/escritorio-depois": {
+    "origem": "public/imagens/antes-depois/escritorio-depois.png",
+    "largura": 1344,
+    "altura": 752,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/escritorio-depois-480.webp",
+        "largura": 480,
+        "altura": 269
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/escritorio-depois-960.webp",
+        "largura": 960,
+        "altura": 537
+      },
+      {
+        "arquivo": "public/imagens/responsivas/antes-depois/escritorio-depois-full.webp",
+        "largura": 1344,
+        "altura": 752
+      }
+    ]
+  },
+  "etapas-marcenaria/image-final-instalacao-celular": {
+    "origem": "public/imagens/etapas-marcenaria/image-final-instalacao-celular.png",
+    "largura": 752,
+    "altura": 1344,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-celular-480.webp",
+        "largura": 480,
+        "altura": 858
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-celular-full.webp",
+        "largura": 752,
+        "altura": 1344
+      }
+    ]
+  },
+  "etapas-marcenaria/image-final-instalacao-computador": {
+    "origem": "public/imagens/etapas-marcenaria/image-final-instalacao-computador.png",
+    "largura": 1344,
+    "altura": 752,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-480.webp",
+        "largura": 480,
+        "altura": 269
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-960.webp",
+        "largura": 960,
+        "altura": 537
+      },
+      {
+        "arquivo": "public/imagens/responsivas/etapas-marcenaria/image-final-instalacao-computador-full.webp",
+        "largura": 1344,
+        "altura": 752
+      }
+    ]
+  },
+  "sobre/marcenaria-sobre-celular": {
+    "origem": "public/imagens/sobre/marcenaria-sobre-celular.png",
+    "largura": 752,
+    "altura": 1344,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/sobre/marcenaria-sobre-celular-480.webp",
+        "largura": 480,
+        "altura": 858
+      },
+      {
+        "arquivo": "public/imagens/responsivas/sobre/marcenaria-sobre-celular-full.webp",
+        "largura": 752,
+        "altura": 1344
+      }
+    ]
+  },
+  "sobre/marcenaria-sobre-computador": {
+    "origem": "public/imagens/sobre/marcenaria-sobre-computador.png",
+    "largura": 960,
+    "altura": 540,
+    "variantes": [
+      {
+        "arquivo": "public/imagens/responsivas/sobre/marcenaria-sobre-computador-480.webp",
+        "largura": 480,
+        "altura": 270
+      },
+      {
+        "arquivo": "public/imagens/responsivas/sobre/marcenaria-sobre-computador-full.webp",
+        "largura": 960,
+        "altura": 540
+      }
+    ]
+  }
+}

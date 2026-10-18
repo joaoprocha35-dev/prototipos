@@ -1,0 +1,389 @@
+/* =========================================================
+   Ajustes responsivos — do maior para o menor breakpoint.
+   1079px: header vira menu compacto · 900px: tablets
+   767px: celular (mesmo corte do vídeo da Hero) · 420px: telas estreitas
+   ========================================================= */
+
+/* ---------- Header compacto e painel do menu mobile ---------- */
+@media (max-width: 1079px) {
+  .menu-toggle {
+    display: grid;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-lg);
+    max-height: calc(100svh - var(--header-h));
+    overflow-y: auto;
+    padding: var(--space-md) var(--gutter) var(--space-xl);
+    background: var(--color-bg);
+    color: var(--color-ink);
+    box-shadow: 0 24px 40px -24px rgba(43, 33, 26, 0.45);
+    /* Estado fechado: invisível e fora da ordem de foco */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity var(--transition-base), transform var(--transition-base),
+      visibility 0s linear 260ms;
+  }
+
+  .site-nav[data-state="open"] {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition: opacity var(--transition-base), transform var(--transition-base), visibility 0s;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .site-nav__list li + li {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .site-nav__link {
+    display: flex;
+    min-height: 56px;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    opacity: 1;
+  }
+
+  .site-nav__link::after {
+    display: none;
+  }
+
+  .site-nav__link.is-active {
+    color: var(--color-wood-dark);
+  }
+
+  .site-nav__cta {
+    min-height: 52px;
+  }
+
+  /* Com o menu aberto o header fica sólido para formar um bloco único com o painel. */
+  .site-header.is-menu-open {
+    background: var(--color-bg);
+    color: var(--color-ink);
+  }
+}
+
+/* ---------- Computador: o 3D cobre todo o fundo do palco das etapas ----------
+   Só com a narrativa ativa e o 3D já desenhado (antes disso a galeria fica na coluna da direita).
+   O canvas ocupa a largura da tela; os cards ficam por cima, à esquerda, e
+   js/etapas-narrativa.js informa à câmera a área livre à direita (setFraming). */
+@media (min-width: 901px) {
+  .process.is-narrative .wardrobe.is-3d {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 0;
+    width: 100vw;
+    transform: translateX(-50%);
+  }
+
+  .process.is-narrative .wardrobe.is-3d .wardrobe__canvas {
+    height: 100%;
+    border-radius: 0;
+    background: radial-gradient(60% 85% at 68% 45%, #fbf7f1 0%, var(--color-bg) 78%);
+  }
+
+  .process.is-narrative .process__steps {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Botões e painel de materiais na área do móvel (metade direita, alinhados ao conteúdo). */
+  .process.is-narrative .wardrobe.is-3d .material-tools {
+    top: 0.75rem;
+    right: max(var(--gutter), calc(50% - var(--content-max) / 2));
+    bottom: 0.75rem;
+    left: 50%;
+  }
+}
+
+/* ---------- Telas médias: 2 cards de serviço por vez ---------- */
+@media (max-width: 1099px) {
+  .services-track {
+    --services-per-view: 2;
+  }
+}
+
+/* ---------- Sobre: abaixo de 1024px, foto vertical e texto em coluna única sobre a foto ---------- */
+@media (max-width: 1023px) {
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: min(56svh, 520px); /* rostos visíveis acima do texto */
+  }
+
+  .about__bg img {
+    object-position: 50% 0%;
+  }
+
+  .about__overlay {
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.2) 0%, rgba(10, 10, 10, 0) 16%, rgba(10, 10, 10, 0.55) 32%, rgba(10, 10, 10, 0.9) 48%, rgba(10, 10, 10, 0.95) 94%, #0a0a0a 100%);
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: clamp(220px, 34vw, 320px);
+  }
+
+  .project-card--kitchen { grid-column: 1 / 3; grid-row: 1; }
+  .project-card--office  { grid-column: 1; grid-row: 2 / 4; }
+  .project-card--bedroom { grid-column: 2; grid-row: 2; }
+  .project-card--tv      { grid-column: 2; grid-row: 3; }
+
+  /* Etapas: composição vertical — modelo em cima, cards embaixo. */
+  .process__stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .wardrobe {
+    order: -1;
+    width: 100%;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .process.is-narrative .process__stage {
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: var(--space-sm);
+  }
+
+  .process.is-narrative .wardrobe,
+  .process.is-narrative .wardrobe__canvas {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .process.is-narrative .wardrobe-gallery__viewport {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Na narrativa, só a etapa ativa mostra a descrição (as demais ficam compactas). */
+  .process.is-narrative .process__steps {
+    gap: var(--space-xs);
+  }
+
+  .process.is-narrative .process-step {
+    padding-block: 0.6rem;
+  }
+
+  .process.is-narrative .process-step__text {
+    display: none;
+  }
+
+  .process.is-narrative .process-step.is-active .process-step__text {
+    display: block;
+  }
+
+  /* Card em destaque cresce para os dois lados (cabe na margem lateral do celular). */
+  .process-step.is-active {
+    scale: 1.03;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Etapas em coluna com tela em pé (foto final vertical) ----------
+   A foto é ampliada e deslocada para cima: cama e guarda-roupa ficam na metade de cima da tela,
+   acima dos cards (que ocupam a metade de baixo). */
+@media (max-width: 900px) and (max-aspect-ratio: 1/1) {
+  .process-final__media {
+    overflow: hidden;
+  }
+
+  .process-final__media img {
+    height: 142%;
+    object-position: 68% 50%;
+    transform: translateY(-32%);
+  }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 767px) {
+  :root {
+    --header-h: 64px;
+  }
+
+  .brand__logo {
+    width: 40px;
+  }
+
+  .brand__name {
+    font-size: 1.2rem;
+  }
+
+  /* Alternativa vertical para a Hero no celular */
+  .hero.has-fallback .hero__media,
+  .hero.has-poster .hero__media {
+    background-image: url("../public/imagens/responsivas/projetos/projeto-home-office-full.webp");
+  }
+
+  .hero__content {
+    padding-bottom: calc(58px + var(--space-2xl)); /* livre do botão flutuante */
+  }
+
+  :root {
+    --hero-intro-size: 150px;
+  }
+
+  .hero__actions .button {
+    flex: 1 1 100%;
+  }
+
+  .hero__video-toggle {
+    top: calc(var(--header-h) + var(--space-md));
+    bottom: auto;
+  }
+
+  .section-header--split {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .compare__frame {
+    border-radius: var(--radius-md); /* proporção = a da foto (3:2 e 16:9): os pontos batem */
+  }
+
+  /* Cartão do material na base do quadro, largura total (cabe em qualquer posição do ponto). */
+  .hotspot__card,
+  .hotspot[data-side="left"] .hotspot__card {
+    top: auto;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    width: auto;
+    max-width: none;
+    transform: translateY(6px);
+  }
+
+  .hotspot.is-open .hotspot__card,
+  .hotspot__button:focus-visible + .hotspot__card {
+    transform: none;
+  }
+
+  .hotspot__button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .compare__label-detail {
+    display: none;
+  }
+
+  /* Serviços: 1 card por vez com uma "espiada" no próximo (arraste lateral nativo). */
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .services-track {
+    grid-auto-columns: 86%;
+  }
+
+  /* CTA: texto na base, sobre a foto vertical. */
+  .section--cta .section__panel {
+    align-items: end;
+    min-height: min(92svh, 760px);
+  }
+
+  .cta__overlay {
+    background: linear-gradient(0deg, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.6) 48%, rgba(10, 10, 10, 0.15) 80%);
+  }
+
+  .material-tools__hint {
+    display: none;
+  }
+
+  .material-panel {
+    grid-template-columns: 44px 1fr auto;
+    gap: 0.6rem;
+    padding: 0.7rem;
+  }
+
+  .material-panel__swatch {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Painel compacto no celular: a linha secundária de acabamento sai; nome, descrição e aviso ficam. */
+  .material-panel__finish {
+    display: none;
+  }
+
+  .material-panel__desc {
+    font-size: 0.78rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .project-card--kitchen,
+  .project-card--office,
+  .project-card--bedroom,
+  .project-card--tv {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .project-card__figure {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-card--office .project-card__figure {
+    aspect-ratio: 4 / 5;
+  }
+
+  .about {
+    text-align: left;
+  }
+
+  .partners__list {
+    gap: var(--space-md) var(--space-xl);
+  }
+
+  .site-footer__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .whatsapp-float {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 420px) {
+  .features-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .brand__name {
+    font-size: 1.1rem;
+  }
+}

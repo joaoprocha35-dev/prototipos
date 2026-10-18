@@ -1,0 +1,20 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (ferramentas locais)
+node_modules/
+
+# Arquivos temporários gerados pelas ferramentas
+ferramentas/*.log
+
+# Imagens originais PNG (versões WebP em public/imagens/responsivas/ são o que vai ao ar)
+# Descomente se quiser ignorá-las no repositório:
+# public/imagens/*.png
