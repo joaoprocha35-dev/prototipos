@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-10-23T01:47:12.757Z",
+  "baseURL": "http://127.0.0.1:8088",
+  "browser": "155.0.8059.85",
+  "cases": [
+    {
+      "name": "desktop-1440x900",
+      "durationMs": 10806
+    }
+  ],
+  "checks": [
+    {
+      "case": "desktop-1440x900",
+      "name": "Fundo visível antes da sequência terminar",
+      "passed": true
+    },
+    {
+      "case": "desktop-1440x900",
+      "name": "Sequência inicial única e na ordem correta",
+      "passed": true,
+      "detail": [
+        {
+          "type": "animationstart",
+          "target": "client",
+          "animation": "fadeInDown",
+          "time": 542.3000000044703,
+          "elapsed": 0
+        },
+        {
+          "type": "animationend",
+          "target": "client",
+          "animation": "fadeInDown",
+          "time": 1637.3000000044703,
+          "elapsed": 1.1
+        },
+        {
+          "type": "animationstart",
+          "target": "title",
+          "animation": "fadeInDown",
+          "time": 3659.39999999851,
+          "elapsed": 0
+        },
+        {
+          "type": "animationend",
+          "target": "title",
+          "animation": "fadeInDown",
+          "time": 4745.39999999851,
+          "elapsed": 1.1
+        },
+        {
+          "type": "animationstart",
+          "target": "nav",
+          "animation": "fadeInLeft",
+          "time": 6761.39999999851,
+          "elapsed": 0
+        },
+        {
+          "type": "animationend",
+          "target": "nav",
+          "animation": "fadeInLeft",
+          "time": 7553.10000000149,
+          "elapsed": 0.8
+        },
+        {
+          "type": "animationstart",
+          "target": "quote",
+          "animation": "fadeInUp",
+          "time": 9561.39999999851,
+          "elapsed": 0
+        },
+        {
+          "type": "animationend",
+          "target": "quote",
+          "animation": "fadeInUp",
+          "time": 10461.5,
+          "elapsed": 0.9
+        }
+      ]
+    },
+    {
+      "case": "desktop-1440x900",
+      "name": "Cliente entra usando fadeInDown",
+      "passed": true
+    },
+    {
+      "case": "desktop-1440x900",
+      "name": "Todas as animações CSS terminam",
+      "passed": true,
+      "detail": [
+        {
+          "type": "animationstart",
+          "target": "client",
+          "animation": "fadeInDown",
+          "time": 542.3000000044703,
+          "elapsed": 0
+        },
+        {
+          "type": "animationend",
+          "target": "client",
+          "animation": "fadeInDown",
+          "time": 1637.3000000044703,
+          "elapsed": 1.1
+        },
+        {
+          "type": "animationstart",
+          "target": "title",
+          "animation": "fadeInDown",
+          "time": 3659.39999999851,
+          "elapsed": 0
+        },
+        {
+          "type": "animationend",
+          "target": "title",
+          "animation": "fadeInDown",
+          "time": 4745.39999999851,
+          "elapsed": 1.1
+        },
+        {
+          "type": "animationstart",
+          "target": "nav",
+          "animation": "fadeInLeft",
+          "time": 6761.39999999851,
+          "elapsed": 0
+        },
+        {
+          "type": "animationend",
+          "target": "nav",
+          "animation": "fadeInLeft",
+          "time": 7553.10000000149,
+          "elapsed": 0.8
+        },
+        {
+          "type": "animationstart",
+          "target": "quote",
+          "animation": "fadeInUp",
+          "time": 9561.39999999851,
+          "elapsed": 0
+        },
+        {
+          "type": "animationend",
+          "target": "quote",
+          "animation": "fadeInUp",
+          "time": 10461.5,
+          "elapsed": 0.9
+        }
+      ]
+    },
+    {
+      "case": "desktop-1440x900",
+      "name": "Intervalos reais de 2s após o fim anterior",
+      "passed": true,
+      "detail": [
+        2.0220999999940394,
+        2.016,
+        2.00829999999702
+      ]
+    },
+    {
+      "case": "desktop-1440x900",
+      "name": "Carregamento inicial não espera a fonte Google externa",
+      "passed": true,
+      "detail": {
+        "domContentLoadedMs": 189.10000000149012,
+        "backgroundLoadedByMs": 274.1000000014901
+      }
+    },
+    {
+      "case": "desktop-1440x900",
+      "name": "Hero final sem elementos ocultos",
+      "passed": true
+    },
+    {
+      "case": "desktop-1440x900",
+      "name": "Console e recursos locais sem erros",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "screenshots": [],
+  "errors": [],
+  "ignoredExternalErrors": [],
+  "summary": {
+    "checks": 8,
+    "passed": 8,
+    "failed": 0
+  }
+}

@@ -1,0 +1,533 @@
+{
+  "checks": [
+    {
+      "name": "1440: título e links em cascata",
+      "passed": true
+    },
+    {
+      "name": "1440: todos os textos visíveis da hero animam",
+      "passed": true
+    },
+    {
+      "name": "1440: chamada para rolar disponível",
+      "passed": true
+    },
+    {
+      "name": "1440: seta se movimenta",
+      "passed": true
+    },
+    {
+      "name": "1440: cliente estática e fluxo sem pin",
+      "passed": true
+    },
+    {
+      "name": "1440: ScrollToPlugin",
+      "passed": true
+    },
+    {
+      "name": "1440: assets preservados",
+      "passed": true
+    },
+    {
+      "name": "1440: fonte normal e pointer global",
+      "passed": true
+    },
+    {
+      "name": "1440: título inteiro atrás da cliente",
+      "passed": true
+    },
+    {
+      "name": "1440: sem overflow",
+      "passed": true
+    },
+    {
+      "name": "1440: seções ocupam largura inteira",
+      "passed": true
+    },
+    {
+      "name": "1440: barra lateral oculta",
+      "passed": true
+    },
+    {
+      "name": "1440: imagem sobre cobre a seção",
+      "passed": true
+    },
+    {
+      "name": "1440: fundo preto em toda a página",
+      "passed": true
+    },
+    {
+      "name": "1440: sobre-mim seleciona a imagem correta",
+      "passed": true
+    },
+    {
+      "name": "1440: vamos-conversar seleciona a imagem correta",
+      "passed": true
+    },
+    {
+      "name": "1440: lâmpada inteira e fundo uniforme",
+      "passed": true
+    },
+    {
+      "name": "1440: link portfolio",
+      "passed": true
+    },
+    {
+      "name": "1440: título de portfolio usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "1440: link sobre-mim",
+      "passed": true
+    },
+    {
+      "name": "1440: título de sobre-mim usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "1440: link servicos",
+      "passed": true
+    },
+    {
+      "name": "1440: título de servicos usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "1440: link como-trabalho",
+      "passed": true
+    },
+    {
+      "name": "1440: título de como-trabalho usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "1440: link depoimentos",
+      "passed": true
+    },
+    {
+      "name": "1440: título de depoimentos usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "1440: link duvidas",
+      "passed": true
+    },
+    {
+      "name": "1440: título de duvidas usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "1440: link vamos-conversar",
+      "passed": true
+    },
+    {
+      "name": "1440: título de vamos-conversar usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "1440: link inicio",
+      "passed": true
+    },
+    {
+      "name": "1440: deslizamento",
+      "passed": true
+    },
+    {
+      "name": "Roda progride gradualmente",
+      "passed": true
+    },
+    {
+      "name": "Roda acumula gestos consecutivos",
+      "passed": true
+    },
+    {
+      "name": "Inversão da roda responde imediatamente",
+      "passed": true
+    },
+    {
+      "name": "Teclado interrompe a navegação animada",
+      "passed": true
+    },
+    {
+      "name": "1440: FAQ",
+      "passed": true
+    },
+    {
+      "name": "1440: modal",
+      "passed": true
+    },
+    {
+      "name": "1440: título do modal animado",
+      "passed": true
+    },
+    {
+      "name": "Carrossel troca após 3 segundos",
+      "passed": true
+    },
+    {
+      "name": "Carrossel pausa no hover",
+      "passed": true
+    },
+    {
+      "name": "Carrossel pausa ao segurar",
+      "passed": true
+    },
+    {
+      "name": "Carrossel retoma após soltar e sair",
+      "passed": true
+    },
+    {
+      "name": "Controle do carrossel funciona",
+      "passed": true
+    },
+    {
+      "name": "1440: todos os títulos do conteúdo receberam a entrada",
+      "passed": true
+    },
+    {
+      "name": "390: título e links em cascata",
+      "passed": true
+    },
+    {
+      "name": "390: todos os textos visíveis da hero animam",
+      "passed": true
+    },
+    {
+      "name": "390: chamada para rolar disponível",
+      "passed": true
+    },
+    {
+      "name": "390: seta se movimenta",
+      "passed": true
+    },
+    {
+      "name": "390: cliente estática e fluxo sem pin",
+      "passed": true
+    },
+    {
+      "name": "390: ScrollToPlugin",
+      "passed": true
+    },
+    {
+      "name": "390: assets preservados",
+      "passed": true
+    },
+    {
+      "name": "390: fonte normal e pointer global",
+      "passed": true
+    },
+    {
+      "name": "390: título inteiro atrás da cliente",
+      "passed": true
+    },
+    {
+      "name": "390: sem overflow",
+      "passed": true
+    },
+    {
+      "name": "390: seções ocupam largura inteira",
+      "passed": true
+    },
+    {
+      "name": "390: barra lateral oculta",
+      "passed": true
+    },
+    {
+      "name": "390: imagem sobre cobre a seção",
+      "passed": true
+    },
+    {
+      "name": "390: fundo preto em toda a página",
+      "passed": true
+    },
+    {
+      "name": "390: sobre-mim seleciona a imagem correta",
+      "passed": true
+    },
+    {
+      "name": "390: sobre-mim mantém proporção e texto abaixo do rosto",
+      "passed": true
+    },
+    {
+      "name": "390: vamos-conversar seleciona a imagem correta",
+      "passed": true
+    },
+    {
+      "name": "390: vamos-conversar mantém proporção e texto abaixo do rosto",
+      "passed": true
+    },
+    {
+      "name": "390: lâmpada inteira e fundo uniforme",
+      "passed": true
+    },
+    {
+      "name": "390: link portfolio",
+      "passed": true
+    },
+    {
+      "name": "390: título de portfolio usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "390: link sobre-mim",
+      "passed": true
+    },
+    {
+      "name": "390: título de sobre-mim usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "390: link servicos",
+      "passed": true
+    },
+    {
+      "name": "390: título de servicos usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "390: link como-trabalho",
+      "passed": true
+    },
+    {
+      "name": "390: título de como-trabalho usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "390: link depoimentos",
+      "passed": true
+    },
+    {
+      "name": "390: título de depoimentos usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "390: link duvidas",
+      "passed": true
+    },
+    {
+      "name": "390: título de duvidas usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "390: link vamos-conversar",
+      "passed": true
+    },
+    {
+      "name": "390: título de vamos-conversar usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "390: link inicio",
+      "passed": true
+    },
+    {
+      "name": "390: deslizamento",
+      "passed": true
+    },
+    {
+      "name": "390: FAQ",
+      "passed": true
+    },
+    {
+      "name": "390: modal",
+      "passed": true
+    },
+    {
+      "name": "390: título do modal animado",
+      "passed": true
+    },
+    {
+      "name": "390: todos os títulos do conteúdo receberam a entrada",
+      "passed": true
+    },
+    {
+      "name": "360: título e links em cascata",
+      "passed": true
+    },
+    {
+      "name": "360: todos os textos visíveis da hero animam",
+      "passed": true
+    },
+    {
+      "name": "360: chamada para rolar disponível",
+      "passed": true
+    },
+    {
+      "name": "360: seta se movimenta",
+      "passed": true
+    },
+    {
+      "name": "360: cliente estática e fluxo sem pin",
+      "passed": true
+    },
+    {
+      "name": "360: ScrollToPlugin",
+      "passed": true
+    },
+    {
+      "name": "360: assets preservados",
+      "passed": true
+    },
+    {
+      "name": "360: fonte normal e pointer global",
+      "passed": true
+    },
+    {
+      "name": "360: título inteiro atrás da cliente",
+      "passed": true
+    },
+    {
+      "name": "360: sem overflow",
+      "passed": true
+    },
+    {
+      "name": "360: seções ocupam largura inteira",
+      "passed": true
+    },
+    {
+      "name": "360: barra lateral oculta",
+      "passed": true
+    },
+    {
+      "name": "360: imagem sobre cobre a seção",
+      "passed": true
+    },
+    {
+      "name": "360: fundo preto em toda a página",
+      "passed": true
+    },
+    {
+      "name": "360: sobre-mim seleciona a imagem correta",
+      "passed": true
+    },
+    {
+      "name": "360: sobre-mim mantém proporção e texto abaixo do rosto",
+      "passed": true
+    },
+    {
+      "name": "360: vamos-conversar seleciona a imagem correta",
+      "passed": true
+    },
+    {
+      "name": "360: vamos-conversar mantém proporção e texto abaixo do rosto",
+      "passed": true
+    },
+    {
+      "name": "360: lâmpada inteira e fundo uniforme",
+      "passed": true
+    },
+    {
+      "name": "360: link portfolio",
+      "passed": true
+    },
+    {
+      "name": "360: título de portfolio usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "360: link sobre-mim",
+      "passed": true
+    },
+    {
+      "name": "360: título de sobre-mim usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "360: link servicos",
+      "passed": true
+    },
+    {
+      "name": "360: título de servicos usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "360: link como-trabalho",
+      "passed": true
+    },
+    {
+      "name": "360: título de como-trabalho usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "360: link depoimentos",
+      "passed": true
+    },
+    {
+      "name": "360: título de depoimentos usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "360: link duvidas",
+      "passed": true
+    },
+    {
+      "name": "360: título de duvidas usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "360: link vamos-conversar",
+      "passed": true
+    },
+    {
+      "name": "360: título de vamos-conversar usa fadeInDown",
+      "passed": true
+    },
+    {
+      "name": "360: link inicio",
+      "passed": true
+    },
+    {
+      "name": "360: deslizamento",
+      "passed": true
+    },
+    {
+      "name": "360: FAQ",
+      "passed": true
+    },
+    {
+      "name": "360: modal",
+      "passed": true
+    },
+    {
+      "name": "360: título do modal animado",
+      "passed": true
+    },
+    {
+      "name": "360: todos os títulos do conteúdo receberam a entrada",
+      "passed": true
+    },
+    {
+      "name": "Movimento reduzido",
+      "passed": true
+    },
+    {
+      "name": "Redimensionar para 800 px atualiza os dois retratos",
+      "passed": true
+    },
+    {
+      "name": "Redimensionar para 801 px atualiza os dois retratos",
+      "passed": true
+    },
+    {
+      "name": "Redimensionar para 390 px atualiza os dois retratos",
+      "passed": true
+    },
+    {
+      "name": "Celular real: link desliza gradualmente",
+      "passed": true
+    },
+    {
+      "name": "Celular real: gesto de toque mantém rolagem livre",
+      "passed": true
+    },
+    {
+      "name": "Alterar preferência desativa entradas e seta",
+      "passed": true
+    },
+    {
+      "name": "Console sem erros",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

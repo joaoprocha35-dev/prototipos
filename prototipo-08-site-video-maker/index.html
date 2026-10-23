@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16091d">
+  <title>Portfólio Videomaker — Histórias em movimento</title>
+  <meta name="description" content="Um olhar sobre histórias em movimento. Conheça o portfólio de videomaker, os vídeos para marcas, eventos e redes sociais e as etapas de produção.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="vendor/Anton-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" as="image" href="referencia-hero/fundo-hero.png" fetchpriority="high">
+  <link rel="preload" as="image" href="referencia-hero/imagem-cliente.png" fetchpriority="high">
+  <link rel="stylesheet" href="vendor/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollToPlugin.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-navigation" id="site-navigation">
+    <div class="nav-reveal">
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span>Menu</span><span class="menu-lines" aria-hidden="true"></span>
+      </button>
+      <nav id="nav-links" aria-label="Navegação principal">
+        <a href="#inicio" aria-current="location">Início</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#sobre-mim">Sobre mim</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#como-trabalho">Como trabalho</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#vamos-conversar">Vamos conversar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <section class="hero section" id="inicio" aria-labelledby="hero-title" tabindex="-1">
+      <div class="hero-scene section-surface section-inner">
+        <img class="hero-background" src="referencia-hero/fundo-hero.png" alt="" width="1672" height="941" fetchpriority="high" decoding="sync">
+        <div class="hero-topline"><span>UM OLHAR QUE SE TORNA HISTÓRIA</span><span>FILMAR · SENTIR · CONTAR</span></div>
+        <div class="hero-title-position"><h1 id="hero-title" data-intro="title">PORTFÓLIO</h1></div>
+        <div class="hero-portrait-position">
+          <img class="hero-portrait" src="referencia-hero/imagem-cliente.png" alt="Retrato da videomaker de óculos escuros e casaco preto, olhando por cima do ombro" width="1335" height="1186" fetchpriority="high" decoding="sync">
+        </div>
+        <div class="hero-quote-position">
+          <div class="hero-quote">
+            <span class="eyebrow">POR TRÁS DE CADA FRAME, UM OLHAR</span>
+            <p>Que minha câmera registre o que meus olhos enxergam, em Deus.</p>
+          </div>
+        </div>
+        <div class="hero-bottom"><span>VIDEOMAKER</span><a href="#portfolio" class="hero-scroll" aria-label="Rolar para baixo e explorar o portfólio"><span>ROLE PARA BAIXO</span><span class="scroll-arrow" aria-hidden="true">↓</span></a><span>CREATIVE PORTFOLIO</span></div>
+      </div>
+    </section>
+
+    <div class="site-content">
+      <section class="portfolio section" id="portfolio" aria-labelledby="portfolio-title" tabindex="-1">
+        <div class="section-surface section-inner">
+          <div class="showreel section-container">
+            <div class="showreel-copy reveal">
+              <span class="eyebrow"><span class="small-dot"></span>01 / PORTFÓLIO</span>
+              <h2 id="portfolio-title">Histórias<br>em movimento.</h2>
+              <p>Um olhar, muitas formas de contar.<br>Deixe as imagens falarem.</p>
+              <button class="text-button" type="button" data-video="showreel" data-title="Showreel"><span class="circle-arrow" aria-hidden="true">↗</span><span>ASSISTA AO SHOWREEL</span></button>
+            </div>
+            <div class="showreel-visual reveal">
+              <button class="showreel-cover" type="button" data-video="showreel" data-title="Showreel" aria-label="Abrir showreel — vídeo a ser adicionado">
+                <picture>
+                  <source media="(min-width: 801px)" srcset="referencia-secoes/capa-do-video-computador.png">
+                  <img src="referencia-secoes/capa-do-video-computador-celular.png" alt="Videomaker em contraluz com iluminação roxa, capa do showreel" width="752" height="1344" loading="lazy" decoding="async">
+                </picture>
+                <span class="cover-topline"><span>UM RESUMO VISUAL</span><span aria-hidden="true">↗</span></span>
+                <span class="play-button" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></svg></span>
+                <span class="cover-bottomline"><span>SHOWREEL</span><span class="availability" data-video-status="showreel">VÍDEO EM BREVE</span></span>
+              </button>
+            </div>
+          </div>
+          <div class="featured section-container">
+            <div class="section-heading reveal"><div><span class="eyebrow">MEUS TRABALHOS</span><h3>Em destaque</h3></div><span class="heading-note">EVENTOS, MARCAS & CONEXÕES.</span></div>
+            <div class="featured-grid" data-stagger>
+              <article class="project-card reveal">
+                <button class="project-cover" type="button" data-video="eventos" data-title="Vídeos de eventos" aria-label="Ver vídeos de eventos — conteúdo a ser adicionado">
+                  <picture><source media="(min-width: 801px)" srcset="referencia-secoes/card-de-destaque-eventos-computador.png"><img src="referencia-secoes/card-de-destaque-eventos-celular.png" alt="Videomaker registrando um evento com câmera profissional entre luzes roxas" width="752" height="1344" loading="lazy" decoding="async"></picture>
+                  <span class="project-label"><span><small>01 / MOMENTOS</small><strong>Eventos</strong></span><span class="outline-arrow" aria-hidden="true">↗</span></span>
+                </button>
+              </article>
+              <article class="project-card reveal">
+                <button class="project-cover" type="button" data-video="marcas" data-title="Vídeos para marcas" aria-label="Ver vídeos para marcas — conteúdo a ser adicionado">
+                  <picture><source media="(min-width: 801px)" srcset="referencia-secoes/card-de-destauqe-marcas-computador.png"><img src="referencia-secoes/card-de-destauqe-marcas-celular.png" alt="Retrato da videomaker em uma produção com iluminação cinematográfica roxa" width="752" height="1344" loading="lazy" decoding="async"></picture>
+                  <span class="project-label"><span><small>02 / IDENTIDADE</small><strong>Marcas</strong></span><span class="outline-arrow" aria-hidden="true">↗</span></span>
+                </button>
+              </article>
+              <article class="project-card project-card-social reveal">
+                <button class="project-cover" type="button" data-video="redes" data-title="Vídeos para redes sociais" aria-label="Ver vídeos para redes sociais — conteúdo a ser adicionado">
+                  <picture><source media="(min-width: 801px)" srcset="referencia-secoes/card-de-destaque-redes-sociais-computador.png"><img src="referencia-secoes/card-videos-redes-sociais-computador-celular.png" alt="Bastidores de uma produção de conteúdo para redes sociais com iluminação roxa" width="1672" height="941" loading="lazy" decoding="async"></picture>
+                  <span class="project-label"><span><small>03 / CONEXÕES</small><strong>Redes sociais</strong></span><span class="outline-arrow" aria-hidden="true">↗</span></span>
+                </button>
+              </article>
+            </div>
+            <p class="section-footnote">Seleção visual do portfólio. Os vídeos e os detalhes dos projetos serão adicionados em breve.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="sobre-mim" aria-labelledby="about-title" tabindex="-1">
+        <div class="section-surface section-inner about-layout section-container">
+          <div class="about-visual reveal"><picture><source media="(min-width: 801px)" srcset="referencia-secoes/secao-sobre-mim-computador.png" width="1536" height="1024"><img src="referencia-secoes/secao-sobre-mim-celular.png" alt="Videomaker de óculos escuros em retrato com curvas de luz roxa e fundo preto" width="752" height="1344" loading="lazy" decoding="async"></picture><span class="photo-caption">O OLHAR POR TRÁS DA CÂMERA.</span></div>
+          <div class="about-copy reveal">
+            <span class="eyebrow">02 / SOBRE MIM</span>
+            <h2 id="about-title">Criar e contar<br>o que importa.</h2>
+            <span class="provisional-label">APRESENTAÇÃO EM CONSTRUÇÃO</span>
+            <p>Aqui você vai conhecer a trajetória, as inspirações e o olhar de quem está por trás da câmera.</p>
+            <p class="muted">Texto provisório. A apresentação e as informações profissionais serão preenchidas com a cliente.</p>
+            <a href="#como-trabalho" class="text-button"><span class="circle-arrow" aria-hidden="true">↗</span><span>CONHEÇA O PROCESSO</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="services section section-container" id="servicos" aria-labelledby="services-title" tabindex="-1">
+        <div class="section-surface section-inner">
+          <div class="section-heading reveal"><div><span class="eyebrow">03 / SERVIÇOS</span><h2 id="services-title">Sua ideia, em cena.</h2></div><p class="heading-description">Diferentes formatos.<br>A mesma atenção ao olhar.</p></div>
+          <div class="services-grid" data-stagger>
+            <article class="service-card reveal"><div class="service-image"><img src="referencia-secoes/card-videos-para-marcas-computador-celular.png" alt="Câmera filmando a apresentação de um frasco de perfume sob luz roxa" width="1672" height="941" loading="lazy" decoding="async"></div><div class="service-copy"><span class="eyebrow">IDENTIDADE EM MOVIMENTO</span><h3>Para marcas</h3><p>Imagens para apresentar a essência de uma marca.</p><a href="#vamos-conversar" aria-label="Conversar sobre vídeos para marcas" class="outline-arrow">↗</a></div></article>
+            <article class="service-card reveal"><div class="service-image"><img src="referencia-secoes/card-videos-para-eventos-computador-e-celular.png" alt="Profissional filmando um casal em uma celebração com luzes quentes" width="1672" height="941" loading="lazy" decoding="async"></div><div class="service-copy"><span class="eyebrow">MOMENTOS QUE FICAM</span><h3>Para eventos</h3><p>Um registro em vídeo dos momentos de um evento.</p><a href="#vamos-conversar" aria-label="Conversar sobre vídeos para eventos" class="outline-arrow">↗</a></div></article>
+            <article class="service-card reveal"><div class="service-image"><img src="referencia-secoes/card-videos-redes-sociais-computador-celular.png" alt="Gravação de conteúdo para redes sociais com celular em um estúdio roxo" width="1672" height="941" loading="lazy" decoding="async"></div><div class="service-copy"><span class="eyebrow">HISTÓRIAS QUE CONECTAM</span><h3>Para redes sociais</h3><p>Conteúdo em vídeo para levar ideias às redes.</p><a href="#vamos-conversar" aria-label="Conversar sobre vídeos para redes sociais" class="outline-arrow">↗</a></div></article>
+          </div>
+          <p class="section-footnote">O escopo de cada produção será definido com a cliente.</p>
+        </div>
+      </section>
+
+      <section class="process section section-container" id="como-trabalho" aria-labelledby="process-title" tabindex="-1">
+        <div class="section-surface section-inner">
+          <div class="section-heading reveal"><div><span class="eyebrow">04 / COMO TRABALHO</span><h2 id="process-title">Da ideia ao último frame.</h2></div><span class="heading-note">UM PROCESSO, QUATRO ETAPAS.</span></div>
+          <ol class="process-grid" data-stagger>
+            <li class="process-card reveal"><div class="process-image"><img src="referencia-secoes/card-briefing.png" alt="Storyboard, caderno e referências visuais sobre uma mesa de produção" width="1672" height="941" loading="lazy" decoding="async"><span aria-hidden="true">01</span></div><div class="process-copy"><h3>Briefing</h3><p>O ponto de partida: a ideia, a mensagem e o objetivo do vídeo.</p></div></li>
+            <li class="process-card reveal"><div class="process-image process-image-bulb"><img src="referencia-secoes/card-planejamento.png" alt="Lâmpada acesa sobre fundo preto, representando o desenvolvimento de ideias" width="1086" height="1448" loading="lazy" decoding="async"><span aria-hidden="true">02</span></div><div class="process-copy"><h3>Planejamento</h3><p>Referências e organização para transformar a ideia em imagens.</p></div></li>
+            <li class="process-card reveal"><div class="process-image"><img src="referencia-secoes/card-capitacao.png" alt="Profissional operando uma câmera de cinema em uma produção de estúdio" width="1933" height="814" loading="lazy" decoding="async"><span aria-hidden="true">03</span></div><div class="process-copy"><h3>Captação</h3><p>A história ganha forma pelo enquadramento, pela luz e pelo movimento.</p></div></li>
+            <li class="process-card reveal"><div class="process-image"><img src="referencia-secoes/card-edicao-entrega.png" alt="Profissional editando imagens e ajustando cores em uma estação de vídeo" width="1672" height="941" loading="lazy" decoding="async"><span aria-hidden="true">04</span></div><div class="process-copy"><h3>Edição e entrega</h3><p>As cenas se encontram na montagem e no formato final do vídeo.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="testimonials section section-container" id="depoimentos" aria-labelledby="testimonials-title" tabindex="-1">
+        <div class="section-surface section-inner split-section">
+          <div class="reveal"><span class="eyebrow">05 / DEPOIMENTOS</span><h2 id="testimonials-title">Depois<br> do play.</h2><p class="muted">O espaço de quem faz parte<br>dessas histórias.</p></div>
+          <div class="testimonial-carousel" role="region" aria-roledescription="carrossel" aria-label="Depoimentos — conteúdo provisório">
+            <div class="testimonial-viewport" tabindex="0" aria-label="Cards de depoimentos. Use as setas para navegar.">
+              <article class="testimonial-placeholder" data-testimonial><span class="quote-mark" aria-hidden="true">“</span><span class="provisional-label">EM BREVE, EXPERIÊNCIAS REAIS</span><h3>Histórias também<br>se contam em palavras.</h3><p>Este espaço está reservado para avaliações reais, publicadas com autorização de cada cliente.</p><span class="placeholder-line" aria-hidden="true"></span></article>
+              <article class="testimonial-placeholder" data-testimonial hidden><span class="quote-mark" aria-hidden="true">“</span><span class="provisional-label">CONTEÚDO A PREENCHER</span><h3>Um espaço para<br>cada experiência.</h3><p>A avaliação e os detalhes do projeto serão incluídos após a confirmação e autorização do cliente.</p><span class="placeholder-line" aria-hidden="true"></span></article>
+              <article class="testimonial-placeholder" data-testimonial hidden><span class="quote-mark" aria-hidden="true">“</span><span class="provisional-label">AGUARDANDO AVALIAÇÕES REAIS</span><h3>Novos relatos<br>chegam em breve.</h3><p>Este é um card provisório de demonstração do carrossel. Nenhuma fala foi atribuída a clientes.</p><span class="placeholder-line" aria-hidden="true"></span></article>
+            </div>
+            <div class="carousel-controls"><button type="button" data-carousel-prev aria-label="Depoimento anterior">←</button><span data-carousel-count aria-live="off">1 / 3</span><button type="button" data-carousel-next aria-label="Próximo depoimento">→</button><button type="button" data-carousel-pause aria-pressed="false">Pausar</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq section section-container" id="duvidas" aria-labelledby="faq-title" tabindex="-1">
+        <div class="section-surface section-inner split-section">
+          <div class="reveal"><span class="eyebrow">06 / DÚVIDAS</span><h2 id="faq-title">Antes de<br> começar.</h2><p class="muted">Algumas perguntas,<br>para a próxima conversa.</p></div>
+          <div class="faq-list reveal">
+            <details><summary>Quais tipos de vídeo posso encontrar aqui?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>O portfólio está organizado em vídeos para marcas, eventos e redes sociais. O escopo de cada serviço será confirmado com a cliente.</p></div></details>
+            <details><summary>Como começa um projeto?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>A estrutura proposta passa por briefing, planejamento, captação e edição e entrega. Os detalhes de cada etapa serão alinhados para cada projeto.</p></div></details>
+            <details><summary>Qual é o prazo de entrega?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Informação a confirmar com a cliente. O prazo real precisa considerar o formato, o escopo e as necessidades da produção.</p></div></details>
+            <details><summary>Como solicitar um orçamento?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Os canais oficiais de contato serão adicionados à seção “Vamos conversar”. Valores e condições serão informados pela profissional.</p></div></details>
+            <details><summary>Em quais locais são feitas as gravações?<span aria-hidden="true">+</span></summary><div class="faq-answer"><p>Área de atendimento a confirmar com a cliente. A localização e a disponibilidade para deslocamentos ainda não foram informadas.</p></div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="vamos-conversar" aria-labelledby="contact-title" tabindex="-1">
+        <div class="contact-panel section-surface section-inner section-container">
+          <div class="contact-visual"><picture><source media="(min-width: 801px)" srcset="referencia-secoes/secao-vamos-conversar-computador.png" width="1344" height="752"><img src="referencia-secoes/secao-vamos-conversar-celular.png" alt="Videomaker segurando uma câmera junto ao rosto, com luz roxa ao fundo" width="752" height="1344" loading="lazy" decoding="async"></picture></div>
+          <div class="contact-heading reveal"><span class="eyebrow">07 / VAMOS CONVERSAR</span><h2 id="contact-title">Toda história começa<br>com uma ideia.</h2></div>
+          <div class="contact-copy reveal"><p>Uma marca, um evento, uma nova história.<br>Qual é a sua próxima cena?</p><div class="contact-channels"><a class="contact-link" data-contact="whatsapp" aria-disabled="true" tabindex="-1"><span>WhatsApp<small data-contact-status>Em breve</small></span><span aria-hidden="true">↗</span></a><a class="contact-link" data-contact="instagram" aria-disabled="true" tabindex="-1"><span>Instagram<small data-contact-status>Em breve</small></span><span aria-hidden="true">↗</span></a><a class="contact-link" data-contact="email" aria-disabled="true" tabindex="-1"><span>E-mail<small data-contact-status>Em breve</small></span><span aria-hidden="true">↗</span></a></div><p class="contact-note">Canais oficiais aguardando confirmação da cliente.</p></div>
+        </div>
+      </section>
+
+      <footer class="site-footer section-container">
+        <div class="footer-main"><a class="footer-brand" href="#inicio">Portfólio<span>VIDEOMAKER & CRIAÇÃO</span></a><nav class="footer-navigation" aria-label="Navegação do rodapé"><a href="#inicio">Início</a><a href="#portfolio">Portfólio</a><a href="#sobre-mim">Sobre mim</a><a href="#servicos">Serviços</a><a href="#como-trabalho">Como trabalho</a><a href="#depoimentos">Depoimentos</a><a href="#duvidas">Dúvidas</a><a href="#vamos-conversar">Vamos conversar</a></nav><a class="back-to-top" href="#inicio" aria-label="Voltar ao início">↑</a></div>
+        <div class="footer-bottom"><span>© <span data-year>2026</span> Portfólio Videomaker.</span><span>UM OLHAR. MUITAS HISTÓRIAS.</span><span>Canais de contato em breve.</span></div>
+      </footer>
+    </div>
+  </main>
+
+  <dialog class="video-dialog" id="video-dialog" aria-labelledby="video-title">
+    <div class="video-dialog-header"><span class="eyebrow">PORTFÓLIO / PLAY</span><button type="button" class="dialog-close" data-dialog-close aria-label="Fechar vídeo">×</button></div>
+    <h2 id="video-title">Showreel</h2>
+    <video id="video-player" controls playsinline preload="none" hidden aria-label="Reprodutor do vídeo selecionado"></video>
+    <div class="video-placeholder" id="video-placeholder"><span class="placeholder-play" aria-hidden="true">▷</span><h3>Em breve, em movimento.</h3><p>Este vídeo ainda não foi adicionado ao portfólio.<br>Volte em breve para assistir.</p></div>
+    <p id="video-error" role="status" hidden></p>
+    <button type="button" class="dialog-return" data-dialog-close>Voltar ao portfólio <span aria-hidden="true">↗</span></button>
+  </dialog>
+</body>
+</html>
